@@ -1,0 +1,46 @@
+﻿@model IEnumerable<SmartTourWeb.Models.group>
+
+@{
+    ViewBag.Title = "Quản lý nhóm";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Danh sách nhóm</h2>
+
+ <div class="Control">
+            <ul>
+                <li><a class="vadd" href="/GroupManager/Create">Thêm nhóm</a></li>
+            </ul>
+    </div>
+<table  class="TableView">
+   <tr class="trHeader">
+        <th >Tùy chọn</th>
+        <th class="Text">
+           Mã nhóm
+        </th>
+       <th class="Text">
+          Tên nhóm
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+   <tr class="trOdd">
+        <td class="Function">
+            @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "vdetail" }) 
+            @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "vedit" }) 
+            @if (item.id != 1 && item.id != 2 && item.id != 3)
+            {
+            @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "vdelete" })
+            }
+        </td>
+       <td class="Text">
+            @Html.DisplayFor(modelItem => item.id)
+        </td>
+        <td class="Text">
+            @Html.DisplayFor(modelItem => item.group_name)
+        </td>
+
+    </tr>
+}
+
+</table>

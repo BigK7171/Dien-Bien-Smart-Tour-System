@@ -1,0 +1,596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="smtModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="smtdbEntities1" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="agents" EntityType="smtModel.agent" />
+    <EntitySet Name="agent_category_permission" EntityType="smtModel.agent_category_permission" />
+    <EntitySet Name="groups" EntityType="smtModel.group" />
+    <EntitySet Name="smt_comment" EntityType="smtModel.smt_comment" />
+    <EntitySet Name="smt_layer" EntityType="smtModel.smt_layer" />
+    <EntitySet Name="smt_location" EntityType="smtModel.smt_location" />
+    <EntitySet Name="smt_parent_category" EntityType="smtModel.smt_parent_category" />
+    <EntitySet Name="smt_permission" EntityType="smtModel.smt_permission" />
+    <EntitySet Name="smt_sub_category" EntityType="smtModel.smt_sub_category" />
+    <EntitySet Name="smt_tour_items" EntityType="smtModel.smt_tour_items" />
+    <EntitySet Name="smt_tours" EntityType="smtModel.smt_tours" />
+    <EntitySet Name="smt_user" EntityType="smtModel.smt_user" />
+    <AssociationSet Name="FK_AGENT_Group_id" Association="smtModel.FK_AGENT_Group_id">
+      <End Role="group" EntitySet="groups" />
+      <End Role="agent" EntitySet="agents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Module_permission_Group_id" Association="smtModel.FK_Group_Module_permission_Group_id">
+      <End Role="agent" EntitySet="agents" />
+      <End Role="agent_category_permission" EntitySet="agent_category_permission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_LAYER_AGENT_agent_id" Association="smtModel.FK_SMT_LAYER_AGENT_agent_id">
+      <End Role="agent" EntitySet="agents" />
+      <End Role="smt_layer" EntitySet="smt_layer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_smt_location_agent_agent_id" Association="smtModel.FK_smt_location_agent_agent_id">
+      <End Role="agent" EntitySet="agents" />
+      <End Role="smt_location" EntitySet="smt_location" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_PARENT_CATEGORY_AGENT_agent_id" Association="smtModel.FK_SMT_PARENT_CATEGORY_AGENT_agent_id">
+      <End Role="agent" EntitySet="agents" />
+      <End Role="smt_parent_category" EntitySet="smt_parent_category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_SUB_CATEGORY_AGENT_agent_id" Association="smtModel.FK_SMT_SUB_CATEGORY_AGENT_agent_id">
+      <End Role="agent" EntitySet="agents" />
+      <End Role="smt_sub_category" EntitySet="smt_sub_category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_TOURS_AGENT_agent_id" Association="smtModel.FK_SMT_TOURS_AGENT_agent_id">
+      <End Role="agent" EntitySet="agents" />
+      <End Role="smt_tours" EntitySet="smt_tours" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_USER_AGENT_agent_id" Association="smtModel.FK_SMT_USER_AGENT_agent_id">
+      <End Role="agent" EntitySet="agents" />
+      <End Role="smt_user" EntitySet="smt_user" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_permission_SMT_PARENT_CATEGORY_parent_category_id" Association="smtModel.FK_Group_permission_SMT_PARENT_CATEGORY_parent_category_id">
+      <End Role="smt_sub_category" EntitySet="smt_sub_category" />
+      <End Role="agent_category_permission" EntitySet="agent_category_permission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_COMMENT_SMT_LOCATION_location_id" Association="smtModel.FK_SMT_COMMENT_SMT_LOCATION_location_id">
+      <End Role="smt_location" EntitySet="smt_location" />
+      <End Role="smt_comment" EntitySet="smt_comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_COMMENT_SMT_USER_user_id" Association="smtModel.FK_SMT_COMMENT_SMT_USER_user_id">
+      <End Role="smt_user" EntitySet="smt_user" />
+      <End Role="smt_comment" EntitySet="smt_comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_LAYER_SMT_USER_user_id" Association="smtModel.FK_SMT_LAYER_SMT_USER_user_id">
+      <End Role="smt_user" EntitySet="smt_user" />
+      <End Role="smt_layer" EntitySet="smt_layer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_smt_location_smt_sub_category_sub_category_id" Association="smtModel.FK_smt_location_smt_sub_category_sub_category_id">
+      <End Role="smt_sub_category" EntitySet="smt_sub_category" />
+      <End Role="smt_location" EntitySet="smt_location" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_PERMISSION_SMT_LOCATION_location_id" Association="smtModel.FK_SMT_PERMISSION_SMT_LOCATION_location_id">
+      <End Role="smt_location" EntitySet="smt_location" />
+      <End Role="smt_permission" EntitySet="smt_permission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_TOUR_ITEMS_SMT_LOCATION_location_id" Association="smtModel.FK_SMT_TOUR_ITEMS_SMT_LOCATION_location_id">
+      <End Role="smt_location" EntitySet="smt_location" />
+      <End Role="smt_tour_items" EntitySet="smt_tour_items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_PARENT_CATEGORY_SMT_USER_user_id" Association="smtModel.FK_SMT_PARENT_CATEGORY_SMT_USER_user_id">
+      <End Role="smt_user" EntitySet="smt_user" />
+      <End Role="smt_parent_category" EntitySet="smt_parent_category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_SUB_CATEGORY_SMT_PARENT_CATEGORY_parent_category_id" Association="smtModel.FK_SMT_SUB_CATEGORY_SMT_PARENT_CATEGORY_parent_category_id">
+      <End Role="smt_parent_category" EntitySet="smt_parent_category" />
+      <End Role="smt_sub_category" EntitySet="smt_sub_category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_PERMISSION_SMT_USER_user_id" Association="smtModel.FK_SMT_PERMISSION_SMT_USER_user_id">
+      <End Role="smt_user" EntitySet="smt_user" />
+      <End Role="smt_permission" EntitySet="smt_permission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_SUB_CATEGORY_SMT_USER_user_id" Association="smtModel.FK_SMT_SUB_CATEGORY_SMT_USER_user_id">
+      <End Role="smt_user" EntitySet="smt_user" />
+      <End Role="smt_sub_category" EntitySet="smt_sub_category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_TOUR_ITEMS_SMT_TOURS_tour_id" Association="smtModel.FK_SMT_TOUR_ITEMS_SMT_TOURS_tour_id">
+      <End Role="smt_tours" EntitySet="smt_tours" />
+      <End Role="smt_tour_items" EntitySet="smt_tour_items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_TOURS_SMT_USER_user_id" Association="smtModel.FK_SMT_TOURS_SMT_USER_user_id">
+      <End Role="smt_user" EntitySet="smt_user" />
+      <End Role="smt_tours" EntitySet="smt_tours" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="agent">
+    <Key>
+      <PropertyRef Name="agent_id" />
+    </Key>
+    <Property Name="agent_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="agent_name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="agent_des" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="group_id" Type="Int32" />
+    <NavigationProperty Name="group" Relationship="smtModel.FK_AGENT_Group_id" FromRole="agent" ToRole="group" />
+    <NavigationProperty Name="agent_category_permission" Relationship="smtModel.FK_Group_Module_permission_Group_id" FromRole="agent" ToRole="agent_category_permission" />
+    <NavigationProperty Name="smt_layer" Relationship="smtModel.FK_SMT_LAYER_AGENT_agent_id" FromRole="agent" ToRole="smt_layer" />
+    <NavigationProperty Name="smt_location" Relationship="smtModel.FK_smt_location_agent_agent_id" FromRole="agent" ToRole="smt_location" />
+    <NavigationProperty Name="smt_parent_category" Relationship="smtModel.FK_SMT_PARENT_CATEGORY_AGENT_agent_id" FromRole="agent" ToRole="smt_parent_category" />
+    <NavigationProperty Name="smt_sub_category" Relationship="smtModel.FK_SMT_SUB_CATEGORY_AGENT_agent_id" FromRole="agent" ToRole="smt_sub_category" />
+    <NavigationProperty Name="smt_tours" Relationship="smtModel.FK_SMT_TOURS_AGENT_agent_id" FromRole="agent" ToRole="smt_tours" />
+    <NavigationProperty Name="smt_user" Relationship="smtModel.FK_SMT_USER_AGENT_agent_id" FromRole="agent" ToRole="smt_user" />
+  </EntityType>
+  <EntityType Name="agent_category_permission">
+    <Key>
+      <PropertyRef Name="agent_id" />
+      <PropertyRef Name="category_id" />
+    </Key>
+    <Property Name="agent_id" Type="Int32" Nullable="false" />
+    <Property Name="category_id" Type="Int32" Nullable="false" />
+    <Property Name="permission" Type="SByte" Nullable="false" />
+    <Property Name="user_created" Type="Int32" Nullable="false" />
+    <Property Name="time_create" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="agent" Relationship="smtModel.FK_Group_Module_permission_Group_id" FromRole="agent_category_permission" ToRole="agent" />
+    <NavigationProperty Name="smt_sub_category" Relationship="smtModel.FK_Group_permission_SMT_PARENT_CATEGORY_parent_category_id" FromRole="agent_category_permission" ToRole="smt_sub_category" />
+  </EntityType>
+  <EntityType Name="group">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="group_name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="agents" Relationship="smtModel.FK_AGENT_Group_id" FromRole="group" ToRole="agent" />
+  </EntityType>
+  <EntityType Name="smt_comment">
+    <Key>
+      <PropertyRef Name="comment_id" />
+    </Key>
+    <Property Name="comment_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="location_id" Type="Int64" Nullable="false" />
+    <Property Name="comment_contain" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="comment_time" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="smt_location" Relationship="smtModel.FK_SMT_COMMENT_SMT_LOCATION_location_id" FromRole="smt_comment" ToRole="smt_location" />
+    <NavigationProperty Name="smt_user" Relationship="smtModel.FK_SMT_COMMENT_SMT_USER_user_id" FromRole="smt_comment" ToRole="smt_user" />
+  </EntityType>
+  <EntityType Name="smt_layer">
+    <Key>
+      <PropertyRef Name="layer_id" />
+    </Key>
+    <Property Name="layer_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="layer_name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="layer_des_vi" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="layer_des_en" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="layer_url" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="layer_time_created" Type="DateTime" Precision="0" />
+    <Property Name="layer_agent_id" Type="Int32" />
+    <Property Name="layer_user_created" Type="Int32" />
+    <NavigationProperty Name="agent" Relationship="smtModel.FK_SMT_LAYER_AGENT_agent_id" FromRole="smt_layer" ToRole="agent" />
+    <NavigationProperty Name="smt_user" Relationship="smtModel.FK_SMT_LAYER_SMT_USER_user_id" FromRole="smt_layer" ToRole="smt_user" />
+  </EntityType>
+  <EntityType Name="smt_location">
+    <Key>
+      <PropertyRef Name="location_id" />
+    </Key>
+    <Property Name="location_id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="sub_category_id" Type="Int32" Nullable="false" />
+    <Property Name="location_latitude" Type="Double" />
+    <Property Name="location_longitude" Type="Double" />
+    <Property Name="location_name_vi" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="location_name_en" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="location_short_des_vi" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="location_short_des_en" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="location_des_vi" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="location_des_en" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="location_icondir" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="location_videodir" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="location_shared" Type="Boolean" />
+    <Property Name="location_addr" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="location_user_created" Type="Int32" />
+    <Property Name="location_time_created" Type="DateTime" Precision="0" />
+    <Property Name="location_user_modified" Type="Int32" />
+    <Property Name="location_time_modified" Type="DateTime" Precision="0" />
+    <Property Name="location_contact_web" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="location_contact_phone" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="agent_id" Type="Int32" Nullable="false" />
+    <Property Name="location_state" Type="SByte" Nullable="false" />
+    <NavigationProperty Name="agent" Relationship="smtModel.FK_smt_location_agent_agent_id" FromRole="smt_location" ToRole="agent" />
+    <NavigationProperty Name="smt_comment" Relationship="smtModel.FK_SMT_COMMENT_SMT_LOCATION_location_id" FromRole="smt_location" ToRole="smt_comment" />
+    <NavigationProperty Name="smt_sub_category" Relationship="smtModel.FK_smt_location_smt_sub_category_sub_category_id" FromRole="smt_location" ToRole="smt_sub_category" />
+    <NavigationProperty Name="smt_permission" Relationship="smtModel.FK_SMT_PERMISSION_SMT_LOCATION_location_id" FromRole="smt_location" ToRole="smt_permission" />
+    <NavigationProperty Name="smt_tour_items" Relationship="smtModel.FK_SMT_TOUR_ITEMS_SMT_LOCATION_location_id" FromRole="smt_location" ToRole="smt_tour_items" />
+  </EntityType>
+  <EntityType Name="smt_parent_category">
+    <Key>
+      <PropertyRef Name="parent_category_id" />
+    </Key>
+    <Property Name="parent_category_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="parent_category_name_vi" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="parent_category_name_en" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="parent_category_des_vi" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="parent_category_des_en" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="parent_category_user_created" Type="Int32" />
+    <Property Name="parent_category_time_created" Type="DateTime" Precision="0" />
+    <Property Name="parent_category_user_modified" Type="Int32" />
+    <Property Name="parent_category_time_modified" Type="DateTime" Precision="0" />
+    <Property Name="parent_agent_id" Type="Int32" />
+    <NavigationProperty Name="agent" Relationship="smtModel.FK_SMT_PARENT_CATEGORY_AGENT_agent_id" FromRole="smt_parent_category" ToRole="agent" />
+    <NavigationProperty Name="smt_user" Relationship="smtModel.FK_SMT_PARENT_CATEGORY_SMT_USER_user_id" FromRole="smt_parent_category" ToRole="smt_user" />
+    <NavigationProperty Name="smt_sub_category" Relationship="smtModel.FK_SMT_SUB_CATEGORY_SMT_PARENT_CATEGORY_parent_category_id" FromRole="smt_parent_category" ToRole="smt_sub_category" />
+  </EntityType>
+  <EntityType Name="smt_permission">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="location_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="location_id" Type="Int64" Nullable="false" />
+    <Property Name="permit_view" Type="SByte" />
+    <Property Name="permit_edit" Type="SByte" />
+    <NavigationProperty Name="smt_location" Relationship="smtModel.FK_SMT_PERMISSION_SMT_LOCATION_location_id" FromRole="smt_permission" ToRole="smt_location" />
+    <NavigationProperty Name="smt_user" Relationship="smtModel.FK_SMT_PERMISSION_SMT_USER_user_id" FromRole="smt_permission" ToRole="smt_user" />
+  </EntityType>
+  <EntityType Name="smt_sub_category">
+    <Key>
+      <PropertyRef Name="sub_category_id" />
+    </Key>
+    <Property Name="sub_category_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="parent_category_id" Type="Int32" />
+    <Property Name="sub_category_name_vi" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="sub_category_name_en" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="sub_category_des_vi" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="sub_category_des_en" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="sub_category_user_created" Type="Int32" />
+    <Property Name="sub_category_time_created" Type="DateTime" Precision="0" />
+    <Property Name="sub_category_user_modified" Type="Int32" />
+    <Property Name="sub_category_time_modified" Type="DateTime" Precision="0" />
+    <Property Name="sub_category_icondir" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="sub_category_agent_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="agent" Relationship="smtModel.FK_SMT_SUB_CATEGORY_AGENT_agent_id" FromRole="smt_sub_category" ToRole="agent" />
+    <NavigationProperty Name="agent_category_permission" Relationship="smtModel.FK_Group_permission_SMT_PARENT_CATEGORY_parent_category_id" FromRole="smt_sub_category" ToRole="agent_category_permission" />
+    <NavigationProperty Name="smt_location" Relationship="smtModel.FK_smt_location_smt_sub_category_sub_category_id" FromRole="smt_sub_category" ToRole="smt_location" />
+    <NavigationProperty Name="smt_parent_category" Relationship="smtModel.FK_SMT_SUB_CATEGORY_SMT_PARENT_CATEGORY_parent_category_id" FromRole="smt_sub_category" ToRole="smt_parent_category" />
+    <NavigationProperty Name="smt_user" Relationship="smtModel.FK_SMT_SUB_CATEGORY_SMT_USER_user_id" FromRole="smt_sub_category" ToRole="smt_user" />
+  </EntityType>
+  <EntityType Name="smt_tour_items">
+    <Key>
+      <PropertyRef Name="item_id" />
+    </Key>
+    <Property Name="tour_id" Type="Int32" Nullable="false" />
+    <Property Name="location_id" Type="Int64" Nullable="false" />
+    <Property Name="item_order" Type="Int32" Nullable="false" />
+    <Property Name="item_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="smt_location" Relationship="smtModel.FK_SMT_TOUR_ITEMS_SMT_LOCATION_location_id" FromRole="smt_tour_items" ToRole="smt_location" />
+    <NavigationProperty Name="smt_tours" Relationship="smtModel.FK_SMT_TOUR_ITEMS_SMT_TOURS_tour_id" FromRole="smt_tour_items" ToRole="smt_tours" />
+  </EntityType>
+  <EntityType Name="smt_tours">
+    <Key>
+      <PropertyRef Name="tour_id" />
+    </Key>
+    <Property Name="tour_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="tour_name_vi" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="tour_name_en" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="tour_short_des_vi" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="tour_short_des_en" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="tour_long_des_vi" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="tour_long_des_en" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="tour_duration" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="tour_price" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="tour_status" Type="Boolean" />
+    <Property Name="tour_user_created" Type="Int32" />
+    <Property Name="tour_time_created" Type="DateTime" Precision="0" />
+    <Property Name="tour_user_modified" Type="Int32" />
+    <Property Name="tour_time_modified" Type="DateTime" Precision="0" />
+    <Property Name="tour_icon_dir" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="tour_contact_web" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="tour_contact_phone" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="tour_video_dir" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="tour_agent_id" Type="Int32" />
+    <NavigationProperty Name="agent" Relationship="smtModel.FK_SMT_TOURS_AGENT_agent_id" FromRole="smt_tours" ToRole="agent" />
+    <NavigationProperty Name="smt_tour_items" Relationship="smtModel.FK_SMT_TOUR_ITEMS_SMT_TOURS_tour_id" FromRole="smt_tours" ToRole="smt_tour_items" />
+    <NavigationProperty Name="smt_user" Relationship="smtModel.FK_SMT_TOURS_SMT_USER_user_id" FromRole="smt_tours" ToRole="smt_user" />
+  </EntityType>
+  <EntityType Name="smt_user">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="user_email" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="secret" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="address" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="phone" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="state" Type="SByte" Nullable="false" />
+    <Property Name="created_time" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="last_login_ip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="last_login_time" Type="DateTime" Precision="0" />
+    <Property Name="user_logo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="agent_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="agent" Relationship="smtModel.FK_SMT_USER_AGENT_agent_id" FromRole="smt_user" ToRole="agent" />
+    <NavigationProperty Name="smt_comment" Relationship="smtModel.FK_SMT_COMMENT_SMT_USER_user_id" FromRole="smt_user" ToRole="smt_comment" />
+    <NavigationProperty Name="smt_layer" Relationship="smtModel.FK_SMT_LAYER_SMT_USER_user_id" FromRole="smt_user" ToRole="smt_layer" />
+    <NavigationProperty Name="smt_parent_category" Relationship="smtModel.FK_SMT_PARENT_CATEGORY_SMT_USER_user_id" FromRole="smt_user" ToRole="smt_parent_category" />
+    <NavigationProperty Name="smt_permission" Relationship="smtModel.FK_SMT_PERMISSION_SMT_USER_user_id" FromRole="smt_user" ToRole="smt_permission" />
+    <NavigationProperty Name="smt_sub_category" Relationship="smtModel.FK_SMT_SUB_CATEGORY_SMT_USER_user_id" FromRole="smt_user" ToRole="smt_sub_category" />
+    <NavigationProperty Name="smt_tours" Relationship="smtModel.FK_SMT_TOURS_SMT_USER_user_id" FromRole="smt_user" ToRole="smt_tours" />
+  </EntityType>
+  <Association Name="FK_AGENT_Group_id">
+    <End Role="group" Type="smtModel.group" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="agent" Type="smtModel.agent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="group">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="agent">
+        <PropertyRef Name="group_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Module_permission_Group_id">
+    <End Role="agent" Type="smtModel.agent" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="agent_category_permission" Type="smtModel.agent_category_permission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="agent">
+        <PropertyRef Name="agent_id" />
+      </Principal>
+      <Dependent Role="agent_category_permission">
+        <PropertyRef Name="agent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_LAYER_AGENT_agent_id">
+    <End Role="agent" Type="smtModel.agent" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="smt_layer" Type="smtModel.smt_layer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="agent">
+        <PropertyRef Name="agent_id" />
+      </Principal>
+      <Dependent Role="smt_layer">
+        <PropertyRef Name="layer_agent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_smt_location_agent_agent_id">
+    <End Role="agent" Type="smtModel.agent" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="smt_location" Type="smtModel.smt_location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="agent">
+        <PropertyRef Name="agent_id" />
+      </Principal>
+      <Dependent Role="smt_location">
+        <PropertyRef Name="agent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_PARENT_CATEGORY_AGENT_agent_id">
+    <End Role="agent" Type="smtModel.agent" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="smt_parent_category" Type="smtModel.smt_parent_category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="agent">
+        <PropertyRef Name="agent_id" />
+      </Principal>
+      <Dependent Role="smt_parent_category">
+        <PropertyRef Name="parent_agent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_SUB_CATEGORY_AGENT_agent_id">
+    <End Role="agent" Type="smtModel.agent" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="smt_sub_category" Type="smtModel.smt_sub_category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="agent">
+        <PropertyRef Name="agent_id" />
+      </Principal>
+      <Dependent Role="smt_sub_category">
+        <PropertyRef Name="sub_category_agent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_TOURS_AGENT_agent_id">
+    <End Role="agent" Type="smtModel.agent" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="smt_tours" Type="smtModel.smt_tours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="agent">
+        <PropertyRef Name="agent_id" />
+      </Principal>
+      <Dependent Role="smt_tours">
+        <PropertyRef Name="tour_agent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_USER_AGENT_agent_id">
+    <End Role="agent" Type="smtModel.agent" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="smt_user" Type="smtModel.smt_user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="agent">
+        <PropertyRef Name="agent_id" />
+      </Principal>
+      <Dependent Role="smt_user">
+        <PropertyRef Name="agent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_permission_SMT_PARENT_CATEGORY_parent_category_id">
+    <End Role="smt_sub_category" Type="smtModel.smt_sub_category" Multiplicity="1" />
+    <End Role="agent_category_permission" Type="smtModel.agent_category_permission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="smt_sub_category">
+        <PropertyRef Name="sub_category_id" />
+      </Principal>
+      <Dependent Role="agent_category_permission">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_COMMENT_SMT_LOCATION_location_id">
+    <End Role="smt_location" Type="smtModel.smt_location" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="smt_comment" Type="smtModel.smt_comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="smt_location">
+        <PropertyRef Name="location_id" />
+      </Principal>
+      <Dependent Role="smt_comment">
+        <PropertyRef Name="location_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_COMMENT_SMT_USER_user_id">
+    <End Role="smt_user" Type="smtModel.smt_user" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="smt_comment" Type="smtModel.smt_comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="smt_user">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="smt_comment">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_LAYER_SMT_USER_user_id">
+    <End Role="smt_user" Type="smtModel.smt_user" Multiplicity="0..1" />
+    <End Role="smt_layer" Type="smtModel.smt_layer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="smt_user">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="smt_layer">
+        <PropertyRef Name="layer_user_created" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_smt_location_smt_sub_category_sub_category_id">
+    <End Role="smt_sub_category" Type="smtModel.smt_sub_category" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="smt_location" Type="smtModel.smt_location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="smt_sub_category">
+        <PropertyRef Name="sub_category_id" />
+      </Principal>
+      <Dependent Role="smt_location">
+        <PropertyRef Name="sub_category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_PERMISSION_SMT_LOCATION_location_id">
+    <End Role="smt_location" Type="smtModel.smt_location" Multiplicity="1" />
+    <End Role="smt_permission" Type="smtModel.smt_permission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="smt_location">
+        <PropertyRef Name="location_id" />
+      </Principal>
+      <Dependent Role="smt_permission">
+        <PropertyRef Name="location_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_TOUR_ITEMS_SMT_LOCATION_location_id">
+    <End Role="smt_location" Type="smtModel.smt_location" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="smt_tour_items" Type="smtModel.smt_tour_items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="smt_location">
+        <PropertyRef Name="location_id" />
+      </Principal>
+      <Dependent Role="smt_tour_items">
+        <PropertyRef Name="location_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_PARENT_CATEGORY_SMT_USER_user_id">
+    <End Role="smt_user" Type="smtModel.smt_user" Multiplicity="0..1" />
+    <End Role="smt_parent_category" Type="smtModel.smt_parent_category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="smt_user">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="smt_parent_category">
+        <PropertyRef Name="parent_category_user_created" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_SUB_CATEGORY_SMT_PARENT_CATEGORY_parent_category_id">
+    <End Role="smt_parent_category" Type="smtModel.smt_parent_category" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="smt_sub_category" Type="smtModel.smt_sub_category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="smt_parent_category">
+        <PropertyRef Name="parent_category_id" />
+      </Principal>
+      <Dependent Role="smt_sub_category">
+        <PropertyRef Name="parent_category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_PERMISSION_SMT_USER_user_id">
+    <End Role="smt_user" Type="smtModel.smt_user" Multiplicity="1" />
+    <End Role="smt_permission" Type="smtModel.smt_permission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="smt_user">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="smt_permission">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_SUB_CATEGORY_SMT_USER_user_id">
+    <End Role="smt_user" Type="smtModel.smt_user" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="smt_sub_category" Type="smtModel.smt_sub_category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="smt_user">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="smt_sub_category">
+        <PropertyRef Name="sub_category_user_created" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_TOUR_ITEMS_SMT_TOURS_tour_id">
+    <End Role="smt_tours" Type="smtModel.smt_tours" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="smt_tour_items" Type="smtModel.smt_tour_items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="smt_tours">
+        <PropertyRef Name="tour_id" />
+      </Principal>
+      <Dependent Role="smt_tour_items">
+        <PropertyRef Name="tour_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_TOURS_SMT_USER_user_id">
+    <End Role="smt_user" Type="smtModel.smt_user" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="smt_tours" Type="smtModel.smt_tours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="smt_user">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="smt_tours">
+        <PropertyRef Name="tour_user_created" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

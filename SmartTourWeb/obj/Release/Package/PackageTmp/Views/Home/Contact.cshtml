@@ -1,0 +1,19 @@
+﻿@model SmartTourWeb.Models.smt_contact
+@{
+    
+    Layout = "~/Views/Shared/Home.cshtml";
+}
+
+<div class="box">
+<h2 style="text-align:center">@Resources.Resource.contact</h2>
+@if ((int)Session["CurrentCulture"] == 1)
+{
+    ViewBag.Title = "Contact";
+    <div style="margin:0px 17px">@Html.Raw(Model.contact_contain_en)</div> 
+}
+else
+{
+    ViewBag.Title = "Liên hệ";
+     <div style="margin:0px 17px">@Html.Raw(Model.contact_contain)</div>
+}
+</div>

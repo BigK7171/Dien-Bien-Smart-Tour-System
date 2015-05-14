@@ -1,0 +1,106 @@
+﻿@model SmartTourWeb.Models.smt_link_tour
+@{
+    ViewBag.Title = "Sửa liên kết tour du lịch";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Sửa liên kết tour du lịch</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <table class="TableUpdate" border="1">
+        <tbody>
+            <tr>
+                <td class="Control" colspan="2">
+                    <ul>
+                        <li>
+                            <input type="submit" value="Lưu lại" class="uupdate" /></li>
+                        <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                    </ul>
+                </td>
+            </tr>
+              <tr>
+                <th>
+                </th>
+                <td>
+                   @if (ViewBag.Success != null) 
+                    {<div class="tgreen">@ViewBag.Success</div>}
+                    else if (ViewBag.Error != null)
+                    { <div class="tred">@ViewBag.Error</div>}
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                   Mã liên kết
+                </th>
+                <td class="text valid">
+                    @Html.DisplayFor(model => model.link_tour_id)
+                    @Html.HiddenFor(model => model.link_tour_id)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                  Tên tour
+                </th>
+                <td class="text valid tbold">
+                  @Html.EditorFor(model => model.tour_name)
+                    @Html.HiddenFor(model => model.tour_name)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                 Tên tour - Tiếng Anh
+                </th>
+                <td class="text valid">
+                    @Html.EditorFor(model => model.tour_name_en)
+                    @Html.ValidationMessageFor(model => model.tour_name_en)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                   Giới thiệu
+                </th>
+                <td class="text valid">
+                    @Html.TextAreaFor(model => model.tour_des_vi, new { cols = 100, rows = 3 })
+                    @Html.ValidationMessageFor(model => model.tour_des_vi)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Giới thiệu - Tiếng Anh
+                </th>
+                <td class="text valid">
+                    @Html.TextAreaFor(model => model.tour_des_en, new { cols = 100, rows = 3 })
+                    @Html.ValidationMessageFor(model => model.tour_des_en)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Đường dẫn liên kết
+                </th>
+                <td class="text valid">
+                    @Html.EditorFor(model => model.tour_link)
+                    @Html.ValidationMessageFor(model => model.tour_link)
+                </td>
+            </tr>
+
+            <tr >
+      
+            <tr>
+                <td class="Control" colspan="2">
+                    <ul>
+                        <li>
+                            <input type="submit" value="Lưu lại" class="uupdate" /></li>
+                        <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                    </ul>
+                </td>
+            </tr>
+    </table>
+}
+
+
+
+

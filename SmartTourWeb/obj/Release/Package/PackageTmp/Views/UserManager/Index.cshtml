@@ -1,0 +1,85 @@
+﻿@model PagedList.IPagedList<SmartTourWeb.Models.smt_user>
+@using PagedList;
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Danh sách người dùng";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Danh sách người dùng</h2>
+
+
+    <div class="Control">
+            <ul>
+                <li><a class="vadd" href="/UserManager/Create">Thêm</a></li>
+            </ul>
+    </div>
+@using (Html.BeginForm("Index", "UserManager", FormMethod.Get))
+{
+    <p>
+        Tìm theo tên: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)  
+        <input type="submit" value="Search" /></p>
+}
+<table  class="TableView">
+   <tr class="trHeader">
+        <th >Tùy chọn</th>
+        <th class="Text">
+            @*@Html.DisplayNameFor(model => model.First().user_email)*@
+            @Html.ActionLink("Email", "Index", new { sortOrder = ViewBag.NameSortParm })
+        </th>
+        <th class="Text">
+            @Html.DisplayNameFor(model => model.First().username)
+        </th>
+        <th class="Text">
+            @Html.DisplayNameFor(model => model.First().address)
+        </th>
+        <th class="Text">
+            @Html.DisplayNameFor(model => model.First().phone)
+        </th>
+        <th class="Text">
+@*            @Html.DisplayNameFor(model => model.First().created_time)*@
+            @Html.ActionLink("Thời gian tạo", "Index", new { sortOrder = ViewBag.DateSortParm })
+        </th>
+        <th class="Text">
+            @Html.DisplayNameFor(model => model.First().agent.agent_name)
+        </th>
+ 
+    </tr>
+
+@foreach (var item in Model) {
+   <tr class="trOdd">
+        <td class="Function">
+            @Html.ActionLink("Details", "Details", new { id = item.user_id }, new { @class = "vdetail" }) 
+            @Html.ActionLink("Edit", "Edit", new { id = item.user_id }, new { @class = "vedit" }) 
+            @if (item.user_id != (int)Session["USER_ID"]) {@Html.ActionLink("Delete", "Delete", new { id = item.user_id }, new { @class = "vdelete" }) }
+            @* Khong hien ra nut Del doi voi tai khoan cua minh*@
+        </td>
+        <td class="Text">
+            @Html.DisplayFor(modelItem => item.user_email)
+        </td>
+        <td class="Text">
+            @Html.DisplayFor(modelItem => item.username)
+        </td>
+        <td class="Text">
+            @Html.DisplayFor(modelItem => item.address)
+        </td>
+        <td class="Text">
+            @Html.DisplayFor(modelItem => item.phone)
+        </td>
+
+        <td class="Text">
+            @Html.DisplayFor(modelItem => item.created_time)
+        </td>
+        <td class="Text">
+            @Html.DisplayFor(modelItem => item.agent.agent_name)
+        </td>
+        
+    </tr>
+}
+</table>
+
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) của @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+

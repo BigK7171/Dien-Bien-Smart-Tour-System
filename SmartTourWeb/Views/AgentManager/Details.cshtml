@@ -1,0 +1,120 @@
+﻿@model SmartTourWeb.Models.agent
+
+@{
+    ViewBag.Title = "Thông tin đơn vị quản lý";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+@{
+    List<SmartTourWeb.Models.smt_sub_category> category = (List<SmartTourWeb.Models.smt_sub_category>)ViewData["category"];
+}
+
+<h2>Thông tin chi tiết đơn vị quản lý</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <table class="TableUpdate" border="1">
+        <tbody>
+            <tr>
+                <td class="Control" colspan="2">
+                    <ul>
+                        <li>@Html.ActionLink("Sửa đơn vị", "Edit", new { id = Model.agent_id }, new { @class = "vedit" })</li>
+                        <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Mã đơn vị
+                </th>
+                <td class="text valid">
+                    @Html.DisplayFor(model => model.agent_id)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                   Tên đơn vị
+                </th>
+                <td class="text valid tbold">
+                    @Html.DisplayFor(model => model.agent_name)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                   Mô tả
+                </th>
+                <td class="text valid">
+                    @Html.DisplayFor(model => model.agent_des)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                Tên nhóm
+                </th>
+                <td class="text valid">
+                    @Html.DisplayFor(model => model.group.group_name)
+                </td>
+            </tr>
+            <tr>
+                <th>Quyền hạn đơn vị</th>
+                <td>
+                    <table>
+                        @if (category != null)
+                        {
+                            <tr>
+                                <td>Cho phép</td>
+                                <td>Thể loại</td>
+                                @*                <td>Người tạo</td>
+                <td>Ngày tạo</td>*@
+                            </tr>
+                            foreach (var item in category)
+                            {
+                                string name = item.sub_category_id.ToString();
+                                int per = 0;
+                                //string user_creat = "null";
+                                //string time_creat = "null";
+                                try
+                                {
+                                    //user_creat = item.Agent_Category_permission.Where(x => x.agent_id == Model.agent_id && x.category_id == item.sub_category_id).Select(y => y.user_created).Single().ToString();
+                                    //time_creat = item.Agent_Category_permission.Where(x => x.agent_id == Model.agent_id && x.category_id == item.sub_category_id).Select(y => y.time_create).Single().ToString();
+                                    per = item.agent_category_permission.Where(x => x.agent_id == Model.agent_id && x.category_id == item.sub_category_id).Select(y => y.permission).Single();
+                                }
+                                catch (Exception e)
+                                { }
+                            <tr>
+
+                                <td>
+                                    <input name = @name type="checkbox" value="1" @(((per == 1) ? "checked" : "")) /></td>
+                                <td>@item.sub_category_name_vi</td>
+                                @*                        <td>@user_creat</td>
+                        <td>@time_creat</td>*@
+                            </tr>
+                            }
+                        }
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <p>
+                        <input type="submit" value="Lưu chỉnh sửa quyền hạn nhóm" />
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="Control" colspan="2">
+                    <ul>
+                        <li>@Html.ActionLink("Sửa đơn vị", "Edit", new { id = Model.agent_id }, new { @class = "vedit" })</li>
+                        <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                    </ul>
+                </td>
+            </tr>
+    </table>
+
+
+
+
+
+}
+

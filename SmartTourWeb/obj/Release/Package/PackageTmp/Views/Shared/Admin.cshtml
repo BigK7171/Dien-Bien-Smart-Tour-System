@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/themes/shared.css" rel="stylesheet" />
+    <link href="~/Content/themes/Admin/admin.css" rel="stylesheet" />
+    <link href="~/Content/themes/Admin/AdminStyle.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script src="~/Scripts/ckfinder/ckfinder.js"></script>
+
+</head>
+<body>
+
+                                                             @*PHẦN ĐẦU*@
+    <div id="header">
+        <div class="div">
+            <table class="tableAd">
+                <tbody>
+                    <tr>
+                        <td colspan="3" class="logo">ADMIN PAGE MANAGER</td>
+                    </tr>   
+                    <tr>
+                        <td class="left"><img class="avata-small" src="@Session["LOGO"]"/> <strong>@Session["USER_NAME"]</strong></td>
+                        <td class="right">[ <a href="/Service/Index" target="_blank">Trang quản trị </a> ] &nbsp; [ <a href="/Home/Index" target="_blank">Trang chủ</a> ] &nbsp; [  @Html.ActionLink("Đăng xuất", "Logout", "UserManager") ] </td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+
+    </div>
+
+    <div id="main" class="clearfix">
+        <table style="width:100%; border:0; border-collapse:collapse;">
+            <tbody>
+                <tr>
+                <td id="col_left">
+                    @{Html.RenderAction("MenudropdownAdmin", "Service");}
+                </td>
+                <td id="col_right">
+                        @RenderBody()
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+   
+    @*Load lại trang*@
+    <script>
+        function refresh() {
+            location.reload();
+        }
+                </script>
+<script type="text/javascript">
+    function BrowseVideo() {
+        var finder_ = new CKFinder();
+        finder_.basePath = '../';
+        finder_.ResourceType = "Files";
+        finder_.selectActionFunction = SetFileFieldVideo;
+        finder_.popup();
+    }
+    function SetFileFieldVideo(fileUrl) {
+
+
+        var extension = fileUrl.substring(fileUrl.lastIndexOf('.'));
+        extension = extension.toLowerCase();
+
+        switch (extension) {
+            case '.mp4': case '.mp3': case '.wav': case '.wma':
+                document.getElementById('ckfVideo').value = fileUrl;
+
+                break;
+            default:
+                alert("This selected media file is not valid!");
+                document.getElementById('ckfVideo').value = "";
+                break;
+        }
+    }
+</script>
+@*    Trình quản lý ảnh, video*@
+<script type="text/javascript">
+    function BrowsePic() {
+        var finder = new CKFinder();
+        finder.basePath = '../';
+        finder.ResourceType = "Files";
+        finder.selectActionFunction = SetFileFieldImage;
+        finder.popup();
+    }
+    function SetFileFieldImage(fileUrl) {
+
+        var extension = fileUrl.substring(fileUrl.lastIndexOf('.'));
+        extension = extension.toLowerCase();
+
+        switch (extension) {
+            case '.jpg': case '.png': case '.gif': case '.jpeg': case '.bmp':
+                document.getElementById('ckfPic').value = fileUrl;
+
+                break;
+            default:
+                alert("This selected Image file is not valid!");
+                document.getElementById('ckfPic').value = "";
+                break;
+        }
+    }
+</script>
+    @*Trình soạn thảo văn bản*@
+    <script type="text/javascript">
+        CKEDITOR.replace('ckeDetail_vi');
+</script>
+    <script type="text/javascript">
+        CKEDITOR.replace("ckeDetail_en");
+</script>
+    <script type="text/javascript">
+        function heartBeat() {
+            $.get("KeepAlive.ashx?", function (data) { });
+        }
+        $(function () {
+            setInterval("heartBeat()", 1000 * 60); // 60s gửi request một lần
+        });
+</script>
+</html>

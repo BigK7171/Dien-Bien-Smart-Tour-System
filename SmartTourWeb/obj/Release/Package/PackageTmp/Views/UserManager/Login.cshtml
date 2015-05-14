@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "Đăng nhập";
+    Layout = "~/Views/Shared/Home.cshtml";
+}
+<link href="~/Content/tool/forms-min.css" rel="stylesheet" />
+<link href="~/Content/tool/buttons-min.css" rel="stylesheet" />
+<link href="~/Content/themes/Home/Home.css" rel="stylesheet" />
+
+<br />
+@if ((int)Session["CurrentCulture"] == 1)
+{
+    if (Session["USER_ID"] == null)
+    {
+        using (Html.BeginForm("Login", "UserManager", FormMethod.Post))
+        {   @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+    
+    <div class="box pure-form pure-form-aligned">
+        <div class="box_name tblue">
+            <div class="active"><span>Login</span></div>
+        </div>
+        <br />
+        <div class="pure-control-group">
+            <label for="email">@Resources.Resource.account</label>
+            <input id="email" name="IDemail" type="email" placeholder="Email Address">
+        </div>
+        <div class="pure-control-group">
+            <label for="password">@Resources.Resource.pass</label>
+            <input id="password" name="PASS" value="" type="password" placeholder="Password">
+        </div>
+
+        <input type="hidden" name="id" value="@ViewBag.id"/>
+
+        @if (ViewBag.Message != null)
+        { <div class="tred">@ViewBag.Message</div> }
+
+        <div class="pure-controls">
+            <button type="submit" id="LOGIN" name="LOGIN" class="pure-button pure-button-primary">@Resources.Resource.Login</button>
+            <div>@Resources.Resource.donthaveacc @Html.ActionLink(Resources.Resource.Register, "Register", "UserManager")</div>
+        </div>
+
+    </div>   
+        }
+
+    }
+    else
+    {
+    <div class="box">
+        <div class="box_name tblue">
+            <div class="active"><span>Register</span></div>
+    </div>
+        <br />
+
+        <div>
+            @Resources.Resource.Login_Note
+        </div>
+    </div>
+    }
+
+}
+else
+    if (Session["USER_ID"] == null)
+    {
+        using (Html.BeginForm("Login", "UserManager", FormMethod.Post))
+        {   @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+   
+
+     <div class="box pure-form pure-form-aligned">
+        <div class="box_name tblue">
+            <div class="active"><span>Đăng nhập</span></div>
+        </div>
+        <br />
+        <div class="pure-control-group">
+            <label for="email">Tài khoản</label>
+            <input id="email" name="IDemail" type="email" placeholder="Email đăng nhập">
+        </div>
+        <div class="pure-control-group">
+            <label for="password">Mật khẩu</label>
+            <input id="password" name="PASS" value="" type="password" placeholder="Mật khẩu">
+        </div>
+
+        <input type="hidden" name="id" value="@ViewBag.id"/>
+
+        @if (ViewBag.Message != null)
+        { <div class="tred">@ViewBag.Message</div> }
+
+        <div class="pure-controls">
+            <button type="submit" id="LOGIN" name="LOGIN" class="pure-button pure-button-primary">Đăng nhập</button>
+            <div>Bạn chưa có tài khoản? Xin vui lòng @Html.ActionLink("Đăng ký", "Register", "UserManager")</div>
+        </div>
+
+    </div>  
+        }
+
+    }
+    else
+    {
+    <div class="box">
+        <div class="box_name tblue">
+            <div class="active"><span>Đăng nhập</span></div>
+        </div>
+        <br />
+        <div>
+            Bạn đã đăng nhập, vui lòng đăng xuất để đăng nhập lại
+        </div>
+    </div>
+    }

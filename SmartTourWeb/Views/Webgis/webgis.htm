@@ -1,0 +1,433 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+	<title>Bản đồ trường đại học Bách Khoa Hà Nội</title>
+    <!-- this gmaps key generated for http://localhost:8080/geoserver/ -->
+    <link rel="stylesheet" href="../theme/default/style.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+    <script type='text/javascript' src='OpenLayers.js'></script>
+    <script src="http://openlayers.org/api/OpenLayers.js"></script>
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyBAiZaF14sIC401Wu-2DDGzNACa4NxC3Es"></script>
+
+
+    <style>
+     #legend{
+        float:middle;
+    }
+    </style>
+    <style type="text/css">
+        #controlToggle li {
+            list-style: none;
+        }
+        p {
+            width: 512px;
+        }
+        #options {
+            position: relative;
+            width: 512px;
+        }
+        #output {
+            float: right;
+        }
+
+        /* avoid pink tiles */
+        .olImageLoadError {
+            background-color: transparent !important;
+        }
+    </style>
+
+    <script type='text/javascript'>
+    var markers;
+    OpenLayers.Control.Click = OpenLayers.Class(OpenLayers.Control, {
+                defaultHandlerOptions: {
+                    'single': true,
+                    'double': false,
+                    'pixelTolerance': 0,
+                    'stopSingle': false,
+                    'stopDouble': false
+                },
+
+                initialize: function(options) {
+                    this.handlerOptions = OpenLayers.Util.extend(
+                        {}, this.defaultHandlerOptions
+                    );
+                    OpenLayers.Control.prototype.initialize.apply(
+                        this, arguments
+                    );
+                    this.handler = new OpenLayers.Handler.Click(
+                        this, {
+                            'click': this.trigger
+                        }, this.handlerOptions
+                    );
+                },
+
+                trigger: function(e) {
+                //A click happened!    
+                    var lonlat = map.getLonLatFromViewPortPx(e.xy)
+                    
+                    lonlat.transform(
+                      new OpenLayers.Projection("EPSG:900913"), 
+                      new OpenLayers.Projection("EPSG:4326")
+                    );
+                    
+                        feature = new OpenLayers.Feature.Vector(
+            new OpenLayers.Geometry.Point(lonlat.lon, lonlat.lat ).transform(
+                    new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                    map.getProjectionObject()));
+                    var size = new OpenLayers.Size(21,25);
+    var offset = new OpenLayers.Pixel(-(size.w/2), -size.h);
+                    var icon1 = new OpenLayers.Icon('http://www.openlayers.org/dev/img/marker.png', size, offset);  
+                vectorLayer.addFeatures(feature , icon1);
+                map.addLayer(vectorLayer);
+                    ///
+                    }
+
+            });
+    OpenLayers.ProxyHost = "geoproxy.php?url=";
+     var vectorLayer = new OpenLayers.Layer.Vector("Marker");
+     var feature;
+    var map,measureControls,controls;
+    var controls_array = [
+   //new OpenLayers.Control.Navigation({position: new OpenLayers.Pixel(100, 600)}),
+   //new OpenLayers.Control.PanZoomBar({}),
+    new OpenLayers.Control.LayerSwitcher({'ascending':false}),
+    new OpenLayers.Control.Zoompanel({position: new OpenLayers.Pixel(100, 600)}),
+    //new OpenLayers.Control.ZoomToMaxExtent({}),
+    new OpenLayers.Control.Permalink(),
+    new OpenLayers.Control.MousePosition({}),
+    new OpenLayers.Control.ScaleLine()
+    //new OpenLayers.Control.KeyboardDefaults()
+    ];
+
+    // Avoid pink error tiles
+    OpenLayers.IMAGE_RELOAD_ATTEMPTS = 3;
+    OpenLayers.Util.onImageLoadErrorColor = "transparent";
+     var historicalOverlay;
+     ///
+           
+      ////       
+	function init() {
+
+        // Map is in mercator this time, so over-ride the default
+        // options that assume lat/lon.
+        var options = {
+            projection: new OpenLayers.Projection("EPSG:32648"),
+            displayProjection: new OpenLayers.Projection("EPSG:4326"),
+            units: "m",
+            numZoomLevels: 100,
+            maxResolution: 2559.75704296875,
+            maxExtent: new OpenLayers.Bounds(-9737508, -3037508, 15037508, 9690998.34),
+            controls: controls_array
+        };
+        
+        map = new OpenLayers.Map('map_element', options);
+
+        // Create Google layers
+        var gmap = new OpenLayers.Layer.Google(
+            "Google Streets", // the default
+            {'sphericalMercator': true, numZoomLevels: 100}
+        );
+
+        var gsat = new OpenLayers.Layer.Google(
+            "Google Satellite",
+            {type: G_SATELLITE_MAP, 'sphericalMercator': true, numZoomLevels: 100}
+  );
+
+        var ghyb = new OpenLayers.Layer.Google(
+            "Google Hybrid",
+            {type: G_HYBRID_MAP, 'sphericalMercator': true,numZoomLevels: 100}
+        );
+
+        //Thêm l?p di?m
+        	var layer1 = new OpenLayers.Layer.WMS(
+			'Cay coi',
+            "http://103.27.237.230:8085/geoserver/wms",
+            {'layers': 'Cay_Coi', 'format':'image/png', 'transparent':'true'},
+           {'opacity': 1.0, 'isBaseLayer': false, 'visibility': false}
+		);
+              var layer2 = new OpenLayers.Layer.WMS(
+			'Co so vat chat',
+            "http://103.27.237.230:8085/geoserver/wms",
+            {'layers': 'Co_so_vat_chat', 'format':'image/png', 'transparent':'true'},
+           {'opacity': 1.0, 'isBaseLayer': false, 'visibility': false}
+		);
+        
+		var layer8 = new OpenLayers.Layer.WMS(
+			'Duong di',
+            "http://103.27.237.230:8085/geoserver/Bkhn_Duong_Di_polyline/wms",
+            {'layers': 'Bkhn_Duong_Di_polyline:Bkhn_Duong_Di_polyline', 'format':'image/png', 'transparent':'true'},
+           {'opacity': 1.0, 'isBaseLayer': false, 'visibility': false}
+		   //	'http://vmap0.tiles.osgeo.org/wms/vmap0',
+			//{layers: 'basic'},
+            //{isBaseLayer: false},
+            //{transparent: true},
+            //{visibility:false},
+            //{opacity:0.5}
+		);
+		var layer9 = new OpenLayers.Layer.WMS(
+			'Khu dan cu',
+            "http://103.27.237.230:8085/geoserver/Bkhn_Khu_Dan_Cu_region/wms",
+            {'layers': 'Bkhn_Khu_Dan_Cu_region:Bkhn_Khu_Dan_Cu_region', 'format':'image/png', 'transparent':'true'},
+           {'opacity': 1.0, 'isBaseLayer': false, 'visibility': false}
+		   //	'http://vmap0.tiles.osgeo.org/wms/vmap0',
+			//{layers: 'basic'},
+            //{isBaseLayer: false},
+            //{transparent: true},
+            //{visibility:false},
+            //{opacity:0.5}
+		);
+		var layer10 = new OpenLayers.Layer.WMS(
+			'Tat ca',
+            "http://103.27.237.230:8085/geoserver/wms",
+            {'layers': 'MapDHBKHaNoi2014', 'format':'image/png', 'transparent':'true'},
+           {'opacity': 1.0, 'isBaseLayer': false, 'visibility': false}
+		);    
+        var click = new OpenLayers.Control.Click();
+                map.addControl(click);
+                click.activate(); 
+        // Add layers to the map
+        map.addLayers([gmap,gsat,ghyb]);
+        map.addLayers([layer10]);
+        map.addLayers([layer1,layer2,layer8,layer9]);
+///
+var lonLatTV = new OpenLayers.LonLat( 105.84405, 21.00457 )
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+          );
+    var markersTV = new OpenLayers.Layer.Markers( "Thu Vien" );
+    map.addLayer(markersTV);
+ 
+    markersTV.addMarker(new OpenLayers.Marker(lonLatTV));
+   markersTV.events.register('click', markersTV, function(e){
+       var ThuVien = new OpenLayers.Layer.WMS(
+			'ThuVien',
+            "http://103.27.237.230:8085/geoserver/wms",
+            {'layers': 'Thu Vien', 'format':'image/png', 'transparent':'true'},
+           {'opacity': 1.0, 'isBaseLayer': false, 'visibility': true}
+		);
+		map.addLayer(ThuVien);
+		map.removeLayer(markersTV);
+		var pointTV = new OpenLayers.LonLat(105.84405, 21.00457 );
+
+        // Chuyen doi diem trung tam sang he toa do kinh vi, thiet lap muc do phong to
+        pointTV.transform(new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject());
+        map.setCenter(pointTV, 20);
+    });     
+        /* 
+         var lonLat = new OpenLayers.LonLat( 105.845195, 21.004225 )
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            map.getProjectionObject() // to Spherical Mercator Projection
+          );
+         var markers = new OpenLayers.Layer.Markers( "Markers" );
+        map.addLayer(markers);
+        markers.addMarker(new OpenLayers.Marker(lonLat));       */
+        
+        // Add a layer switcher , scale line control
+        var LayerSwitcher = new OpenLayers.Control.LayerSwitcher({});
+        map.addControl(LayerSwitcher);
+        map.addControl(new OpenLayers.Control.ScaleLine({position: new OpenLayers.Pixel(100, 520)}));
+        map.addControl (new OpenLayers.Control.Permalink('Xem toàn bộ'));
+         // Coordinate display at bottom of map
+        map.addControl(new OpenLayers.Control.MousePosition());
+
+        var nav = new OpenLayers.Control.NavigationHistory();
+   		map.addControl(nav);
+		panel = new OpenLayers.Control.Panel({
+    	div: document.getElementById("panel"),
+        position: new OpenLayers.Pixel(15, 130)});
+		panel.addControls([nav.next, nav.previous]);
+		map.addControl(panel);
+
+        // Thiet lap diem trung tam khung nhin ban do
+        var point = new OpenLayers.LonLat(105.845195, 21.004225);
+
+        // Chuyen doi diem trung tam sang he toa do kinh vi, thiet lap muc do phong to
+        point.transform(new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject());
+        map.setCenter(point, 16);
+  
+    
+// style the sketch fancy
+          var sketchSymbolizers = {
+              "Point": {
+                  pointRadius: 4,
+                  graphicName: "square",
+                  fillColor: "white",
+                  fillOpacity: 1,
+                  strokeWidth: 1,
+                  strokeOpacity: 1,
+                  strokeColor: "#333333"
+              },
+              "Line": {
+                  strokeWidth: 3,
+                  strokeOpacity: 1,
+                  strokeColor: "#666666",
+                  strokeDashstyle: "dash"
+              },
+              "Polygon": {
+                  strokeWidth: 2,
+                  strokeOpacity: 1,
+                  strokeColor: "#666666",
+                  fillColor: "white",
+                  fillOpacity: 0.3
+              }
+          };
+          var style = new OpenLayers.Style();
+          style.addRules([
+              new OpenLayers.Rule({symbolizer: sketchSymbolizers})
+          ]);
+          var styleMap = new OpenLayers.StyleMap({"default": style});
+
+          measureControls = {
+              line: new OpenLayers.Control.Measure(
+                  OpenLayers.Handler.Path, {
+                      persist: true,
+                      handlerOptions: {
+                          layerOptions: {styleMap: styleMap}
+                      }
+                  }
+              ),
+              polygon: new OpenLayers.Control.Measure(
+                  OpenLayers.Handler.Polygon, {
+                      persist: true,
+                      handlerOptions: {
+                          layerOptions: {styleMap: styleMap}
+                      }
+                  }
+              )
+          };
+
+          var control;
+          for(var key in measureControls) {
+              control = measureControls[key];
+              control.events.on({
+                  "measure": handleMeasurements,
+                  "measurepartial": handleMeasurements
+              });
+              map.addControl(control);
+          }
+
+
+
+       
+  };
+    
+    function handleMeasurements(event) {
+            var geometry = event.geometry;
+            var units = event.units;
+            var order = event.order;
+            var measure = event.measure;
+            var element = document.getElementById('output');
+            var out = "";
+            if(order == 1) {
+                out += ">> Kết quả đo: " + measure.toFixed(3) + " " + units;
+            } else {
+                out += ">> Kết quả đo: " + measure.toFixed(3) + " " + units + "<sup>2</" + "sup>";
+            }
+            element.innerHTML = out;
+        }
+     function toggleControl(element) {
+            for(key in measureControls) {
+                var control = measureControls[key];
+                if(element.value == key && element.checked) {
+                    control.activate();
+                } else {
+                    control.deactivate();
+                }
+            }
+          
+         
+        }
+         function xoamarker() {
+         try{
+              vectorLayer.removeFeatures([feature]);
+              vectorLayer.length=0;
+              map.removeLayer(vectorLayer);
+              vectorLayer = new OpenLayers.Layer.Vector("Marker");   
+              }
+              catch(err)
+            {
+            //Handle errors here
+            } 
+            }
+
+    </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><style type="text/css">
+<!--
+body,td,th {
+	font-size: 18px;
+	color: #0000FF;
+	font-weight: bold;
+}
+body {
+	background-color: #FFFFFF;
+	background-image: url(earth2.jpeg);
+}
+.style2 {
+	font-size: 30px;
+	font-family: "Times New Roman", Times, serif;
+	color: #FFFF00;
+}
+.style6 {
+	color: #FFFF00;
+	font-size: 26px;
+    width: 120px;
+    height: 20px;
+}
+.style7 {
+	font-size: 29px;
+    color:blue
+}
+-->
+</style> 
+</head>
+
+<body onload='init();'>
+<div align="center" class="style2">
+  <h1 class="style7">BẢN ĐỒ TRƯỜNG ĐẠI HỌC BÁCH KHOA HÀ NỘI</h1>
+</div>
+
+ <table width="800" height="30">
+   <tr>
+     <td>
+         <div id="controlToggle">
+
+                <input type="radio" name="type" value="none" id="noneToggle"
+                       onclick="toggleControl(this);" checked="checked" />
+                <label for="noneToggle">Bỏ đo lường</label>
+
+
+                <input type="radio" name="type" value="line" id="lineToggle" onclick="toggleControl(this);" />
+                <label for="lineToggle">Đo khoảng cách</label>
+
+                <input type="radio" name="type" value="polygon" id="polygonToggle" onclick="toggleControl(this);" />
+                <label for="polygonToggle">Đo diện tích</label>
+               
+               <input type="submit" value="Xóa Marker" onclick="xoamarker();" />
+               
+
+         </div>
+     </td>
+     <td>
+        <div id="output">
+        </div>
+     </td>
+   </tr>
+ </table>
+<div align="left">
+  <table width="130" border="1" bordercolor="#FF0000">
+    <tr bordercolor="#F0F0F0">
+      <td width="100" align="left" valign="top"><div align="center" id='map_element' style='width: 1210px; height: 545px;'></div></td>
+
+    </tr>
+  </table>
+</div>
+
+
+</body>
+</html>

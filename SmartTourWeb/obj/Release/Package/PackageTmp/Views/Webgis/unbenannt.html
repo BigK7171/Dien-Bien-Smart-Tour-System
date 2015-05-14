@@ -1,0 +1,45 @@
+1.<!DOCTYPE html>
+2.<html lang='en'>
+<head>
+ <meta charset='utf-8' />
+ <title>My OpenLayers Map</title>
+ <script type='text/javascript' src='OpenLayers.js'></script>  
+ <script type='text/javascript'>
+
+ var map;
+
+ function init() {
+ var map, layer;
+map = new OpenLayers.Map('map');
+layer = new OpenLayers.Layer.WMS("OpenLayers WMS",
+    "http://vmap0.tiles.osgeo.org/wms/vmap0", {
+    layers: 'basic'
+});
+map.addLayer(layer);
+map.setCenter(new OpenLayers.LonLat(105.845195, 21.004225), 100);
+var markersLayer = new OpenLayers.Layer.Markers("Markers");
+map.addLayer(markersLayer);
+var size = new OpenLayers.Size(21, 25);
+var offset = new OpenLayers.Pixel(-(size.w / 2), -size.h);
+var icon = new OpenLayers.Icon('http://www.openlayers.org/dev/img/marker.png', size, offset);
+
+
+marker = new OpenLayers.Marker(new OpenLayers.LonLat(105.845195, 21.004225), icon);
+
+markersLayer.addMarker(marker);
+map.addControl(new OpenLayers.Control.LayerSwitcher());
+map.zoomToMaxExtent();
+
+marker.events.register('click', marker, function (evt) {
+    alert("lon: "+evt.object.lonlat.lon+" , lat: "+evt.object.lonlat.lat);
+});
+
+ }
+
+ </script>
+</head>
+
+<body onload='init();'>
+ <div id="map" class="smallmap"></div>
+</body>
+</html>

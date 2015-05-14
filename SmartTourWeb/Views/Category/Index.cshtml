@@ -1,0 +1,63 @@
+﻿@model IEnumerable<SmartTourWeb.Models.smt_sub_category>
+
+@{
+    ViewBag.Title = "Quản lý danh mục";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Danh sách các danh mục</h2>
+
+<div class="Control">
+    <ul>
+        <li><a class="vadd" href="/Category/Create">Thêm danh mục</a></li>
+    </ul>
+</div>
+<table class="TableView">
+    <tr class="trHeader">
+        <th>Tùy chọn</th>
+        <th class="Text">
+         Tên danh mục
+        </th>
+                <th class="Text">
+           Nhóm
+        </th>
+        <th class="Text">
+          Ảnh đại diện
+        </th>
+        <th class="Text">
+           Người tạo
+        </th>
+        <th class="Text">
+          Thời gian tạo
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class="trOdd">
+            <td class="Function">
+                @Html.ActionLink("Details", "Details", new { id = item.sub_category_id }, new { @class = "vdetail" }) 
+                @Html.ActionLink("Edit", "Edit", new { id = item.sub_category_id }, new { @class = "vedit" }) 
+            @Html.ActionLink("Delete", "Delete", new { id = item.sub_category_id }, new { @class = "vdelete" })
+            </td>
+            <td class="Text tbold">
+                @Html.DisplayFor(modelItem => item.sub_category_name_vi)
+            </td>
+            <td class="Text">
+                @Html.DisplayFor(modelItem => item.smt_parent_category.parent_category_name_vi)
+            </td>
+
+            <td class="Text">
+                <img src="@item.sub_category_icondir" alt="Logo" width="100px" height="150px" />
+            </td>
+            <td class="Text">
+                @Html.DisplayFor(modelItem => item.smt_user.user_email)
+            </td>
+            <td class="Text">
+                @Html.DisplayFor(modelItem => item.sub_category_time_created)
+            </td>
+        </tr>
+    }
+
+</table>

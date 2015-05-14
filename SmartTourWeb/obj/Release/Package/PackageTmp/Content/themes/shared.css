@@ -1,0 +1,14 @@
+﻿.avata
+{ height: 100px;
+  max-width: 100px;
+}
+.avata-small
+{   padding: 2px; 
+    height: 24px;
+    min-width: 24px;
+}
+.note
+{
+    font: 80% ;
+
+}

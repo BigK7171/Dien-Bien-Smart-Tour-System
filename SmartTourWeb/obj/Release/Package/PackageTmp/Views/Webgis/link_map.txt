@@ -1,0 +1,6 @@
+file:///C:/Users/tutu/Desktop/database/layers/webgis.htm
+dung adruno dieu khien xe qua mobile
+tich hop thuat toan vao card wifi
+dinh vi theo chieu sau
+
+<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msa=0&amp;msid=207246798156319077753.0004d9d9435c4d83465fa&amp;ie=UTF8&amp;t=m&amp;ll=20.984418,105.808087&amp;spn=0.068639,0.103426&amp;output=embed"></iframe><br /><small>Xem <a href="https://maps.google.com/maps/ms?msa=0&amp;msid=207246798156319077753.0004d9d9435c4d83465fa&amp;ie=UTF8&amp;t=m&amp;ll=20.984418,105.808087&amp;spn=0.068639,0.103426&amp;source=embed" style="color:#0000FF;text-align:left">Ch? du?ng lái xe d?n Tru?ng Ð?i h?c Bách khoa Hà N?i, Ð?i C? Vi?t, Hà N?i, Vi?t Nam</a> ? b?n d? l?n hon</small>

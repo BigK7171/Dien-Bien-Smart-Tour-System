@@ -1,0 +1,43 @@
+﻿@model SmartTourWeb.Models.smt_contact
+@{
+    ViewBag.Title = "Quản lý liên hệ";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Quản lý liên hệ</h2>
+
+<div class="Control">
+    @if (Model == null)
+    {
+         <ul>
+        <li><a class="vadd" href="/Contact/Create">Tạo bài liên hệ</a></li>
+    </ul>
+    }
+   
+</div>
+<table class="TableView">
+    <tr class="trHeader">
+        <th>Tùy chọn</th>
+        <th class="Text">
+            Nội dung Tiếng Việt
+        </th>
+        <th class="Text">
+            Nội dung Tiếng Anh
+        </th>
+           
+    </tr>
+    @if (Model != null)
+    {
+        <tr class="trOdd">
+            <td class="Function">
+                @Html.ActionLink("Edit", "Edit", new { id = Model.contact_id}, new { @class = "vedit" }) 
+            </td>
+            <td class="Text tbold">
+               @Html.Raw(Model.contact_contain)
+            </td>
+            <td class="Text tbold">
+               @Html.Raw(Model.contact_contain_en)
+            </td>            
+        </tr>
+    }
+</table>

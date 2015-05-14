@@ -1,0 +1,56 @@
+﻿@model IEnumerable<SmartTourWeb.Models.agent>
+
+@{
+    ViewBag.Title = "Quản lý các đơn vị";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Danh sách đơn vị quản lý</h2>
+    <div class="Control">
+            <ul>
+                <li><a class="vadd" href="/AgentManager/Create">Thêm đơn vị</a></li>
+            </ul>
+    </div>
+<table  class="TableView">
+   <tr class="trHeader">
+        <th >Tùy chọn</th>
+        <th class="Text">
+            Mã đơn vị
+        </th>
+        <th class="Text">
+          Tên đơn vị
+        </th>
+        <th class="Text">
+           Mô tả
+        </th>
+        <th class="Text">
+           Tên nhóm
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+   <tr class="trOdd">
+        <td class="Function">
+            @Html.ActionLink("Details", "Details", new { id = item.agent_id }, new { @class = "vdetail" }) 
+            @Html.ActionLink("Edit", "Edit", new { id = item.agent_id }, new { @class = "vedit" }) 
+            @if (item.agent_id != 1 && item.agent_id != 2 && item.agent_id != 3)
+            {
+            @Html.ActionLink("Delete", "Delete", new { id = item.agent_id }, new { @class = "vdelete" })
+            }
+        </td>
+        <td class="Text">
+            @Html.DisplayFor(modelItem => item.agent_id)
+        </td>
+        <td class="Text">
+            @Html.DisplayFor(modelItem => item.agent_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.agent_des)
+        </td>
+        <td class="Text">
+            @Html.DisplayFor(modelItem => item.group.group_name)
+        </td>
+    </tr>
+}
+
+</table>

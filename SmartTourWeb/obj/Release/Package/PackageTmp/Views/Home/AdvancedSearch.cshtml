@@ -1,0 +1,106 @@
+﻿@model PagedList.IPagedList<SmartTourWeb.Models.smt_location>
+@using PagedList;
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Tìm kiếm nâng cao";
+    Layout = "~/Views/Shared/Home.cshtml";
+    List<SmartTourWeb.Models.smt_location> location = (List<SmartTourWeb.Models.smt_location>)ViewData["locate"];
+
+}
+
+    <style>
+        .advancedsearch {
+    float: left;
+    width: 65%;
+    min-height: 1000px;
+    margin: 0px 26px;
+    padding: 26px;
+    border: 1px solid #EEE;
+}
+        span > select
+        {
+            height: 33px;
+            border-radius: 5px;
+            margin: 12px 0px;
+            border: 1px solid rgb(204, 204, 204);
+        }
+        .buttonSearch
+        {
+            height: 33px;
+            border-radius: 5px;
+            border: 1px solid rgb(204, 204, 204);
+            width: 89px;
+            background-color: #3EADD0;
+            color: #FFF;
+            font-weight: bold;
+        }
+        .input_keyword
+        {
+            width: 233px;
+            margin: 0px 35px;
+        }
+    </style>   
+
+    <div class="advancedsearch">
+        <label style="color:#F00">Tùy chọn tìm kiếm nâng cao</label>
+        <div class="pure-form">
+            <input type="text" id="keyword_advanced" name="inputtext" placeholder="Nhập từ khóa tìm kiếm" class="input_keyword"/>
+        </div>
+        <span style="color:#F00">hoặc</span>
+        <span>
+            @Html.DropDownList("Category",(SelectList)ViewBag.sub_category_id, "Tìm kiếm theo",
+           new { onchange = "document.location.href = '/List-' + this.options[this.selectedIndex].text + '-' + this.options[this.selectedIndex].value;" }) 
+          @* @Html.DropDownList("Category",(SelectList)ViewBag.sub_category_id, "Tìm kiếm theo",
+           new { onchange = "javascript:SearchResult();" })*@
+        </span>
+        <input type="submit" id="category_advanced" name="search" value="Tìm kiếm" class="buttonSearch"/>        
+       
+        @*<script type="text/javascript">
+            function SearchResult()
+            {
+                var search = document.getElementById('listResult');
+                document.write(search);
+            }
+        </script>*@
+        
+         @* <div class="box">
+    <div class="box_name">
+                    <div class="active">
+                        <span>@ViewBag.Category_vi</span>
+                      <!--  <p style="background: transparent url(/Images/theme/border-bottom.png) repeat-x scroll right top; margin-top: 24px; padding: 168px;"><p></p></p>
+                   -->
+                    </div>
+                  </div>
+   <div class="box-list">
+         @if (location != null || location.Count > 0)
+        {
+            foreach (var item in location)
+            {
+            <table class="box-item">
+                <tr >
+                    <td class="box-item-img">
+                        <img src="@item.location_icondir" /></td> 
+                    <td>
+                        <table class="box-item-table">
+                            <tr>
+                                <td class="box-item-name">@Html.ActionLink(item.location_name_vi, "Details", new { id = item.location_id, name_lacation=item.location_name_vi })</td>
+                            </tr>
+                            <tr>
+                                <td class="box-item-addr">@Resources.Resource.Add : @item.location_addr
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="box-item-des">@item.location_short_des_vi ...</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            }
+        }
+   </div>
+</div> *@
+          
+    </div>    
+
+

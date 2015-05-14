@@ -1,0 +1,130 @@
+﻿@*@model IEnumerable<SmartTourWeb.Models.SMT_LOCATION>*@
+@model PagedList.IPagedList<SmartTourWeb.Models.smt_location>
+@using PagedList;
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Quản lý " +ViewBag.namecategory;
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Danh sách @ViewBag.namecategory </h2>
+<div class="Control">
+    <ul>
+        <li><a class="vadd" href="/Service/Create?category=@ViewBag.id">Thêm mới @ViewBag.namecategory </a></li>
+    </ul>
+</div>
+
+
+@using (Html.BeginForm("Index", "Service", FormMethod.Get))
+  {
+    <p>
+        Tìm theo tên: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string,new { style="width:180px" })
+        @Html.Hidden("category", ViewBag.id as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+@if (ViewBag.Success !=null) {<div class="tgreen">@ViewBag.Success</div>}
+<table class="TableView">
+    <tr class="trHeader">
+        <th>Tùy chọn</th>
+        <th class="Text">
+
+            @*@Html.DisplayNameFor(model => model.First().location_name_vi)*@
+            @Html.ActionLink("Tên", "Index", new { category = ViewBag.id, sortOrder = ViewBag.NameSortParm })
+        </th>
+        <th class="Text">
+           Địa chỉ
+
+        </th>
+        <th>
+            Ảnh đại diện
+        </th>
+        <th class="Textdes">
+           @* @Html.DisplayNameFor(model => model.First().location_des_vi)*@
+            Chia sẻ địa điểm
+        </th>
+
+        <th class="Text">
+         Người tạo
+        </th>
+        <th class="Text">
+           Đợn vị quản lý
+        </th>
+        <th class="Date">
+            @*            @Html.DisplayNameFor(model => model.location_time_created)*@
+            @Html.ActionLink("Thời gian tạo", "Index", new { category = ViewBag.id, sortOrder = ViewBag.DateSortParm })
+        </th>
+        <th class="Text">
+          Thời gian sửa
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    { 
+        <tr class="trOdd">
+            <td class="Function">
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.location_id }, new { @class = "vdetail" })
+                @Html.ActionLink("Sửa", "Edit", new { id = item.location_id }, new { @class = "vedit" })
+                @Html.ActionLink("Xóa", "Delete", new { id = item.location_id }, new { @class = "vdelete" })
+@*                @if (ViewBag.category == 2)
+                { @Html.ActionLink("Danh sách đặt phòng", "ListBooking", new { id = item.location_id })}
+                else { }*@
+            </td>
+            <td class="Text">
+                @Html.DisplayFor(modelItem => item.location_name_vi)
+            </td>
+            <td class="Text">
+                @Html.DisplayFor(modelItem => item.location_addr)
+            </td>
+            <td>
+                <img src="@Html.Raw(item.location_icondir)" alt="Logo" width="100px" height="150px" />
+            </td>
+            <td class="Text">
+                @*@Html.Raw(trimString(item.location_des_vi, 200))*@
+                <input type="checkbox" name="locationshared" value="1" @((item.location_shared == true) ? "checked" : "") disabled="disabled"/>
+             
+            </td>
+            <td class="Text">
+                @Html.DisplayFor(modelItem => item.smt_user.user_email)
+            </td>
+            <td class="Text">
+                @Html.DisplayFor(modelItem => item.smt_user.agent.agent_name)
+            </td>
+            <td class="Date">
+                @Html.DisplayFor(modelItem => item.location_time_created)
+            </td>
+            <td class="Date">
+                @Html.DisplayFor(modelItem => item.location_time_modified)
+            </td>
+        </tr>
+
+    }
+
+
+
+
+</table>
+
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) của @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { category = ViewBag.id, page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+
+@functions{
+    string trimString(string str, int length)
+    {
+        if (str == null)
+        {
+            str = "";
+        }
+        if (str.Length > length)
+        {
+            return str.Substring(0, length) + "...";
+        }
+        else
+        {
+            return str;
+        }
+    }
+}
+

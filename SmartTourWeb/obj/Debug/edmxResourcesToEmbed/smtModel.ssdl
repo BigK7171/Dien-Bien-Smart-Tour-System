@@ -1,0 +1,631 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="smtdbModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="smtdbModelStoreContainer">
+    <EntitySet Name="AGENT" EntityType="smtdbModel.Store.AGENT" store:Type="Tables" Schema="smtdb" />
+    <EntitySet Name="DIRECTION_METRIC" EntityType="smtdbModel.Store.DIRECTION_METRIC" store:Type="Tables" Schema="smtdb" />
+    <EntitySet Name="DIRECTION_POINT" EntityType="smtdbModel.Store.DIRECTION_POINT" store:Type="Tables" Schema="smtdb" />
+    <EntitySet Name="Group" EntityType="smtdbModel.Store.Group" store:Type="Tables" Schema="smtdb" />
+    <EntitySet Name="Group_Module_permission" EntityType="smtdbModel.Store.Group_Module_permission" store:Type="Tables" Schema="smtdb" />
+    <EntitySet Name="Module_permission" EntityType="smtdbModel.Store.Module_permission" store:Type="Tables" Schema="smtdb" />
+    <EntitySet Name="Modules" EntityType="smtdbModel.Store.Modules" store:Type="Tables" Schema="smtdb" />
+    <EntitySet Name="SMT_COMMENT" EntityType="smtdbModel.Store.SMT_COMMENT" store:Type="Tables" Schema="smtdb" />
+    <EntitySet Name="SMT_LAYER" EntityType="smtdbModel.Store.SMT_LAYER" store:Type="Tables" Schema="smtdb" />
+    <EntitySet Name="SMT_LOCATION" EntityType="smtdbModel.Store.SMT_LOCATION" store:Type="Tables" Schema="smtdb" />
+    <EntitySet Name="SMT_PARENT_CATEGORY" EntityType="smtdbModel.Store.SMT_PARENT_CATEGORY" store:Type="Tables" Schema="smtdb" />
+    <EntitySet Name="SMT_PERMISSION" EntityType="smtdbModel.Store.SMT_PERMISSION" store:Type="Tables" Schema="smtdb" />
+    <EntitySet Name="SMT_SUB_CATEGORY" EntityType="smtdbModel.Store.SMT_SUB_CATEGORY" store:Type="Tables" Schema="smtdb" />
+    <EntitySet Name="SMT_TOUR_ITEMS" EntityType="smtdbModel.Store.SMT_TOUR_ITEMS" store:Type="Tables" Schema="smtdb" />
+    <EntitySet Name="SMT_TOURS" EntityType="smtdbModel.Store.SMT_TOURS" store:Type="Tables" Schema="smtdb" />
+    <EntitySet Name="SMT_USER" EntityType="smtdbModel.Store.SMT_USER" store:Type="Tables" Schema="smtdb" />
+    <EntitySet Name="SMT_USER_HISTORY" EntityType="smtdbModel.Store.SMT_USER_HISTORY" store:Type="Tables" Schema="smtdb" />
+    <AssociationSet Name="FK_AGENT_Group_id" Association="smtdbModel.Store.FK_AGENT_Group_id">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="AGENT" EntitySet="AGENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Module_permission__id" Association="smtdbModel.Store.FK_Group_Module_permission__id">
+      <End Role="Module_permission" EntitySet="Module_permission" />
+      <End Role="Group_Module_permission" EntitySet="Group_Module_permission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Module_permission_Group_id" Association="smtdbModel.Store.FK_Group_Module_permission_Group_id">
+      <End Role="Group" EntitySet="Group" />
+      <End Role="Group_Module_permission" EntitySet="Group_Module_permission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Module_permission_Group_permission_module_permission_id" Association="smtdbModel.Store.FK_Module_permission_Group_permission_module_permission_id">
+      <End Role="Modules" EntitySet="Modules" />
+      <End Role="Module_permission" EntitySet="Module_permission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_COMMENT_SMT_LOCATION_location_id" Association="smtdbModel.Store.FK_SMT_COMMENT_SMT_LOCATION_location_id">
+      <End Role="SMT_LOCATION" EntitySet="SMT_LOCATION" />
+      <End Role="SMT_COMMENT" EntitySet="SMT_COMMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_COMMENT_SMT_USER_user_id" Association="smtdbModel.Store.FK_SMT_COMMENT_SMT_USER_user_id">
+      <End Role="SMT_USER" EntitySet="SMT_USER" />
+      <End Role="SMT_COMMENT" EntitySet="SMT_COMMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_LAYER_AGENT_agent_id" Association="smtdbModel.Store.FK_SMT_LAYER_AGENT_agent_id">
+      <End Role="AGENT" EntitySet="AGENT" />
+      <End Role="SMT_LAYER" EntitySet="SMT_LAYER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_LAYER_SMT_USER_user_id" Association="smtdbModel.Store.FK_SMT_LAYER_SMT_USER_user_id">
+      <End Role="SMT_USER" EntitySet="SMT_USER" />
+      <End Role="SMT_LAYER" EntitySet="SMT_LAYER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_LOCATION_AGENT_agent_id" Association="smtdbModel.Store.FK_SMT_LOCATION_AGENT_agent_id">
+      <End Role="AGENT" EntitySet="AGENT" />
+      <End Role="SMT_LOCATION" EntitySet="SMT_LOCATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_LOCATION_SMT_SUB_CATEGORY_sub_category_id" Association="smtdbModel.Store.FK_SMT_LOCATION_SMT_SUB_CATEGORY_sub_category_id">
+      <End Role="SMT_SUB_CATEGORY" EntitySet="SMT_SUB_CATEGORY" />
+      <End Role="SMT_LOCATION" EntitySet="SMT_LOCATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_LOCATION_SMT_USER_user_id" Association="smtdbModel.Store.FK_SMT_LOCATION_SMT_USER_user_id">
+      <End Role="SMT_USER" EntitySet="SMT_USER" />
+      <End Role="SMT_LOCATION" EntitySet="SMT_LOCATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_PARENT_CATEGORY_AGENT_agent_id" Association="smtdbModel.Store.FK_SMT_PARENT_CATEGORY_AGENT_agent_id">
+      <End Role="AGENT" EntitySet="AGENT" />
+      <End Role="SMT_PARENT_CATEGORY" EntitySet="SMT_PARENT_CATEGORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_PARENT_CATEGORY_SMT_USER_user_id" Association="smtdbModel.Store.FK_SMT_PARENT_CATEGORY_SMT_USER_user_id">
+      <End Role="SMT_USER" EntitySet="SMT_USER" />
+      <End Role="SMT_PARENT_CATEGORY" EntitySet="SMT_PARENT_CATEGORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_PERMISSION_SMT_LOCATION_location_id" Association="smtdbModel.Store.FK_SMT_PERMISSION_SMT_LOCATION_location_id">
+      <End Role="SMT_LOCATION" EntitySet="SMT_LOCATION" />
+      <End Role="SMT_PERMISSION" EntitySet="SMT_PERMISSION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_PERMISSION_SMT_USER_user_id" Association="smtdbModel.Store.FK_SMT_PERMISSION_SMT_USER_user_id">
+      <End Role="SMT_USER" EntitySet="SMT_USER" />
+      <End Role="SMT_PERMISSION" EntitySet="SMT_PERMISSION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_SUB_CATEGORY_AGENT_agent_id" Association="smtdbModel.Store.FK_SMT_SUB_CATEGORY_AGENT_agent_id">
+      <End Role="AGENT" EntitySet="AGENT" />
+      <End Role="SMT_SUB_CATEGORY" EntitySet="SMT_SUB_CATEGORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_SUB_CATEGORY_SMT_PARENT_CATEGORY_parent_category_id" Association="smtdbModel.Store.FK_SMT_SUB_CATEGORY_SMT_PARENT_CATEGORY_parent_category_id">
+      <End Role="SMT_PARENT_CATEGORY" EntitySet="SMT_PARENT_CATEGORY" />
+      <End Role="SMT_SUB_CATEGORY" EntitySet="SMT_SUB_CATEGORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_SUB_CATEGORY_SMT_USER_user_id" Association="smtdbModel.Store.FK_SMT_SUB_CATEGORY_SMT_USER_user_id">
+      <End Role="SMT_USER" EntitySet="SMT_USER" />
+      <End Role="SMT_SUB_CATEGORY" EntitySet="SMT_SUB_CATEGORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_TOUR_ITEMS_SMT_LOCATION_location_id" Association="smtdbModel.Store.FK_SMT_TOUR_ITEMS_SMT_LOCATION_location_id">
+      <End Role="SMT_LOCATION" EntitySet="SMT_LOCATION" />
+      <End Role="SMT_TOUR_ITEMS" EntitySet="SMT_TOUR_ITEMS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_TOUR_ITEMS_SMT_TOURS_tour_id" Association="smtdbModel.Store.FK_SMT_TOUR_ITEMS_SMT_TOURS_tour_id">
+      <End Role="SMT_TOURS" EntitySet="SMT_TOURS" />
+      <End Role="SMT_TOUR_ITEMS" EntitySet="SMT_TOUR_ITEMS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_TOURS_AGENT_agent_id" Association="smtdbModel.Store.FK_SMT_TOURS_AGENT_agent_id">
+      <End Role="AGENT" EntitySet="AGENT" />
+      <End Role="SMT_TOURS" EntitySet="SMT_TOURS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_TOURS_SMT_USER_user_id" Association="smtdbModel.Store.FK_SMT_TOURS_SMT_USER_user_id">
+      <End Role="SMT_USER" EntitySet="SMT_USER" />
+      <End Role="SMT_TOURS" EntitySet="SMT_TOURS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_USER_AGENT_agent_id" Association="smtdbModel.Store.FK_SMT_USER_AGENT_agent_id">
+      <End Role="AGENT" EntitySet="AGENT" />
+      <End Role="SMT_USER" EntitySet="SMT_USER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_USER_HISTORY_SMT_LOCATION_location_id" Association="smtdbModel.Store.FK_SMT_USER_HISTORY_SMT_LOCATION_location_id">
+      <End Role="SMT_LOCATION" EntitySet="SMT_LOCATION" />
+      <End Role="SMT_USER_HISTORY" EntitySet="SMT_USER_HISTORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SMT_USER_HISTORY_SMT_USER_user_id" Association="smtdbModel.Store.FK_SMT_USER_HISTORY_SMT_USER_user_id">
+      <End Role="SMT_USER" EntitySet="SMT_USER" />
+      <End Role="SMT_USER_HISTORY" EntitySet="SMT_USER_HISTORY" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AGENT">
+    <Key>
+      <PropertyRef Name="agent_id" />
+    </Key>
+    <Property Name="agent_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="agent_name" Type="varchar" MaxLength="50" />
+    <Property Name="agent_des" Type="varchar" MaxLength="255" />
+    <Property Name="group_id" Type="int" />
+  </EntityType>
+  <EntityType Name="DIRECTION_METRIC">
+    <Key>
+      <PropertyRef Name="location_id_1" />
+      <PropertyRef Name="location_id_2" />
+    </Key>
+    <Property Name="location_id_1" Type="int" Nullable="false" />
+    <Property Name="location_id_2" Type="int" Nullable="false" />
+    <Property Name="metric" Type="int" />
+  </EntityType>
+  <EntityType Name="DIRECTION_POINT">
+    <Key>
+      <PropertyRef Name="point_id" />
+    </Key>
+    <Property Name="point_id" Type="int" Nullable="false" />
+    <Property Name="point_lat" Type="double" />
+    <Property Name="point_lon" Type="double" />
+    <Property Name="point_des" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="group_name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Group_Module_permission">
+    <Key>
+      <PropertyRef Name="group_module_id" />
+    </Key>
+    <Property Name="group_id" Type="int" />
+    <Property Name="module_permission_id" Type="int" />
+    <Property Name="group_module_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6035: The relationship 'FK_Modules_Module_permission_module_id' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+      -->
+  <EntityType Name="Module_permission">
+    <Key>
+      <PropertyRef Name="module_permission_id" />
+    </Key>
+    <Property Name="module_permission_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="module_id" Type="int" />
+    <Property Name="permission" Type="int" />
+    <Property Name="description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Modules">
+    <Key>
+      <PropertyRef Name="module_id" />
+    </Key>
+    <Property Name="module_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="module_name" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="SMT_COMMENT">
+    <Key>
+      <PropertyRef Name="comment_id" />
+    </Key>
+    <Property Name="comment_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="location_id" Type="bigint" Nullable="false" />
+    <Property Name="comment_contain" Type="varchar" MaxLength="500" />
+    <Property Name="comment_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SMT_LAYER">
+    <Key>
+      <PropertyRef Name="layer_id" />
+    </Key>
+    <Property Name="layer_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="layer_name" Type="varchar" MaxLength="50" />
+    <Property Name="layer_des_vi" Type="varchar" MaxLength="50" />
+    <Property Name="layer_des_en" Type="varchar" MaxLength="50" />
+    <Property Name="layer_url" Type="varchar" MaxLength="200" />
+    <Property Name="layer_time_created" Type="datetime" />
+    <Property Name="layer_agent_id" Type="int" />
+    <Property Name="layer_user_created" Type="int" />
+  </EntityType>
+  <EntityType Name="SMT_LOCATION">
+    <Key>
+      <PropertyRef Name="location_id" />
+    </Key>
+    <Property Name="location_id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="sub_category_id" Type="int" Nullable="false" />
+    <Property Name="location_latitude" Type="double" Nullable="false" />
+    <Property Name="location_longitude" Type="double" Nullable="false" />
+    <Property Name="location_name_vi" Type="varchar" MaxLength="200" />
+    <Property Name="location_name_en" Type="varchar" MaxLength="200" />
+    <Property Name="location_des_vi" Type="longtext" />
+    <Property Name="location_des_en" Type="longtext" />
+    <Property Name="location_icondir" Type="varchar" MaxLength="100" />
+    <Property Name="location_videodir" Type="varchar" MaxLength="200" />
+    <Property Name="location_shared" Type="tinyint" />
+    <Property Name="location_addr" Type="varchar" MaxLength="200" />
+    <Property Name="location_user_created" Type="int" />
+    <Property Name="location_time_created" Type="datetime" />
+    <Property Name="location_user_modified" Type="int" />
+    <Property Name="location_time_modified" Type="datetime" />
+    <Property Name="location_contact_web" Type="varchar" MaxLength="100" />
+    <Property Name="location_contact_phone" Type="varchar" MaxLength="20" />
+    <Property Name="agent_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SMT_PARENT_CATEGORY">
+    <Key>
+      <PropertyRef Name="parent_category_id" />
+    </Key>
+    <Property Name="parent_category_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="parent_category_name_vi" Type="varchar" MaxLength="100" />
+    <Property Name="parent_category_name_en" Type="varchar" MaxLength="100" />
+    <Property Name="parent_category_des_vi" Type="varchar" MaxLength="500" />
+    <Property Name="parent_category_des_en" Type="varchar" MaxLength="500" />
+    <Property Name="parent_category_user_created" Type="int" />
+    <Property Name="parent_category_time_created" Type="datetime" />
+    <Property Name="parent_category_user_modified" Type="int" />
+    <Property Name="parent_category_time_modified" Type="datetime" />
+    <Property Name="parent_agent_id" Type="int" />
+  </EntityType>
+  <EntityType Name="SMT_PERMISSION">
+    <Key>
+      <PropertyRef Name="user_id" />
+      <PropertyRef Name="location_id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="location_id" Type="bigint" Nullable="false" />
+    <Property Name="permit_view" Type="tinyint" />
+    <Property Name="permit_edit" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="SMT_SUB_CATEGORY">
+    <Key>
+      <PropertyRef Name="sub_category_id" />
+    </Key>
+    <Property Name="sub_category_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="parent_category_id" Type="int" />
+    <Property Name="sub_category_name_vi" Type="varchar" MaxLength="100" />
+    <Property Name="sub_category_name_en" Type="varchar" MaxLength="100" />
+    <Property Name="sub_category_des_vi" Type="varchar" MaxLength="500" />
+    <Property Name="sub_category_des_en" Type="varchar" MaxLength="500" />
+    <Property Name="sub_category_user_created" Type="int" />
+    <Property Name="sub_category_time_created" Type="datetime" />
+    <Property Name="sub_category_user_modified" Type="int" />
+    <Property Name="sub_category_time_modified" Type="datetime" />
+    <Property Name="sub_category_icondir" Type="varchar" MaxLength="100" />
+    <Property Name="sub_category_agent_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SMT_TOUR_ITEMS">
+    <Key>
+      <PropertyRef Name="item_id" />
+    </Key>
+    <Property Name="tour_id" Type="int" Nullable="false" />
+    <Property Name="location_id" Type="bigint" Nullable="false" />
+    <Property Name="item_order" Type="int" Nullable="false" />
+    <Property Name="item_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="SMT_TOURS">
+    <Key>
+      <PropertyRef Name="tour_id" />
+    </Key>
+    <Property Name="tour_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="tour_name_vi" Type="varchar" MaxLength="200" />
+    <Property Name="tour_name_en" Type="varchar" MaxLength="200" />
+    <Property Name="tour_short_des_vi" Type="varchar" MaxLength="500" />
+    <Property Name="tour_short_des_en" Type="varchar" MaxLength="500" />
+    <Property Name="tour_long_des_vi" Type="varchar" MaxLength="1529" />
+    <Property Name="tour_long_des_en" Type="varchar" />
+    <Property Name="tour_duration" Type="varchar" MaxLength="50" />
+    <Property Name="tour_price" Type="varchar" MaxLength="20" />
+    <Property Name="tour_status" Type="varchar" MaxLength="50" />
+    <Property Name="tour_user_created" Type="int" />
+    <Property Name="tour_time_created" Type="datetime" />
+    <Property Name="tour_user_modified" Type="int" />
+    <Property Name="tour_time_modified" Type="varchar" MaxLength="100" />
+    <Property Name="tour_icon_dir" Type="varchar" MaxLength="100" />
+    <Property Name="tour_contact_web" Type="varchar" MaxLength="100" />
+    <Property Name="tour_contact_phone" Type="varchar" MaxLength="100" />
+    <Property Name="tour_video_dir" Type="varchar" MaxLength="100" />
+    <Property Name="tour_agent_id" Type="int" />
+  </EntityType>
+  <EntityType Name="SMT_USER">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="user_email" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="secret" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="address" Type="varchar" MaxLength="100" />
+    <Property Name="phone" Type="varchar" MaxLength="20" />
+    <Property Name="state" Type="tinyint" />
+    <Property Name="created_time" Type="datetime" Nullable="false" />
+    <Property Name="last_login_ip" Type="varchar" MaxLength="20" />
+    <Property Name="last_login_time" Type="time" />
+    <Property Name="user_logo" Type="varchar" MaxLength="100" />
+    <Property Name="agent_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SMT_USER_HISTORY">
+    <Key>
+      <PropertyRef Name="user_history_id" />
+    </Key>
+    <Property Name="user_history_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="location_id" Type="bigint" Nullable="false" />
+    <Property Name="user_history_time" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_AGENT_Group_id">
+    <End Role="Group" Type="smtdbModel.Store.Group" Multiplicity="0..1" />
+    <End Role="AGENT" Type="smtdbModel.Store.AGENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="AGENT">
+        <PropertyRef Name="group_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Module_permission__id">
+    <End Role="Module_permission" Type="smtdbModel.Store.Module_permission" Multiplicity="0..1" />
+    <End Role="Group_Module_permission" Type="smtdbModel.Store.Group_Module_permission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Module_permission">
+        <PropertyRef Name="module_permission_id" />
+      </Principal>
+      <Dependent Role="Group_Module_permission">
+        <PropertyRef Name="module_permission_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Module_permission_Group_id">
+    <End Role="Group" Type="smtdbModel.Store.Group" Multiplicity="0..1" />
+    <End Role="Group_Module_permission" Type="smtdbModel.Store.Group_Module_permission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Group_Module_permission">
+        <PropertyRef Name="group_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Module_permission_Group_permission_module_permission_id">
+    <End Role="Modules" Type="smtdbModel.Store.Modules" Multiplicity="0..1" />
+    <End Role="Module_permission" Type="smtdbModel.Store.Module_permission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modules">
+        <PropertyRef Name="module_id" />
+      </Principal>
+      <Dependent Role="Module_permission">
+        <PropertyRef Name="module_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_COMMENT_SMT_LOCATION_location_id">
+    <End Role="SMT_LOCATION" Type="smtdbModel.Store.SMT_LOCATION" Multiplicity="1" />
+    <End Role="SMT_COMMENT" Type="smtdbModel.Store.SMT_COMMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SMT_LOCATION">
+        <PropertyRef Name="location_id" />
+      </Principal>
+      <Dependent Role="SMT_COMMENT">
+        <PropertyRef Name="location_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_COMMENT_SMT_USER_user_id">
+    <End Role="SMT_USER" Type="smtdbModel.Store.SMT_USER" Multiplicity="1" />
+    <End Role="SMT_COMMENT" Type="smtdbModel.Store.SMT_COMMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SMT_USER">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="SMT_COMMENT">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_LAYER_AGENT_agent_id">
+    <End Role="AGENT" Type="smtdbModel.Store.AGENT" Multiplicity="0..1" />
+    <End Role="SMT_LAYER" Type="smtdbModel.Store.SMT_LAYER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AGENT">
+        <PropertyRef Name="agent_id" />
+      </Principal>
+      <Dependent Role="SMT_LAYER">
+        <PropertyRef Name="layer_agent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_LAYER_SMT_USER_user_id">
+    <End Role="SMT_USER" Type="smtdbModel.Store.SMT_USER" Multiplicity="0..1" />
+    <End Role="SMT_LAYER" Type="smtdbModel.Store.SMT_LAYER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SMT_USER">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="SMT_LAYER">
+        <PropertyRef Name="layer_user_created" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_LOCATION_AGENT_agent_id">
+    <End Role="AGENT" Type="smtdbModel.Store.AGENT" Multiplicity="1" />
+    <End Role="SMT_LOCATION" Type="smtdbModel.Store.SMT_LOCATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AGENT">
+        <PropertyRef Name="agent_id" />
+      </Principal>
+      <Dependent Role="SMT_LOCATION">
+        <PropertyRef Name="agent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_LOCATION_SMT_SUB_CATEGORY_sub_category_id">
+    <End Role="SMT_SUB_CATEGORY" Type="smtdbModel.Store.SMT_SUB_CATEGORY" Multiplicity="1" />
+    <End Role="SMT_LOCATION" Type="smtdbModel.Store.SMT_LOCATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SMT_SUB_CATEGORY">
+        <PropertyRef Name="sub_category_id" />
+      </Principal>
+      <Dependent Role="SMT_LOCATION">
+        <PropertyRef Name="sub_category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_LOCATION_SMT_USER_user_id">
+    <End Role="SMT_USER" Type="smtdbModel.Store.SMT_USER" Multiplicity="0..1" />
+    <End Role="SMT_LOCATION" Type="smtdbModel.Store.SMT_LOCATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SMT_USER">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="SMT_LOCATION">
+        <PropertyRef Name="location_user_created" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_PARENT_CATEGORY_AGENT_agent_id">
+    <End Role="AGENT" Type="smtdbModel.Store.AGENT" Multiplicity="0..1" />
+    <End Role="SMT_PARENT_CATEGORY" Type="smtdbModel.Store.SMT_PARENT_CATEGORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AGENT">
+        <PropertyRef Name="agent_id" />
+      </Principal>
+      <Dependent Role="SMT_PARENT_CATEGORY">
+        <PropertyRef Name="parent_agent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_PARENT_CATEGORY_SMT_USER_user_id">
+    <End Role="SMT_USER" Type="smtdbModel.Store.SMT_USER" Multiplicity="0..1" />
+    <End Role="SMT_PARENT_CATEGORY" Type="smtdbModel.Store.SMT_PARENT_CATEGORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SMT_USER">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="SMT_PARENT_CATEGORY">
+        <PropertyRef Name="parent_category_user_created" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_PERMISSION_SMT_LOCATION_location_id">
+    <End Role="SMT_LOCATION" Type="smtdbModel.Store.SMT_LOCATION" Multiplicity="1" />
+    <End Role="SMT_PERMISSION" Type="smtdbModel.Store.SMT_PERMISSION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SMT_LOCATION">
+        <PropertyRef Name="location_id" />
+      </Principal>
+      <Dependent Role="SMT_PERMISSION">
+        <PropertyRef Name="location_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_PERMISSION_SMT_USER_user_id">
+    <End Role="SMT_USER" Type="smtdbModel.Store.SMT_USER" Multiplicity="1" />
+    <End Role="SMT_PERMISSION" Type="smtdbModel.Store.SMT_PERMISSION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SMT_USER">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="SMT_PERMISSION">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_SUB_CATEGORY_AGENT_agent_id">
+    <End Role="AGENT" Type="smtdbModel.Store.AGENT" Multiplicity="1" />
+    <End Role="SMT_SUB_CATEGORY" Type="smtdbModel.Store.SMT_SUB_CATEGORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AGENT">
+        <PropertyRef Name="agent_id" />
+      </Principal>
+      <Dependent Role="SMT_SUB_CATEGORY">
+        <PropertyRef Name="sub_category_agent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_SUB_CATEGORY_SMT_PARENT_CATEGORY_parent_category_id">
+    <End Role="SMT_PARENT_CATEGORY" Type="smtdbModel.Store.SMT_PARENT_CATEGORY" Multiplicity="0..1" />
+    <End Role="SMT_SUB_CATEGORY" Type="smtdbModel.Store.SMT_SUB_CATEGORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SMT_PARENT_CATEGORY">
+        <PropertyRef Name="parent_category_id" />
+      </Principal>
+      <Dependent Role="SMT_SUB_CATEGORY">
+        <PropertyRef Name="parent_category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_SUB_CATEGORY_SMT_USER_user_id">
+    <End Role="SMT_USER" Type="smtdbModel.Store.SMT_USER" Multiplicity="0..1" />
+    <End Role="SMT_SUB_CATEGORY" Type="smtdbModel.Store.SMT_SUB_CATEGORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SMT_USER">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="SMT_SUB_CATEGORY">
+        <PropertyRef Name="sub_category_user_created" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_TOUR_ITEMS_SMT_LOCATION_location_id">
+    <End Role="SMT_LOCATION" Type="smtdbModel.Store.SMT_LOCATION" Multiplicity="1" />
+    <End Role="SMT_TOUR_ITEMS" Type="smtdbModel.Store.SMT_TOUR_ITEMS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SMT_LOCATION">
+        <PropertyRef Name="location_id" />
+      </Principal>
+      <Dependent Role="SMT_TOUR_ITEMS">
+        <PropertyRef Name="location_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_TOUR_ITEMS_SMT_TOURS_tour_id">
+    <End Role="SMT_TOURS" Type="smtdbModel.Store.SMT_TOURS" Multiplicity="1" />
+    <End Role="SMT_TOUR_ITEMS" Type="smtdbModel.Store.SMT_TOUR_ITEMS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SMT_TOURS">
+        <PropertyRef Name="tour_id" />
+      </Principal>
+      <Dependent Role="SMT_TOUR_ITEMS">
+        <PropertyRef Name="tour_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_TOURS_AGENT_agent_id">
+    <End Role="AGENT" Type="smtdbModel.Store.AGENT" Multiplicity="0..1" />
+    <End Role="SMT_TOURS" Type="smtdbModel.Store.SMT_TOURS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AGENT">
+        <PropertyRef Name="agent_id" />
+      </Principal>
+      <Dependent Role="SMT_TOURS">
+        <PropertyRef Name="tour_agent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_TOURS_SMT_USER_user_id">
+    <End Role="SMT_USER" Type="smtdbModel.Store.SMT_USER" Multiplicity="0..1" />
+    <End Role="SMT_TOURS" Type="smtdbModel.Store.SMT_TOURS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SMT_USER">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="SMT_TOURS">
+        <PropertyRef Name="tour_user_created" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_USER_AGENT_agent_id">
+    <End Role="AGENT" Type="smtdbModel.Store.AGENT" Multiplicity="1" />
+    <End Role="SMT_USER" Type="smtdbModel.Store.SMT_USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AGENT">
+        <PropertyRef Name="agent_id" />
+      </Principal>
+      <Dependent Role="SMT_USER">
+        <PropertyRef Name="agent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_USER_HISTORY_SMT_LOCATION_location_id">
+    <End Role="SMT_LOCATION" Type="smtdbModel.Store.SMT_LOCATION" Multiplicity="1" />
+    <End Role="SMT_USER_HISTORY" Type="smtdbModel.Store.SMT_USER_HISTORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SMT_LOCATION">
+        <PropertyRef Name="location_id" />
+      </Principal>
+      <Dependent Role="SMT_USER_HISTORY">
+        <PropertyRef Name="location_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SMT_USER_HISTORY_SMT_USER_user_id">
+    <End Role="SMT_USER" Type="smtdbModel.Store.SMT_USER" Multiplicity="1" />
+    <End Role="SMT_USER_HISTORY" Type="smtdbModel.Store.SMT_USER_HISTORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SMT_USER">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="SMT_USER_HISTORY">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

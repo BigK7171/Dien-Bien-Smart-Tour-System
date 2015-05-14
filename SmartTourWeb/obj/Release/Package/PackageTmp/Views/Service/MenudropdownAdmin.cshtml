@@ -1,0 +1,123 @@
+﻿@{
+    List<SmartTourWeb.Models.smt_parent_category> parent = (List<SmartTourWeb.Models.smt_parent_category>)ViewData["parent"];
+
+    List<SmartTourWeb.Models.smt_sub_category> sub = (List<SmartTourWeb.Models.smt_sub_category>)ViewData["sub"];
+}
+
+<table class="tableAd">
+    <tbody>
+        <tr>
+            <td class="left">
+                <img alt="" src="/Images/blank.gif" />
+            </td>
+            <td>Quản lý tài khoản
+            </td>
+            <td class="image">
+                <img alt="" id="imgdiv8" src="/Images/closed.gif" onclick="toggleXPMenu('div8');" />
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div id="div8" class="content">
+    <ul>
+        @if (Session["AGENT"] != null)
+        {
+            if (Session["AGENT"].ToString() == "1")
+            {
+            <li>@Html.ActionLink("Quản lý nhóm", "Index", "GroupManager")</li>
+            <li>@Html.ActionLink("Quản lý các đơn vị", "Index", "AgentManager")</li>
+            <li>@Html.ActionLink("Quản lý tài khoản", "Index", "UserManager")</li>
+            <li>@Html.ActionLink("Quản lý danh mục", "Index", "Category")</li>
+            }
+        }
+        <li>@Html.ActionLink("Thông tin cá nhân", "Details", "UserManager", new { id = (Session["USER_ID"]) }, null)</li>
+        <li>@Html.ActionLink("Đổi mật khẩu", "ChangePass", "UserManager", new { id = (Session["USER_ID"]) }, null)</li>
+    </ul>
+</div>
+@if (parent != null)
+{
+    foreach (var item in parent.Where(x => x.parent_category_id != 1 && x.parent_category_id != 3))
+    {
+        string name = "imgdiv" + item.parent_category_id.ToString();
+        string nametoggle = "div" + item.parent_category_id.ToString(); 
+    <table class="tableAd">
+        <tbody>
+            <tr>
+                <td class="left">
+                    <img alt="" src="/Images/blank.gif" />
+                </td>
+                <td>@item.parent_category_name_vi
+                </td>
+                <td class="image">
+                    <img alt="" id=@name src="/Images/closed.gif" onclick="toggleXPMenu('@nametoggle');" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+                        
+    <div id=@nametoggle class="content">
+        <ul>
+            @foreach (var subcategory in sub)
+            {
+                if (subcategory.parent_category_id == item.parent_category_id)
+                {
+                <li>@Html.ActionLink(@subcategory.sub_category_name_vi, "Index", "Service", new { category = subcategory.sub_category_id }, null)</li>
+                }
+            }
+        </ul>
+    </div>
+    }
+
+}
+<table class="tableAd">
+    <tbody>
+        <tr>
+            <td class="left">
+                <img alt="" src="/Images/blank.gif" />
+            </td>
+            <td>Quản lý các danh mục khác
+            </td>
+            <td class="image">
+                <img alt="" id="imgdiv7" src="/Images/closed.gif" onclick="toggleXPMenu('div7');">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div id="div7" class="content">
+    
+    <ul>
+        @if (Session["AGENT"].ToString() == "1")
+        {
+            <li>@Html.ActionLink("Quản lý tour du lịch", "Index", "Tour")</li>
+            <li>@Html.ActionLink("Quản lý hỗ trợ online", "Index", "Support")</li>
+            <li>@Html.ActionLink("Quản lý giới thiệu", "Index", "Introduce")</li>
+            <li>@Html.ActionLink("Quản lý liên hệ", "Index", "Contact")</li>
+        }
+        
+        @*        <li>@Html.ActionLink("Danh sách đặt tour", "BookingTourIndex", "Tour", new { category = 11 }, null)</li>*@
+    </ul>
+</div>
+@* list menu *@
+<script type="text/javascript">
+    function Get(idname) {
+        if (document.getElementById)
+        { return document.getElementById(idname); }
+        else if (document.all) { return document.all[idname]; }
+        else if (document.layers) { return document.layers[idname]; }
+        else { return null; }
+    }
+    function toggleXPMenu(block) {
+        var CloseImage = "/Images/closed.gif";
+        var OpenImage = "/Images/open.gif";
+        var divid = block;
+        var img = "img" + block;
+        if (Get(divid).style.display == "") {
+            Get(divid).style.display = "none";
+            Get(img).src = OpenImage;
+            return false;
+        }
+        else {
+            Get(divid).style.display = ""; Get(img).src = CloseImage; return false;
+        }
+    }
+</script>

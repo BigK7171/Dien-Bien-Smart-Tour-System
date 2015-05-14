@@ -1,0 +1,272 @@
+﻿body {
+    background-color: #eee;
+}
+
+#_header
+{
+    background-color: #FFF;
+    padding: 0;
+    margin-bottom: 1.5em;
+}
+
+    #_header.dark
+    {
+        background-color: #222;
+    }
+
+    #_header.light
+    {
+        background-color: #fff;
+    }
+
+        #_header.light h1#site-logo span
+        {
+            color: #333;
+        }
+#home-slideshow
+{
+    /*margin: 0px 50px; */
+    margin: 0px 27px;
+}
+
+    #home-slideshow .item
+    {
+        max-height: 280px;
+       /* max-width: 900px; */
+    }
+        #home-slideshow .item > img
+        {
+            min-width: 1021px;           
+        }
+.item a img
+{
+    width: 80px;
+    height: 65px;
+}
+.row:before, .row:after, ul.rating-list li:before, ul.rating-list li:after, ul.rating-list:before, ul.rating-list:after, nav.top-menu ul:before, nav.top-menu ul:after, nav.top-menu ul.main-menu:before, nav.top-menu ul.main-menu:after, .primary-menu ul.main-menu:before, .primary-menu ul.main-menu:after, .posts-top-grid:before, .posts-top-grid:after, .review-stars:before, .review-stars:after, ul.recent-posts:before, ul.recent-posts:after, ul.recent-posts li:before, ul.recent-posts li:after, ul.recent-comments:before, ul.recent-comments:after, ul.recent-comments li:before, ul.recent-comments li:after, ul.ad-banner-125x125:before, ul.ad-banner-125x125:after, .tagcloud:before, .tagcloud:after, .block-layout-one:before, .block-layout-one:after, .block-layout-two .item:before, .block-layout-two .item:after, .block-layout-three .item:before, .block-layout-three .item:after, .block-layout-four:before, .block-layout-four:after, .rating-stars:before, .rating-stars:after, .block-layout-five:after, .block-layout-five:before, .block-layout-five .main-item:before, .block-layout-five .main-item:after, .post-share:before, .post-share:after, .post-controls:before, .post-controls:after, .post-rating:before, .post-rating:after, .single-post .featured:after, .single-post .featured:before, ul.products:before, ul.products:after, #main div.product:after, #main div.product:before, .woocommerce-tabs:before, .woocommerce-tabs:after, ul.product_list_widget li:after, ul.product_list_widget li:before
+{
+    content: " ";
+    display: table;
+}
+ul.rating-list li:after, ul.rating-list:after, nav.top-menu ul.main-menu:after, .primary-menu ul.main-menu:after, .posts-top-grid:after, .review-stars:after, ul.recent-posts:after, ul.recent-posts li:after, ul.recent-comments:after, ul.recent-comments li:after, ul.ad-banner-125x125:after, .tagcloud:after, .block-layout-one:after, .block-layout-two .item:after, .block-layout-three .item:after, .block-layout-four:after, .rating-stars:after, .row:after, .block-layout-five:after, .block-layout-five .main-item:after, .post-share:after, .post-controls:after, .post-rating:after, .single-post .featured:after, ul.products:after, #main div.product:after, .woocommerce-tabs:after, ul.product_list_widget li:after
+{
+    clear: both;
+}
+.light
+    {
+        background-color: #fff;
+        border-bottom: 1px solid #eee;
+    }
+
+/*Footer*/
+#footer ul.recent-posts li:last-child, ul.recent-posts li:last-child
+    {
+        border-bottom: none!important;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+#footer ul.recent-comments li:last-child, ul.recent-comments li:last-child
+    {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+footer
+{
+    display: block;
+}
+#footer
+{
+    color: #ccc;
+    background-color: #222;   
+    clear:both;
+}
+
+    #footer a
+    {
+        color: #ccc;
+    }
+
+        #footer a:hover
+        {
+            color: #fff;
+        }
+
+    #footer > .inner-wrapper
+    {
+        padding-top: 1.5em;
+        padding-bottom: 2.5em;
+    }
+
+    #footer .widget:last-child
+    {
+        margin-right: 0;
+    }
+
+    #footer .widget
+    {
+        width: 450px;
+        display: inline;
+        float: left;
+        margin: 0 20px 1em 0;
+    }
+
+    #footer .widget-title
+    {
+        border-bottom: 3px solid #373737;
+        padding-bottom: 5px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #fff;
+    }
+
+    #footer ul.recent-comments li, #footer ul.recent-posts li
+    {
+        border-bottom: 1px solid #333;
+    }
+
+    #footer ul.recent-comments h3 a, #footer ul.recent-posts h3 a
+    {
+        color: #fff;
+    }
+
+    #footer .widget-archive li:before, #footer .widget-categories li:before
+    {
+        color: #333;
+    }
+
+    #footer .widget-archive li, #footer .widget-categories li
+    {
+        color: #555;
+    }
+
+    #footer .tagcloud a
+    {
+        color: #999;
+        background-color: #333;
+    }
+
+        #footer .tagcloud a:hover
+        {
+            color: #fff;
+        }
+
+    #footer .tagcloud div span
+    {
+        margin-left: -5px;
+        min-width: 20px;
+        padding: 0 5px;
+        text-align: center;
+        height: 30px;
+        display: inline-block;
+        line-height: 30px;
+        border: 1px solid #333;
+        position: relative;
+        background-color: #222;
+    }
+
+        #footer .tagcloud div span:after
+        {
+            right: 100%;
+            top: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(34,34,34,0);
+            border-right-color: #222;
+            border-width: 5px;
+            margin-top: -5px;
+        }
+
+#copyright
+{
+    font-size: 13px;
+    padding: 1.5em 0;
+    background-color: #333;
+      clear: both;
+}
+
+    #copyright a
+    {
+        color: #fff;
+    }
+
+    #copyright .grid_6
+    {
+        margin-bottom: 0;
+    }
+
+        #copyright .grid_6:last-child
+        {
+            text-align: right;
+        }
+.inner-wrapper
+{
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.inner-wrapper
+    {
+        padding-top: 5px;
+    }
+ #wrapper.boxed, .inner-wrapper
+    {
+        width: 100%;
+    }
+ .widget
+    {
+        padding: 0;
+    }
+ .widget-title
+    {
+        cursor: pointer;
+        margin: 0px;
+        border-bottom: 0px;
+        padding-bottom: 0px;
+    }
+ .widget ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+ul.recent-comments li
+{
+    margin-bottom: .3em;
+    padding-bottom: .2em;
+    border-bottom: 1px solid #eee;
+}
+
+    #footer ul.recent-comments li:last-child, ul.recent-comments li:last-child
+    {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+ul.recent-comments h3
+{
+    font-size: 14px;
+}
+
+    ul.recent-comments h3 a
+    {
+        color: #333;
+    }
+
+        ul.recent-comments h3 a:hover
+        {
+            text-decoration: underline;
+        }
+
+ul.recent-comments p.author
+{
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: 11px;
+}

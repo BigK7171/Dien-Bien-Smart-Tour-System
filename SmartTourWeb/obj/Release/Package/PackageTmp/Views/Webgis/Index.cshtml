@@ -1,0 +1,241 @@
+﻿@{    
+    Layout = "~/Views/Shared/Home.cshtml";
+}
+ @if ((int)Session["CurrentCulture"] == 1)
+ { ViewBag.Title = "Tourist map"; }
+ else
+ { ViewBag.Title = "Bản đồ du lịch"; }
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+	<title>Ban do dai hoc bach khoa ha noi</title>
+    <!-- this gmaps key generated for http://localhost:8080/geoserver/ -->
+    <link rel="stylesheet" href="../theme/default/style.css" type="text/css">
+        <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="http://openlayers.org/api/OpenLayers.js"></script>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAiZaF14sIC401Wu-2DDGzNACa4NxC3Es">
+    </script>
+    
+    <script type="text/javascript">
+        var map;
+        var markers = [];
+
+        function initialize() {
+
+            var mapOptions = {
+                center: new google.maps.LatLng(21.38180, 103.01844),
+                zoom: 13
+            };
+            map = new google.maps.Map(document.getElementById('map_element'),
+                mapOptions);
+            //    getLayer(0);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+        $(document).ready(function () {
+            $("#Category").change(function () {
+
+                if ($("#Category").text() != "Chọn lớp bản đồ") {
+                    var cate_id = $("#Category").val();
+                    clearMarkers();
+                    getLayer(cate_id);
+
+                }
+            });
+        });
+
+        function getLayer(cate_id) {
+            // alert(cate_id);
+            $.ajax({
+                type: 'POST',
+                url: 'Webgis/getLayer',
+                data: JSON.stringify({ category_id: cate_id }),
+                contentType: "application/json; charset=utf-8;",
+                success: function (data) {
+                    //  alert(data)
+                    getMarker(data);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert(textStatus);
+                }
+            });
+        }
+        // Sets the map on all markers in the array.
+        function setAllMap(map) {
+            for (var i = 0; i < markers.length; i++) {
+                markers[i].setMap(map);
+            }
+        }
+
+        // Removes the markers from the map, but keeps them in the array.
+        function clearMarkers() {
+            setAllMap(null);
+        }
+
+        var myLatlng;
+        var marker;
+        var infowindow = new google.maps.InfoWindow();
+        function getMarker(data) {
+            if (data != null) {
+                var i;
+                var bounds = new google.maps.LatLngBounds();
+                //   alert(data.length);
+                if (data.length == 1) {
+                    var myLatlng = new google.maps.LatLng(data[0].location_lat, data[0].locaton_lon);
+                    var category_id = data[0].sub_category_id;
+                    var image;
+                    switch (category_id) {
+                        case 1:
+                            image = 'Images/Category/ditichlichsu.png';
+                            break;
+                        case 2:
+                            image = 'Images/Category/pagoda_icon.png';
+                        case 3:
+                            image = 'Images/Category/science_icon.png';
+                            break;
+                        case 4:
+                            image = 'Images/Category/monument3232';
+                            break;
+                        case 5:
+                            image = 'Images/Category/festival_icon.png';
+                            break;
+                        case 6:
+                            image = 'Images/Category/festival_icon.png';
+                            break;
+                        case 7:
+                            image = 'Images/Category/hotel_icon.png';
+                            break;
+                        case 8:
+                            image = 'Images/Category/restaurant_icon.png';
+                            break;
+                        case 9:
+                            image = 'Images/Category/bank_icon.png';
+                            break;
+                        case 10:
+                            image = 'Images/Category/parking_place_icon.png';
+                            break;
+                        case 11:
+                            image = 'Images/Category/supper_marker_icon.png';
+                            break;
+                    }
+
+
+                    var _marker = new google.maps.Marker({
+                        position: myLatlng,
+                        map: map,
+                        title: data[0].location_name,
+                        icon: image
+                    });
+                    markers.push(_marker);
+                    //     alert(data[i].location_name);
+
+                    google.maps.event.addListener(_marker, 'click', (function (_marker, i) {
+                        return function () {
+                            infowindow.setContent(data[0].location_name);
+                            infowindow.open(map, _marker);
+                        }
+                    })(_marker, i));
+
+                    map.setCenter(myLatlng);
+                    map.setZoom(15);
+                    //return;
+                }
+                else {
+                    for (i = 0; i < data.length; i++) {
+                        var myLatlng = new google.maps.LatLng(data[i].location_lat, data[i].locaton_lon);
+                        bounds.extend(myLatlng);
+                        var image;
+                        var category_id = data[i].sub_category_id;
+                        //  alert(category_id);
+                        switch (category_id) {
+                            case 1:
+                                image = 'Images/Category/ditichlichsu.png';
+                                break;
+                            case 2:
+                                image = 'Images/Category/pagoda_icon.png';
+                            case 3:
+                                image = 'Images/Category/science_icon.png';
+                                break;
+                            case 4:
+                                image = 'Images/Category/monument3232';
+                                break;
+                            case 5:
+                                image = 'Images/Category/festival_icon.png';
+                                break;
+                            case 6:
+                                image = 'Images/Category/festival_icon.png';
+                                break;
+                            case 7:
+                                image = 'Images/Category/hotel_icon.png';
+                                break;
+                            case 8:
+                                image = 'Images/Category/restaurant_icon.png';
+                                break;
+                            case 9:
+                                image = 'Images/Category/bank_icon.png';
+                                break;
+                            case 10:
+                                image = 'Images/Category/parking_place_icon.png';
+                                break;
+                            case 11:
+                                image = 'Images/Category/supper_marker_icon.png';
+                                break;
+                        }
+
+                        marker = new google.maps.Marker({
+                            position: myLatlng,
+                            map: map,
+                            title: data[i].location_name,
+                            icon: image
+                        });
+                        markers.push(marker);
+                        //     alert(data[i].location_name);
+
+                        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                            return function () {
+                                infowindow.setContent(data[i].location_name);
+                                infowindow.open(map, marker);
+                            }
+                        })(marker, i));
+                    }
+                    map.fitBounds(bounds);
+                }
+            }
+        }
+
+    </script>
+<body onload='initialize();'>
+<div class="map-border">
+ <div align="center" class="style2">
+  <h3 class="style7">BẢN ĐỒ DU LỊCH ĐIỆN BIÊN</h3>
+</div>
+
+ <table width="700" height="30">
+   <tr>
+     <td>
+         <div id="controlToggle">
+             <label for="noneToggle">Chọn lớp bản đồ</label> 
+              @Html.DropDownList("Category", (SelectList)ViewBag.sub_category_id, "Chọn lớp bản đồ")           
+         </div>
+     </td>
+     <td>
+        <div id="output">
+        </div>
+     </td>
+   </tr>
+ </table>
+ <div style="margin: 14px 0px; width: 100%">
+  <table style="width: 130px; border:1px; border-color:#FF0000">
+    <tr style="border-color:#F0F0F0">
+      <td style="width:100px; align:center; valign:top"><div align="center" id='map_element' style='width: 700px; height: 545px;'></div></td>
+    </tr>
+  </table>
+</div>
+</div>
+</body>
+</html>

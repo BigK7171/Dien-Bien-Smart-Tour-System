@@ -1,0 +1,66 @@
+﻿@model SmartTourWeb.Models.smt_contact
+
+@{
+    ViewBag.Title = "Quản lý giới thiệu";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Quản lý giới thiệu</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <table class="TableUpdate" border="1">
+        <tbody>
+
+            <tr>
+                <td class="Control" colspan="2">
+                    <ul>
+                        <li>
+                            <input type="submit" value="Lưu lại" class="uupdate" /></li>
+                        <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                </th>
+                <td>
+                   @if (ViewBag.Success != null) 
+                    {<div class="tgreen">@ViewBag.Success</div>}
+                    else if (ViewBag.Error != null)
+                    { <div class="tred">@ViewBag.Error</div>}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                   Giới thiệu Tiếng Việt
+                </th>
+                <td class="text valid">
+                   @*  @Html.EditorFor(model => model.intro_contain)*@
+                   @Html.TextAreaFor(model => model.contact_contain, new { @id = "ckeDetail_vi" })
+                </td>
+            </tr>
+                        <tr>
+                <th>
+                   Giới thiệu Tiếng Anh
+                </th>
+                <td class="text valid">
+                   @* @Html.EditorFor(model => model.intro_contain_en)*@
+                    @Html.TextAreaFor(model => model.contact_contain_en, new { @id = "ckeDetail_en" })
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="Control" colspan="2">
+                    <ul>
+                        <li>
+                            <input type="submit" value="Lưu lại" class="uupdate" /></li>
+                        <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                    </ul>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+}

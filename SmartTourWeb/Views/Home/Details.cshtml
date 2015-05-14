@@ -1,0 +1,300 @@
+﻿@model  SmartTourWeb.Models.smt_location
+@if ((int)Session["CurrentCulture"] == 1)
+{ ViewBag.Title = @Model.location_name_en; }
+else
+{ ViewBag.Title = @Model.location_name_vi; }
+@{
+    
+    //   ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Home.cshtml";
+    <script src="~/Scripts/streamvideo.js"></script>
+    <script src="~/Scripts/limitdes.js"></script>
+}
+
+@{
+    //List<SmartTourWeb.Models.smt_tour_items> tour_item = (List<SmartTourWeb.Models.smt_tour_items>)ViewData["tour_item"];
+    List<SmartTourWeb.Models.smt_location> sub_location = (List<SmartTourWeb.Models.smt_location>)ViewData["sub_location"];
+}
+<!--@if ((int)Session["CurrentCulture"] == 1) // English
+    { <div>@{Html.RenderAction("Search_en", "Home");}</div><br /> }
+    else // Vietnames
+    { <div>@{Html.RenderAction("Search", "Home");}</div><br />}
+    -->
+<br />
+<div class="box">
+    <div class="box_name tblue">
+        <div class="active">
+            <span>
+                @if ((int)Session["CurrentCulture"] == 1)
+                { @Model.location_name_en  }
+                else
+                {@Model.location_name_vi}
+            </span>
+            <!--  <p style="background: transparent url(/Images/theme/border-bottom.png) repeat-x scroll right top; margin-top: 24px; padding: 168px;"><p></p></p>
+            -->
+        </div>
+    </div>
+    <table class="box-item">
+        <tr>
+            <td class="box-item-img">
+                <img src="@Model.location_icondir" /></td>
+            <td>
+                <table class="box-item-table">
+                    <tr>
+                        <td class="box-item-addr tbold">@Resources.Resource.Add</td>
+                        <td class="box-item-addr">
+                            @if ((int)Session["CurrentCulture"] == 1)
+                            { @Model.location_addr_en }
+                            else
+                            {@Model.location_addr}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="box-item-addr tbold">@Resources.Resource.RelatedTour</td>
+                        <td class="box-item-des"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1">@Resources.Resource.detail</a></li>
+            @if (sub_location.Count > 0)
+            {                  
+                <li><a href="#tabs-2">@Resources.Resource.sub_location</a></li>
+            }
+        </ul>
+        <div id="tabs-1">
+            @if ((int)Session["CurrentCulture"] == 1)
+            { @Html.Raw(Model.location_des_en)  }
+            else
+            {@Html.Raw(Model.location_des_vi)}
+
+            @if (Model.location_videodir != null)
+            {
+                <div>
+                    <iframe style="margin: 0px 106px;" width="420" height="315" src=@Model.location_videodir></iframe>
+                    @*  <video width="480" height="360" style="display:block; margin: 0 auto;" src="@Model.location_videodir" controls="controls" ></video>*@
+                </div>
+            }            
+@*hiển thị  danh sách các comment*@
+@*        <div id="CommentId">
+                <div class="tbold">
+                    @Resources.Resource.Comment
+                </div>
+                <br />
+                @foreach (var item in Model.smt_comment)
+                {   <div class="box-comment">
+                    <div class="box-contain-comment">
+                        <b class="tblue">@Html.DisplayFor(m => @item.smt_user.username)</b> - <i class="tblue">@Html.DisplayFor(m => @item.smt_user.user_email)</i>
+                        <table>
+                            <tr>
+                                <td class="box-avt-comment">
+                                    <img src="@item.smt_user.user_logo"/></td>
+                                <td>
+                                    <div>
+                                        @Html.DisplayFor(m => @item.comment_contain)
+                                    </div>
+                                    <br />
+                                    <div class="tsmall">
+
+                                        <i>@Html.DisplayFor(m => @item.comment_time)</i>
+                                    </div>
+                                    @if (Session["USER_ID"] != null)
+                                    {
+                                        if (item.user_id == (int)Session["USER_ID"] || (int)Session["AGENT"] == 1)
+                                        {
+                                        <div>@Ajax.ActionLink(Resources.Resource.Del, "DeleteComment", "User", new { id = @item.comment_id }, new AjaxOptions { UpdateTargetId = "CommentId" })</div>                      
+                                        }
+                                    }
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <br />
+                </div> 
+                }
+            </div>
+            @if (Session["USER_ID"] != null)
+            {
+                <div>
+                    @{Html.RenderAction("CreateComment", "User", new { ITEM_ID = Model.location_id });}
+                </div>
+            }
+            else
+            {<div>@Resources.Resource.Please @Html.ActionLink(Resources.Resource.Login, "Login", "UserManager", routeValues: null, htmlAttributes: new { id = "loginLink" }) @Resources.Resource.tocomment</div>}*@
+
+        </div>
+
+        <div id="tabs-2">
+            <div class="box_inside">
+                @if (sub_location != null)
+                {
+                    int i = 0, post_count = 0;
+                    string postid = "";
+                    foreach (var sub in sub_location)
+                    {
+                        post_count++;
+                        postid = "post" + post_count.ToString();
+                    <table class="box-item-resize">
+                        <tr>
+                            <td class="box-item-img">
+                                <img src="@sub.location_icondir" />
+                            </td>
+                            <td>
+                                <table class="box-item-table">
+                                    <tr>
+                                        <td class="box-item-name">
+                                            <div>
+                                                @Html.ActionLink(((int)Session["CurrentCulture"] == 1) ? sub.location_name_en : sub.location_name_vi, "Details", new { id = sub.location_id, name_lacation = sub.location_name_en })
+                                            </div>
+                                            <div class="views">
+                                                @if (@sub.location_counter == null)
+                                                {
+                                                    sub.location_counter = 0;
+                                                }
+                                                @sub.location_counter @Resources.Resource.Views
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="box-item-addr">
+                                            @Resources.Resource.Add:
+                                            @if ((int)Session["CurrentCulture"] == 1) // English
+                                            { @sub.location_addr_en }
+                                            else // Vietnames
+                                            { @sub.location_addr}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="box-item-des">
+                                            <div id="@postid">
+                                                @if ((int)Session["CurrentCulture"] == 1)
+                                                { @sub.location_short_des_en  }
+                                                else
+                                                {@sub.location_short_des_vi}
+                                                ...
+                                            </div>
+                                            <script>
+                                                limitDescription("@postid");
+                                            </script>
+                                            @if (sub.location_videodir != null && sub.location_videodir != "")
+                                            {
+                                                i++;
+                                                string watch = "xem_video_" + i.ToString();
+                                                <div style="float: right; margin: 7px 0px;">
+                                                    <a href="javascript:void(0);" onclick="openVideo(@i);" title="">
+                                                        <span class="icon-video">
+                                                            <img src="~/Images/theme/icon-video.gif" />
+                                                        </span>
+                                                        <span id="@watch" style="color:#06F">@Resources.Resource.IntroductionVideo</span>
+                                                    </a>
+                                                </div>
+                                            }
+                                            else { }
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr id="@i" style="display: none">
+                            <td colspan="3" align="center">
+                                <iframe width="560" height="315" src="@sub.location_videodir" frameborder="0" allowfullscreen></iframe>
+                            </td>
+                        </tr>
+                    </table>
+                    }
+                }
+            </div>
+        </div>
+
+        @*        <div id="tabs-3">
+            @if (tour_item.Count != 0)
+            {
+                int i = 1;
+                foreach (var item in tour_item)
+                {
+                    string name = "tb" + i;
+                    if (i != 1)
+                    {<b>&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;</b>}
+                @Html.ActionLink(((int)Session["CurrentCulture"] == 1) ? item.smt_tours.tour_name_en : item.smt_tours.tour_name_vi, "TourDetail", "Home", new { id = item.tour_id }, null)      
+                    i++;
+                }
+            }
+            else
+            {
+                if ((int)Session["CurrentCulture"] == 1)
+                { <div>No tour passing through</div>}
+                else
+                {  <div>Chưa có tour nào đi qua </div>}
+
+            }
+        </div>*@
+
+    </div>
+
+
+    @* }*@
+
+</div>
+
+
+
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });
+</script>
+
+
+<style>
+    .demoHeaders
+    {
+        margin-top: 2em;
+    }
+
+    #dialog-link
+    {
+        padding: .4em 1em .4em 20px;
+        text-decoration: none;
+        position: relative;
+    }
+
+        #dialog-link span.ui-icon
+        {
+            margin: 0 5px 0 0;
+            position: absolute;
+            left: .2em;
+            top: 50%;
+            margin-top: -8px;
+        }
+
+    #icons
+    {
+        margin: 0;
+        padding: 0;
+    }
+
+        #icons li
+        {
+            margin: 2px;
+            position: relative;
+            padding: 4px 0;
+            cursor: pointer;
+            float: left;
+            list-style: none;
+        }
+
+        #icons span.ui-icon
+        {
+            float: left;
+            margin: 0 4px;
+        }
+
+    .fakewindowcontain .ui-widget-overlay
+    {
+        position: absolute;
+    }
+</style>

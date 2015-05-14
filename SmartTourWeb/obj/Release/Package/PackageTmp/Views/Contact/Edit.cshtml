@@ -1,0 +1,55 @@
+﻿@model SmartTourWeb.Models.smt_contact
+
+@{
+    ViewBag.Title = "Sửa bài liên hệ";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Sửa bài liên hệ</h2>
+
+@using (Html.BeginForm("Edit", "Contact", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <table class="TableUpdate" border="1">
+        <tbody>
+            <tr>
+                <td class="Control" colspan="2">
+                    <ul>
+                        <li>
+                            <input type="submit" value="Lưu lại" class="uupdate" /></li>
+                        <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                </th>
+                <td>
+                   @if (ViewBag.Success != null) 
+                    {<div class="tgreen">@ViewBag.Success</div>}
+                    else if (ViewBag.Error != null)
+                    { <div class="tred">@ViewBag.Error</div>}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Nội dung Tiếng Việt
+                </th>
+                <td class="text valid">
+                    @Html.TextAreaFor(model => model.contact_contain, new { @id = "ckeDetail_vi", @rows = 10, @cols = 80 })
+                </td>
+            </tr>
+            <tr>
+                <th>
+                  Nội dung Tiếng Anh
+                </th>
+                <td class="text valid">
+                    @Html.TextAreaFor(model => model.contact_contain_en, new { @id = "ckeDetail_en", @rows = 10, @cols = 80 })
+                </td>
+            </tr>
+           
+
+        </tbody>
+    </table>
+    @Html.HiddenFor(model => model.contact_id)
+}

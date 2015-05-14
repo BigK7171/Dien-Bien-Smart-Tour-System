@@ -1,0 +1,53 @@
+﻿@model SmartTourWeb.Models.smt_user
+
+@{
+    ViewBag.Title = "Đổi mật khẩu";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Thay đổi mật khẩu</h2>
+
+@using (Html.BeginForm("ChangePass", "UserManager", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{  
+    @Html.ValidationSummary(true)
+        @Html.AntiForgeryToken()
+        if (ViewBag.Message != null)
+        {
+            <div style="color:red">@ViewBag.Message</div>
+        }
+                <div class="editor-label">
+           Mật khẩu cũ  (*)
+        </div>
+        <div>
+            <input type="password" class="editor-field" name="oldpass" />
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.pasword)  (*)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.pasword)
+            @Html.ValidationMessageFor(model => model.pasword)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ConfirmPassword)  (*)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ConfirmPassword)
+            @Html.ValidationMessageFor(model => model.ConfirmPassword)
+        </div>
+            @Html.HiddenFor(model => model.user_email)
+            @Html.HiddenFor(model => model.user_id)
+            @Html.HiddenFor(model => model.username)
+            @Html.HiddenFor(model => model.address)
+            @Html.HiddenFor(model => model.phone)
+            @Html.HiddenFor(model => model.state)
+            @Html.HiddenFor(model => model.created_time)
+            @Html.HiddenFor(model => model.last_login_ip)
+            @Html.HiddenFor(model => model.last_login_time)
+            @Html.HiddenFor(model => model.user_logo)
+            @Html.HiddenFor(model => model.agent_id)
+        <div>
+            <input type="submit" value="Hoàn tất" />
+        </div>
+}

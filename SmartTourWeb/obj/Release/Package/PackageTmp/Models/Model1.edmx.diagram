@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d6af7623357a495eb7e1c70826d75f40" Name="Diagram1">
+        <EntityTypeShape EntityType="smtdbModel.agent" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="smtdbModel.agent_category_permission" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="smtdbModel.article" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="smtdbModel.group" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="smtdbModel.smt_comment" Width="1.5" PointX="15" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="smtdbModel.smt_contact" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="smtdbModel.smt_intro" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="smtdbModel.smt_layer" Width="1.5" PointX="7.5" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="smtdbModel.smt_link_tour" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="smtdbModel.smt_location" Width="1.5" PointX="12.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="smtdbModel.smt_parent_category" Width="1.5" PointX="10.5" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="smtdbModel.smt_sub_category" Width="1.5" PointX="15.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="smtdbModel.smt_support_online" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="smtdbModel.smt_user" Width="1.5" PointX="5.25" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="smtdbModel.smt_user_history" Width="1.5" PointX="18" PointY="19.5" IsExpanded="true" />
+        <AssociationConnector Association="smtdbModel.FK_AGENT_Group_id" ManuallyRouted="false" />
+        <AssociationConnector Association="smtdbModel.FK_Group_Module_permission_Group_id" ManuallyRouted="false" />
+        <AssociationConnector Association="smtdbModel.FK_SMT_LAYER_AGENT_agent_id" ManuallyRouted="false" />
+        <AssociationConnector Association="smtdbModel.FK_smt_location_agent_agent_id" ManuallyRouted="false" />
+        <AssociationConnector Association="smtdbModel.FK_SMT_PARENT_CATEGORY_AGENT_agent_id" ManuallyRouted="false" />
+        <AssociationConnector Association="smtdbModel.FK_SMT_SUB_CATEGORY_AGENT_agent_id" ManuallyRouted="false" />
+        <AssociationConnector Association="smtdbModel.FK_smt_user_agent_agent_id" ManuallyRouted="false" />
+        <AssociationConnector Association="smtdbModel.FK_Group_permission_SMT_PARENT_CATEGORY_parent_category_id" ManuallyRouted="false" />
+        <AssociationConnector Association="smtdbModel.FK_SMT_COMMENT_SMT_LOCATION_location_id" ManuallyRouted="false" />
+        <AssociationConnector Association="smtdbModel.FK_SMT_COMMENT_SMT_USER_user_id" ManuallyRouted="false" />
+        <AssociationConnector Association="smtdbModel.FK_SMT_LAYER_SMT_USER_user_id" ManuallyRouted="false" />
+        <AssociationConnector Association="smtdbModel.FK_smt_location_smt_layer_layer_id" ManuallyRouted="false" />
+        <AssociationConnector Association="smtdbModel.FK_smt_location_smt_user_user_id" ManuallyRouted="false" />
+        <AssociationConnector Association="smtdbModel.FK_SMT_USER_HISTORY_SMT_LOCATION_location_id" ManuallyRouted="false" />
+        <AssociationConnector Association="smtdbModel.FK_smt_parent_category_smt_user_user_id" ManuallyRouted="false" />
+        <AssociationConnector Association="smtdbModel.FK_SMT_SUB_CATEGORY_SMT_PARENT_CATEGORY_parent_category_id" ManuallyRouted="false" />
+        <AssociationConnector Association="smtdbModel.FK_SMT_SUB_CATEGORY_SMT_USER_user_id" ManuallyRouted="false" />
+        <AssociationConnector Association="smtdbModel.FK_SMT_USER_HISTORY_SMT_USER_user_id" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

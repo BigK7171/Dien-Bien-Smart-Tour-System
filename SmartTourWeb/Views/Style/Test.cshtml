@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>tesst</title>
+<link href="~/Content/tool/slideshow/demo.css" rel="stylesheet" />
+<script src="~/Scripts/quake.slider.js"></script>
+<script src="~/Scripts/jquery-2.1.1.js"></script>
+<script src="~/Scripts/quake.slider-min.js"></script>
+<link href="~/Content/tool/slideshow/quake.slider.css" rel="stylesheet" />
+    </head>
+
+<body>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.quake-slider').quake({
+                effects: ['swirlFadeIn', 'swirlFadeOut', 'swirlFadeIn', 'linearPealReverse', 'slideIn', 'swirlFadeIn', 'explodeFancy'],
+                thumbnails: true,
+                captionOpacity: '0.3',
+                captionsSetup: [
+                                 {
+                                     "orientation": "bottom",
+                                     "slides": [0, 1],
+                                     "callback": captionAnimateCallback
+                                 },
+                                  {
+                                      "orientation": "top",
+                                      "slides": [2, 3],
+                                      "callback": captionAnimateCallback
+                                  }
+                                  ,
+                                  {
+                                      "orientation": "left",
+                                      "slides": [4, 5],
+                                      "callback": captionAnimationCallback1
+                                  }
+                                  ,
+                                  {
+                                      "orientation": "right",
+                                      "slides": [6, 7],
+                                      "callback": captionAnimationCallback1
+                                  }
+                ]
+
+            });
+
+            function captionAnimateCallback(captionWrapper, captionContainer, orientation) {
+                captionWrapper.css({ left: '-990px' }).stop(true, true).animate({ left: 0 }, 500);
+                captionContainer.css({ left: '-990px' }).stop(true, true).animate({ left: 0 }, 500);
+            }
+            function captionAnimationCallback1(captionWrapper, captionContainer, orientation) {
+                captionWrapper.css({ top: '-330px' }).stop(true, true).animate({ top: 0 }, 500);
+                captionContainer.css({ top: '-330px' }).stop(true, true).animate({ top: 0 }, 500);
+            }
+
+        });
+    </script>
+
+    <div class="wrapper">
+        <div class="logo">
+         <div class="quake-slider">
+            <div class="quake-slider-images">
+                <a target="_blank" href="http://www.egrappler.com/free-premium-website-template-clean-business/">
+                    <img src="~/Content/tool/slideshow/images/1.jpg" alt="Clean Business Free Business Website Premium Template" />
+                </a><a target="_blank" href="http://www.egrappler.com/free-premium-html-adminbackend-template-for-web-applications-bluewhale-admin/">
+                    <img src="~/Content/tool/slideshow/images/2.jpg" alt="Free Premium HTML Admin/Backend Template for Web Applications" /></a>
+                <a target="_blank" href="http://www.egrappler.com/free-html-jquery-portfolio-template-mni-html-vcard/">
+                    <img src="~/Content/tool/slideshow/images/3.jpg" alt="Free HTML jQuery Portfolio Template" />
+                </a><a target="_blank" href="http://www.egrappler.com/jquery-clean-and-simple-tooltips-gips/">
+                    <img src="~/Content/tool/slideshow/images/4.jpg" alt="jQuery Clean and Simple Tooltips Plugin" />
+                </a><a target="_blank" href="http://www.egrappler.com/jquery-plugin-for-on-demand-search-box-seacrhmeme/">
+                    <img src="~/Content/tool/slideshow/images/5.jpg" alt="jQuery Plugin for On Demand Search Box" />
+                </a><a target="_blank" href="http://www.egrappler.com/multi-level-hierarchical-jquery-menu-jqsimplemenu/">
+                    <img src="~/Content/tool/slideshow/images/6.jpg" alt="Multi Level Hierarchical jQuery Menu" />
+                </a><a target="_blank" href="http://www.egrappler.com/xml-driven-vertical-news-scroller-script-using-html-and-jquery-vscroller/">
+                    <img src="~/Content/tool/slideshow/images/9.jpg" alt="XML Driven Vertical New Scroller Script Using HTML and jQuery" />
+                </a><a target="_blank" href="http://www.egrappler.com/jquery-spin-button-plugin-smart-spin/">
+                    <img src="~/Content/tool/slideshow/images/16.jpg" alt="jQuery Spin Button Control Plugin" />
+                </a>
+            </div>
+           </div>
+        </div>
+    </div>
+
+    </body>
+</html>

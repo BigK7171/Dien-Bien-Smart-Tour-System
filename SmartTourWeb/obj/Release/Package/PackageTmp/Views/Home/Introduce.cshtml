@@ -1,0 +1,20 @@
+﻿@model SmartTourWeb.Models.smt_intro
+@{
+   
+    Layout = "~/Views/Shared/Home.cshtml";
+}
+
+
+<div class="box">
+<h2 style="text-align:center">@Resources.Resource.intro</h2>
+@if ((int)Session["CurrentCulture"] == 1)
+{
+    ViewBag.Title = "Introduce";
+    <div style="margin:0px 17px">@Html.Raw(Model.intro_contain_en)</div> 
+}
+else
+{
+    ViewBag.Title = "Giới thiệu";
+     <div style="margin:0px 17px">@Html.Raw(Model.intro_contain)</div>
+}
+</div>

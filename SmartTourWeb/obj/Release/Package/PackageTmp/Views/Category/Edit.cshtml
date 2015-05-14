@@ -1,0 +1,104 @@
+﻿@model SmartTourWeb.Models.smt_sub_category
+
+@{
+    ViewBag.Title = "Sửa danh mục";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Sửa danh mục</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <table class="TableUpdate" border="1">
+        <tbody>
+            <tr>
+                <td class="Control" colspan="2">
+                    <ul>
+                        <li>
+                            <input type="submit" value="Lưu lại" class="uupdate" /></li>
+                        <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                </th>
+                <td>
+                   @if (ViewBag.Success != null) 
+                    {<div class="tgreen">@ViewBag.Success</div>}
+                    else if (ViewBag.Error != null)
+                    { <div class="tred">@ViewBag.Error</div>}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                   Tên danh mục
+                </th>
+                <td class="text valid tbold">
+                    @Html.DisplayFor(model => model.sub_category_name_vi)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                   Tên danh mục - Tiếng Anh
+                </th>
+                <td class="text valid">
+                    @Html.EditorFor(model => model.sub_category_name_en)
+                    @Html.ValidationMessageFor(model => model.sub_category_name_en)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                  Nhóm
+                </th>
+                <td class="text valid">
+                    @Html.DropDownList("parent_category_id", String.Empty)
+                    @Html.ValidationMessageFor(model => model.parent_category_id)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                  Ảnh đại diện
+                </th>
+                <td class="text valid">
+                     @Html.TextAreaFor(model => model.sub_category_icondir, new { @id = "ckfPic", @rows = 1, @cols = 80 })
+                        <input type="button" value="Chọn Ảnh ..." onclick="BrowsePic();"/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                  Mô tả
+                </th>
+                <td class="text valid">
+                    @Html.TextAreaFor(model => model.sub_category_des_vi, new { cols = 100, rows = 3 })
+                    @Html.ValidationMessageFor(model => model.sub_category_des_vi)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                 Mô tả - Tiếng Anh
+                </th>
+                <td class="text valid">
+                    @Html.TextAreaFor(model => model.sub_category_des_en, new { cols = 100, rows = 3 })
+                    @Html.ValidationMessageFor(model => model.sub_category_des_en)
+                </td>
+            </tr>
+            <tr>
+                <td class="Control" colspan="2">
+                    <ul>
+                        <li>
+                            <input type="submit" value="Lưu lại" class="uupdate" /></li>
+                        <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                    </ul>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    @Html.HiddenFor(model => model.sub_category_id)
+    @Html.HiddenFor(model => model.sub_category_name_vi)
+    @Html.HiddenFor(model => model.sub_category_time_created)
+    @Html.HiddenFor(model => model.sub_category_user_created)
+    @Html.HiddenFor(model => model.sub_category_agent_id)
+}

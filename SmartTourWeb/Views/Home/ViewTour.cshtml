@@ -1,0 +1,43 @@
+﻿@model IEnumerable<SmartTourWeb.Models.smt_link_tour>
+
+@{
+    ViewBag.Title = "ViewTour";
+    Layout = "~/Views/Shared/Home.cshtml";
+}
+    @if ((int)Session["CurrentCulture"] == 1) // English
+    {
+        ViewBag.Title = "ViewTour";
+    }
+       else
+    {
+        ViewBag.Title = "Danh sách tour du lịch";
+    }
+         
+<div class="box">
+    <h2 style="text-align:center">@Resources.Resource.linktour</h2>
+    <div class="box-list">
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+            <table class="box-item">
+                <tr >
+                   
+                    <td>
+                        <table class="box-item-table">
+                            <tr>
+                                <td class="box-item-name"><a href=@item.tour_link>@item.tour_name</a> </td>
+                            </tr>
+                            <tr>
+                                <td class="box-item-addr">@item.tour_des_vi
+                                </td>
+                            </tr>
+                         
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            }
+        }
+    </div>
+ </div>

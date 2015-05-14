@@ -1,0 +1,54 @@
+﻿@model IEnumerable<SmartTourWeb.Models.smt_support_online>
+
+@{
+    ViewBag.Title = "ListSupport";
+    Layout = "~/Views/Shared/Home.cshtml";
+    List<SmartTourWeb.Models.smt_support_online> supports = (List<SmartTourWeb.Models.smt_support_online>)ViewData["support"];
+
+}
+<script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
+<style>
+                        .supporter {
+                           width: 50%;
+                           height: 108px;
+                           float: left;
+                           text-align: center;
+                           border: 1px solid #FFF;
+                        }
+                        .supporter_list {
+                           color: #F00;
+                        }
+                        .chat_box
+                        {
+                           width: 50%; 
+                           height: 100%;
+                           float: right;  
+                           margin: 0px; 
+                           border: 1px solid rgb(255, 255, 255);
+                        }
+</style>
+<h5>Hỗ trợ trực tuyến</h5>
+<div class="supporter">
+    <label style="color: rgb(0, 102, 255); float: left;">Người hỗ trợ</label>
+    <ul class="supporter_list">
+        @foreach(var item in supports)
+        {
+             <li>@Html.DisplayFor(modelItem => item.support_name)</li>
+        }
+    </ul>
+</div>
+@foreach (var item in supports)
+{
+                          string strSession = "SkypeButton_Call_"+@item.support_nick+"_1";
+                          <div class="chat_box" id=strSession>
+                           <script type="text/javascript">
+                               Skype.ui({
+                                   "name": "chat",
+                                   "element": "SkypeButton_Call_"+ @item.support_nick + "_1",
+                                   "participants": ["+@item.support_nick+"],
+                                   "imageSize": 32
+                               });
+                           </script>
+                      </div>   
+}
+

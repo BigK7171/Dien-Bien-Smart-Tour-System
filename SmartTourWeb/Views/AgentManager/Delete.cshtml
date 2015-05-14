@@ -1,0 +1,68 @@
+﻿@model SmartTourWeb.Models.agent
+
+@{
+    ViewBag.Title = "Xóa đơn vị quản lý";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h3 class="tred">Bạn chắc chắn muốn xóa?</h3>
+<table class="TableUpdate" border="1">
+    <tbody>
+        <tr>
+            <td class="Control" colspan="2">
+                <ul>
+                    <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Mã đơn vị
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.agent_id)
+            </td>
+        </tr>
+        <tr>
+            <th>
+               Tên đơn vị
+            </th>
+            <td class="text valid tbold">
+                @Html.DisplayFor(model => model.agent_name)
+            </td>
+        </tr>
+        <tr>
+            <th>
+               Mô tả
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.agent_des)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Tên nhóm
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.group.group_name)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                @using (Html.BeginForm())
+                {
+                    <p>
+                        <input type="submit" value="Xóa" />
+                    </p>
+                }
+            </td>
+        </tr>
+        <tr>
+            <td class="Control" colspan="2">
+                <ul>
+                    <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                </ul>
+            </td>
+        </tr>
+</table>

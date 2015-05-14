@@ -1,0 +1,163 @@
+﻿@model SmartTourWeb.Models.smt_tours
+@{
+    ViewBag.Title = "TourIndex";
+    Layout = "~/Views/Shared/Home.cshtml";
+}
+@{
+    List<SmartTourWeb.Models.smt_tour_items> tour_item = (List<SmartTourWeb.Models.smt_tour_items>)ViewData["tour_item"];
+}
+<link href="~/Content/themes/Home/jquery-ui.css" rel="stylesheet" />
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css">
+
+<div class="box">
+    <div class="box_name">
+        <div class="active"><span>@Model.tour_name_vi</span></div>
+    </div>
+    <div class="box-list">
+
+        <table class="box-item">
+            <tr>
+                <td class="box-item-img">
+                    <img src="@Model.tour_icon_dir" /></td>
+                <td>
+                    <table class="box-item-table">
+                        <tr>
+                            <td class="box-item-addr">@Resources.Resource.time  @Model.tour_duration</td>
+                        </tr>
+                        <tr>
+                            <td class="box-item-des tred">@Resources.Resource.price   @Model.tour_price</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1">@Resources.Resource.intro</a></li>
+            <li><a href="#tabs-2">@Resources.Resource.touritem</a></li>
+            <li><a href="#tabs-3">@Resources.Resource.detail</a></li>
+        </ul>
+
+
+        <div id="tabs-1">
+            @if ((int)Session["CurrentCulture"] == 1)
+            {
+                @Html.DisplayFor(model => model.tour_short_des_en)
+            }
+            else
+            {
+                @Html.DisplayFor(model => model.tour_short_des_vi)
+            }
+            
+            @*      <video src="@Model.tour_video_dir" width="320" height="240" preload="none"></video>*@
+            <div>
+                <video width="480" height="360" style="display:block; margin: 0 auto;" src="@Model.tour_video_dir" controls="controls" ></video>
+            </div>
+        </div>
+
+        <div id="tabs-2">
+            @if (tour_item != null)
+            {
+                int i = 1;
+
+                foreach (var item in tour_item)
+                {
+                    string name = "tb" + i;
+                    if (i != 1)
+                    {<b>&nbsp;&nbsp;  - &nbsp;&nbsp;&nbsp;</b>}
+                        if ((int)Session["CurrentCulture"] == 1)
+                        {
+                            @Html.ActionLink(item.smt_location.location_name_en, "Details", "Home", new { id = item.smt_location.location_id }, null)      
+
+                        }
+                        else
+                        {
+                            @Html.ActionLink(item.smt_location.location_name_vi, "Details", "Home", new { id = item.smt_location.location_id }, null)      
+
+                        }                                          
+                    i++;
+                }
+            }
+            else
+            {
+                <div>@Resources.Resource.ChuaCoDiaDanh </div>
+            }
+            <br />
+
+        </div>
+        <div id="tabs-3">
+            @if ((int)Session["CurrentCulture"] == 1)
+            {
+                            @Html.Raw(Model.tour_long_des_en)
+            }
+            else
+            {
+                            @Html.Raw(Model.tour_long_des_vi)
+
+            }
+        </div>
+      
+    </div>
+</div>
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });
+</script>
+
+
+<style>
+
+
+    .demoHeaders
+    {
+        margin-top: 2em;
+    }
+
+    #dialog-link
+    {
+        padding: .4em 1em .4em 20px;
+        text-decoration: none;
+        position: relative;
+    }
+
+        #dialog-link span.ui-icon
+        {
+            margin: 0 5px 0 0;
+            position: absolute;
+            left: .2em;
+            top: 50%;
+            margin-top: -8px;
+        }
+
+    #icons
+    {
+        margin: 0;
+        padding: 0;
+    }
+
+        #icons li
+        {
+            margin: 2px;
+            position: relative;
+            padding: 4px 0;
+            cursor: pointer;
+            float: left;
+            list-style: none;
+        }
+
+        #icons span.ui-icon
+        {
+            float: left;
+            margin: 0 4px;
+        }
+
+    .fakewindowcontain .ui-widget-overlay
+    {
+        position: absolute;
+    }
+</style>

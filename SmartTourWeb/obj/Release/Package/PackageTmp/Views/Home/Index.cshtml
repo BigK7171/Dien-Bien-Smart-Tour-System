@@ -1,0 +1,155 @@
+﻿@{
+    ViewBag.Title = "Du lịch Điện Biên";
+    Layout = "~/Views/Shared/Home.cshtml";
+    List<SmartTourWeb.Models.smt_sub_category> sub = (List<SmartTourWeb.Models.smt_sub_category>)ViewData["sub"];
+    List<SmartTourWeb.Models.smt_support_online> lst_support = (List<SmartTourWeb.Models.smt_support_online>)ViewData["supports"];
+     
+    List<SmartTourWeb.Models.smt_parent_category> parent = (List<SmartTourWeb.Models.smt_parent_category>)ViewData["parent"];
+  
+}
+@model IEnumerable<SmartTourWeb.Models.smt_location>
+<!--@if ((int)Session["CurrentCulture"] == 1) // English
+{ <div>@{Html.RenderAction("Search_en", "Home");}</div>
+    <br /> }
+else // Vietnames
+{ <div>@{Html.RenderAction("Search", "Home");}</div>
+    <br />}
+    -->
+<br />
+@if ((int)Session["CurrentCulture"] == 1)
+{
+    <div>
+        @if (sub != null)
+        {
+            foreach (var subcategory in sub)
+            {
+                if (subcategory.sub_category_id != 13)
+                {
+                    if ((Model.Where(x => x.sub_category_id == subcategory.sub_category_id).FirstOrDefault()) != null)
+                    {
+                        int i = 0;
+            <div class="box">
+                <div class="box_name">
+                    <div class="active">
+                        <span>@Html.ActionLink(subcategory.sub_category_name_en, "List", "Home", new { category = subcategory.sub_category_id, category_name = subcategory.sub_category_name_en }, null)</span>
+                      <!--  <p style="background: transparent url(/Images/theme/border-bottom.png) repeat-x scroll right top; margin-top: 24px; padding: 168px;"><p></p></p>
+                       -->
+                    </div>
+                </div>
+
+                <div class="box-list">
+                    @foreach (var item in Model.Where(x => x.sub_category_id == subcategory.sub_category_id).ToList())
+                    {
+                        i++;
+                        <table class="box-item">
+                            <tr>
+                                <td class="box-item-img">
+                                    <img src="@item.location_icondir" /></td>
+                                <td>
+                                    <table class="box-item-table">
+                                        <tr>
+                                          @* <td class="box-item-name">@Html.ActionLink(item.location_name_en, "Details", new { id = item.location_id, name_lacation = item.location_name_en })</td>*@
+                                            <td class="box-item-name">@Html.ActionLink(item.location_name_en , "Details", new { id = item.location_id })</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="box-item-addr">@Resources.Resource.Add :   @item.location_addr_en</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="box-item-des">@*@Resources.Resource.Des :*@
+                                                @item.location_short_des_en ...
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+
+                        if (i == 3) { break; } // moi box co 4 item
+                    }
+                </div>
+            </div>
+                    }
+                }
+
+            }
+        }
+        <br />
+
+    </div>
+
+}
+else
+{
+    <div>
+        @if (sub != null)
+        {
+            foreach (var subcategory in sub)
+            {
+
+                if ((Model.Where(x => x.sub_category_id == subcategory.sub_category_id).FirstOrDefault()) != null)
+                {
+                    int i = 0;
+            <div class="box">
+                <div class="box_name">
+                    <div class="active">
+                        <span>@Html.ActionLink(subcategory.sub_category_name_vi, "List", "Home", new { category = subcategory.sub_category_id, category_name = subcategory.sub_category_name_en }, null)</span>
+                      <!--  <p style="background: transparent url(/Images/theme/border-bottom.png) repeat-x scroll right top; margin-top: 24px; padding: 168px;"><p></p></p>
+                        -->
+                    </div>
+                </div>
+
+                <div class="box-list">
+                    @foreach (var item in Model.Where(x => x.sub_category_id == subcategory.sub_category_id).ToList())
+                    {
+                        i++;
+                        <table class="box-item">
+                            <tr>
+                                <td class="box-item-img">
+                                    <img src="@item.location_icondir" /></td>
+                                <td>
+                                    <table class="box-item-table">
+                                        <tr>
+                                            <td class="box-item-name">@Html.ActionLink(item.location_name_vi, "Details", new { id = item.location_id, name_lacation = item.location_name_en })</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="box-item-addr">@Resources.Resource.Add :   @item.location_addr</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="box-item-des">@*@Resources.Resource.Des :*@
+                                                @item.location_short_des_vi ...
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+
+                        if (i == 3) { break; } // moi box co 4 item
+                    }
+                </div>
+            </div>
+                }
+            }
+        }
+        <br />
+
+    </div>
+}
+
+@functions{
+    string trimString(string str, int length)
+    {
+        if (str == null)
+        {
+            str = "";
+        }
+        if (str.Length > length)
+        {
+            return str.Substring(0, length) + " ...";
+        }
+        else
+        {
+            return str;
+        }
+    }
+}

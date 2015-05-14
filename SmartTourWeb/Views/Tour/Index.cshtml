@@ -1,0 +1,70 @@
+﻿@model IEnumerable<SmartTourWeb.Models.smt_link_tour>
+
+@{
+    ViewBag.Title = "Danh sách các Tour du lịch";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Danh sách Tour du lịch</h2>
+
+    <div class="Control">
+            <ul>
+                <li><a class="vadd" href="/Tour/Create">Thêm liên kết tour du lịch</a></li>
+            </ul>
+    </div>
+
+<table class="TableView">
+    <tr class="trHeader">
+        <th>Tùy chọn</th>
+        <th class="TextShort">
+            Mã tour
+ </th>
+        <th class="Text">
+          Tên tour
+ </th>
+        <th class="Text">
+         Tên tour - Tiếng Anh
+ </th>
+        <th class="TextLong">
+          Giới thiệu
+ </th>
+        <th class="TextLong">
+       Giới thiệu - Tiếng Anh
+</th>
+         <th class="Text">
+           Đường dẫn liên kết
+ </th>
+    </tr>
+@if (Model != null)
+{
+    foreach (var item in Model) {
+        <tr class="trOdd">
+            <td class="Function">
+            @Html.ActionLink("Details", "Details", new { id=item.link_tour_id }, new { @class = "vdetail" }) 
+            @Html.ActionLink("Edit", "Edit", new { id=item.link_tour_id}, new { @class = "vedit" }) 
+            @Html.ActionLink("Delete", "Delete", new {id=item.link_tour_id}, new { @class = "vdelete" })
+            </td>
+            <td class="Text">
+            @Html.DisplayFor(modelItem => item.link_tour_id)
+            </td>
+            <td class="Text">
+            @Html.DisplayFor(modelItem => item.tour_name)
+            </td>
+            <td class="Text">
+            @Html.DisplayFor(modelItem => item.tour_name_en)
+            </td>
+            <td class="Text">
+            @Html.DisplayFor(modelItem => item.tour_des_vi)
+            </td>
+            <td class="Text">
+            @Html.DisplayFor(modelItem => item.tour_des_en)
+            </td>
+            <td class="Text">
+            @Html.DisplayFor(modelItem => item.tour_link)
+            </td>
+    </tr>
+}
+}
+
+
+</table>

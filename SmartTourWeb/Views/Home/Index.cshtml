@@ -1,0 +1,226 @@
+﻿@{
+    ViewBag.Title = "Du lịch Điện Biên";
+    Layout = "~/Views/Shared/Home.cshtml";
+    List<SmartTourWeb.Models.smt_sub_category> sub = (List<SmartTourWeb.Models.smt_sub_category>)ViewData["sub"];
+    List<SmartTourWeb.Models.smt_support_online> lst_support = (List<SmartTourWeb.Models.smt_support_online>)ViewData["supports"];
+    List<SmartTourWeb.Models.smt_parent_category> parent = (List<SmartTourWeb.Models.smt_parent_category>)ViewData["parent"];
+    <script src="~/Scripts/streamvideo.js"></script>
+    <script src="~/Scripts/streamvideo_en.js"></script>
+    <script src="~/Scripts/limitdes.js"></script>
+}
+@model IEnumerable<SmartTourWeb.Models.smt_location>
+<!--@if ((int)Session["CurrentCulture"] == 1) // English
+    { <div>@{Html.RenderAction("Search_en", "Home");}</div>
+    <br /> }
+    else // Vietnames
+    { <div>@{Html.RenderAction("Search", "Home");}</div>
+    <br />}
+    -->
+<br />
+@if ((int)Session["CurrentCulture"] == 1)
+{
+    <div>
+        @if (sub != null)
+        {
+            int count_en = 0;
+            int post_count = 0;
+            string postid_en = "";
+            foreach (var subcategory in sub)
+            {
+                post_count++;
+                postid_en = "post"+ post_count.ToString();
+                if (subcategory.sub_category_id != 13)
+                {
+                    if ((Model.Where(x => x.sub_category_id == subcategory.sub_category_id).FirstOrDefault()) != null)
+                    {
+                        int i = 0;
+            <div class="box">
+                <div class="box_name">
+                    <div class="active">
+                        <span>@Html.ActionLink(subcategory.sub_category_name_en, "List", "Home", new { category = subcategory.sub_category_id, category_name = subcategory.sub_category_name_en }, null)</span>
+                        <!--  <p style="background: transparent url(/Images/theme/border-bottom.png) repeat-x scroll right top; margin-top: 24px; padding: 168px;"><p></p></p>
+                       -->
+                    </div>
+                </div>
+
+                <div class="box-list">
+                    @foreach (var item in Model.Where(x => x.sub_category_id == subcategory.sub_category_id).ToList())
+                    {
+                        if (@item.location_counter == null)
+                        {
+                            item.location_counter = 0;
+                        }
+                        i++;
+                        <table class="box-item">
+                            <tr>
+                                <td class="box-item-img">
+                                    <img src="@item.location_icondir" /></td>
+                                <td>
+                                    <table class="box-item-table">
+                                        <tr>
+                                            @* <td class="box-item-name">@Html.ActionLink(item.location_name_en, "Details", new { id = item.location_id, name_lacation = item.location_name_en })</td>*@
+                                            <td class="box-item-name">
+                                                <div>
+                                                    @Html.ActionLink(item.location_name_en, "Details", new { id = item.location_id })
+                                                </div>
+                                                <div class="views">@item.location_counter @Resources.Resource.Views</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="box-item-addr">@Resources.Resource.Add :   @item.location_addr_en</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="box-item-des">@*@Resources.Resource.Des :*@
+                                                <div id="@postid_en">@item.location_short_des_en ...</div>
+                                                <script>
+                                                    limitDescription("@postid_en");
+                                                </script>
+                                                @if (item.location_videodir != null && item.location_videodir != "")
+                                                {
+                                                    count_en++;
+                                                    string watch_en = "streaming_video_" + count_en.ToString();
+                                                    <div style="float: right; margin: 7px 0px;">
+                                                        <a href="javascript:void(0);" onclick="openVideo_en(@count_en);" title="">
+                                                            <span class="icon-video">
+                                                                <img src="~/Images/theme/icon-video.gif" />
+                                                            </span>
+                                                            <span id="@watch_en" style="color:#06F">@Resources.Resource.IntroductionVideo</span>
+                                                        </a>
+                                                    </div>
+                                                }
+                                                else { }
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr id="@count_en" style="display: none">
+                                <td colspan="3" align="center">
+                                    <iframe width="560" height="315" src="@item.location_videodir" frameborder="0" allowfullscreen></iframe>
+                                </td>
+                            </tr>
+                        </table>
+
+                                                if (i == 3) { break; } // moi box co 4 item
+                    }
+                </div>
+            </div>
+                    }
+                }
+
+            }
+        }
+        <br />
+
+    </div>
+
+}
+else
+{
+    <div>
+        @if (sub != null)
+        {
+            int count = 0, post_count = 0;
+            string postid = "";
+            foreach (var subcategory in sub)
+            {
+                post_count++;
+                postid = "post" + post_count.ToString();
+                if ((Model.Where(x => x.sub_category_id == subcategory.sub_category_id).FirstOrDefault()) != null)
+                {
+                    int i = 0;
+            <div class="box">
+                <div class="box_name">
+                    <div class="active">
+                        <span>@Html.ActionLink(subcategory.sub_category_name_vi, "List", "Home", new { category = subcategory.sub_category_id, category_name = subcategory.sub_category_name_en }, null)</span>
+                        <!--  <p style="background: transparent url(/Images/theme/border-bottom.png) repeat-x scroll right top; margin-top: 24px; padding: 168px;"><p></p></p>
+                        -->
+                    </div>
+                </div>
+
+                <div class="box-list">
+                    @foreach (var item in Model.Where(x => x.sub_category_id == subcategory.sub_category_id).ToList())
+                    {
+                        if (@item.location_counter == null)
+                        {
+                            item.location_counter = 0;
+                        }
+                        i++;
+                        <table class="box-item">
+                            <tr>
+                                <td class="box-item-img">
+                                    <img src="@item.location_icondir" /></td>
+                                <td>
+                                    <table class="box-item-table">
+                                        <tr>
+                                            <td class="box-item-name">
+                                                <div>
+                                                    @Html.ActionLink(item.location_name_vi, "Details", new { id = item.location_id, name_lacation = item.location_name_en })
+                                                </div>
+                                                <div class="views">@item.location_counter @Resources.Resource.Views</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="box-item-addr">@Resources.Resource.Add :   @item.location_addr</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="box-item-des">@*@Resources.Resource.Des :*@
+                                                <div id="@postid">@item.location_short_des_vi ...</div>
+                                                <script>
+                                                    limitDescription("@postid");
+                                                </script>
+                                                @if (item.location_videodir != null && item.location_videodir != "")
+                                                {
+                                                    count++;
+                                                    string watch = "xem_video_" + count.ToString();
+                                                    <div style="float: right; margin: 7px 0px;">
+                                                        <a href="javascript:void(0);" onclick="openVideo(@count);" title="">
+                                                            <span class="icon-video">
+                                                                <img src="~/Images/theme/icon-video.gif" />
+                                                            </span>
+                                                            <span id="@watch" style="color:#06F">@Resources.Resource.IntroductionVideo</span>
+                                                        </a>
+                                                    </div>
+                                                }
+                                                else { }
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr id="@count" style="display: none">
+                                <td colspan="3" align="center">
+                                    <iframe width="560" height="315" src="@item.location_videodir" frameborder="0" allowfullscreen></iframe>
+                                </td>
+                            </tr>
+                        </table>
+
+                                                if (i == 3) { break; } // moi box co 4 item
+                    }
+                </div>
+            </div>
+                }
+            }
+        }
+        <br />
+
+    </div>
+}
+
+@functions{
+    string trimString(string str, int length)
+    {
+        if (str == null)
+        {
+            str = "";
+        }
+        if (str.Length > length)
+        {
+            return str.Substring(0, length) + " ...";
+        }
+        else
+        {
+            return str;
+        }
+    }
+}

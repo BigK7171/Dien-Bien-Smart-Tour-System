@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SmartTourWeb.Models.smt_support_online>
+
+@{
+    ViewBag.Title = "Quản lý hỗ trợ trực tuyến";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Tài khoản hỗ trợ trực tuyến</h2>
+
+<div class="Control">
+    <ul>
+        <li><a class="vadd" href="/Support/Create">Thêm người hỗ trợ</a></li>
+    </ul>
+</div>
+<table class="TableView">
+    <tr class="trHeader">
+        <th>Tùy chọn</th>
+        <th class="Text">
+            Người hỗ trợ
+        </th>
+        <th class="Text">
+           Tài khoản Sky
+        </th>
+     
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class="trOdd">
+            <td class="Function">
+                @Html.ActionLink("Details", "Details", new { id = item.support_id }, new { @class = "vdetail" }) 
+                @Html.ActionLink("Edit", "Edit", new { id = item.support_id}, new { @class = "vedit" }) 
+            @Html.ActionLink("Delete", "Delete", new { id =item.support_id}, new { @class = "vdelete" })
+            </td>
+            <td class="Text tbold">
+                @Html.DisplayFor(modelItem => item.support_name)
+            </td>
+            <td class="Text">
+                @Html.DisplayFor(modelItem => item.support_nick)
+            </td>
+
+        </tr>
+    }
+
+</table>

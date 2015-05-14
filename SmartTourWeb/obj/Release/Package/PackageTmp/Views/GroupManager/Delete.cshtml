@@ -1,0 +1,52 @@
+﻿@model SmartTourWeb.Models.group
+
+@{
+    ViewBag.Title = "Xóa nhóm";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2 class="tred">Bạn chắc chắn muốn xóa ? </h2>
+<table class="TableUpdate" border="1">
+    <tbody>
+        <tr>
+            <td class="Control" colspan="2">
+                <ul>
+                    <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>
+
+             Mã nhóm
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.id)
+            </td>
+        </tr>
+        <tr>
+            <th>
+               Tên nhóm
+            </th>
+            <td class="text valid tbold">
+                @Html.DisplayFor(model => model.group_name)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>@using (Html.BeginForm())
+                {
+                <p>
+                    <input type="submit" value="Đồng ý xóa" />
+                </p>
+                }</td>
+        </tr>
+        <tr>
+            <td class="Control" colspan="2">
+                <ul>
+                    <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                </ul>
+            </td>
+        </tr>
+</table>
+

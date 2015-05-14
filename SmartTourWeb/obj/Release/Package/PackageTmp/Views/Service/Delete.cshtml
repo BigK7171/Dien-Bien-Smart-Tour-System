@@ -1,0 +1,210 @@
+﻿@model SmartTourWeb.Models.smt_location
+
+@{
+    ViewBag.Title = "Xóa địa điểm";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h3 style="color:red">Bạn chắc chắn muốn xóa ?</h3>
+<table class="TableUpdate" border="1">
+    <tbody>
+        <tr>
+            <td class="Control" colspan="2">
+                <ul>
+                    <li>@Html.ActionLink("Quay lại", "Index",  new { category = Model.sub_category_id }, new { @class = "vback" })</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>
+               Mã địa điểm
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.location_id)
+            </td>
+        </tr>
+        <tr>
+            <th>
+               Tên địa điểm
+            </th>
+            <td class="text valid tbold">
+                @Html.DisplayFor(model => model.location_name_vi)
+            </td>
+        </tr>
+        <tr>
+            <th>
+              Tên địa điểm - Tiếng Anh
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.location_name_en)
+            </td>
+        </tr>
+        <tr>
+            <th>
+           Vĩ độ
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.location_latitude)
+            </td>
+        </tr>
+        <tr>
+            <th>
+              Kinh độ
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.location_longitude)
+            </td>
+        </tr>
+        <tr>
+            <th>
+            Địa chỉ
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.location_addr)
+            </td>
+        </tr>
+        <tr>
+            <th>
+            Địa chỉ  - Tiếng Anh
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.location_addr_en)
+            </td>
+        </tr>
+        <tr>
+            <th>
+               Danh mục
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.sub_category_id)
+            </td>
+        </tr>
+        <tr>
+            <th>
+            Mô tả ngắn
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.location_short_des_vi)
+            </td>
+        </tr>
+        <tr>
+            <th>
+               Mô tả ngắn - Tiếng Anh
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.location_short_des_en)
+            </td>
+        </tr>
+        <tr>
+            <th>
+               Thông tin chung
+            </th>
+            <td class="textareaDetail valid">
+                @Html.Raw(Model.location_des_vi)
+            </td>
+        </tr>
+        <tr>
+            <th>
+               Thông tin chung - Tiếng Anh
+            </th>
+            <td class="textareaDetail valid">
+                @Html.Raw(Model.location_des_en)
+            </td>
+        </tr>
+        <tr>
+            <th>
+              Ảnh đại diện
+            </th>
+            <td class="textareaDetail valid">
+                <img src="@Model.location_icondir" />
+            </td>
+        </tr>
+        <tr>
+            <th>
+               Video
+            </th>
+            <td class="text valid">
+                <video src="@Model.location_videodir" />
+            </td>
+        </tr>
+        <tr>
+            <th>
+              Website liên hệ
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.location_contact_web)
+            </td>
+
+        </tr>
+        <tr>
+            <th>
+              Điện thoại liên hệ
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.location_contact_phone)
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+              Đơn vị quản lý
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.agent.agent_name)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Người viết
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.smt_user.user_email)
+            </td>
+        </tr>
+        <tr>
+            <th>
+              Thời gian viết
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.location_time_created)
+            </td>
+        </tr>
+        <tr>
+            <th>
+               Người sửa
+            </th>
+            <td class="text valid">
+                @ViewBag.user_modified
+            </td>
+        </tr>
+        <tr>
+            <th>
+               Thời gian sửa
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.location_time_modified)
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                @using (Html.BeginForm())
+                {
+                @Html.AntiForgeryToken()
+                <p >
+                    <input type="submit" value="Đồng ý xóa" />
+                </p>
+                }
+
+            </td>
+        </tr>
+                <tr>
+            <td class="Control" colspan="2">
+                <ul>
+                    <li>@Html.ActionLink("Quay lại", "Index",  new { category = Model.sub_category_id }, new { @class = "vback" })</li>
+                </ul>
+            </td>
+        </tr>
+</table>
+

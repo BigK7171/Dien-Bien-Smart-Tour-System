@@ -1,0 +1,119 @@
+﻿@model SmartTourWeb.Models.smt_user
+
+@{
+    ViewBag.Title = "Tạo người dùng";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Thêm mới người dùng</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+
+     <table class="TableUpdate" border="1" >
+         <tbody>
+       
+             <tr >
+                <td class="Control"  colspan="2">
+                    <ul> 
+                        <li><input type="submit" value="Lưu lại" class="uupdate" /></li>
+                         <li>@Html.ActionLink("Quay lại", "Index",null, new { @class="vback" })</li>
+                    </ul>
+                </td>
+            </tr>
+              @if (ViewBag.Message != null)
+        {
+            <tr>
+                <td></td>
+                <td style="color:red">@ViewBag.Message</td>
+            </tr>
+        }
+             <tr>
+            <th >
+                @Html.LabelFor(model => model.user_email)  (*)
+            </th>
+            <td class="text valid">
+                @Html.EditorFor(model => model.user_email)
+            @Html.ValidationMessageFor(model => model.user_email)
+            </td>
+        </tr>
+             <tr>
+            <th >
+                @Html.LabelFor(model => model.pasword)  (*)
+            </th>
+            <td class="text valid">
+                @Html.EditorFor(model => model.pasword)
+            @Html.ValidationMessageFor(model => model.pasword)
+            </td>
+        </tr>
+            
+             <tr>
+            <th >
+                @Html.LabelFor(model => model.ConfirmPassword)  (*)
+            </th>
+            <td class="text valid">
+                @Html.EditorFor(model => model.ConfirmPassword)
+            @Html.ValidationMessageFor(model => model.ConfirmPassword)
+            </td>
+        </tr>
+        
+        <tr>
+            <th >
+                @Html.LabelFor(model => model.username)  (*)
+            </th>
+            <td class="text valid">
+                @Html.EditorFor(model => model.username)
+                @Html.ValidationMessageFor(model => model.username)
+            </td>
+        </tr>
+    
+             <tr>
+            <th >
+                @Html.LabelFor(model => model.address)
+            </th>
+            <td class="text valid">
+                @Html.EditorFor(model => model.address)
+                @Html.ValidationMessageFor(model => model.address)
+            </td>
+        </tr>
+
+    <tr>
+            <th >
+                @Html.LabelFor(model => model.phone)
+            </th>
+            <td class="text valid">
+                @Html.EditorFor(model => model.phone)
+            @Html.ValidationMessageFor(model => model.phone)
+            </td>
+        </tr>
+
+@*        <div class="editor-label">
+            @Html.LabelFor(model => model.user_logo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.user_logo)
+            @Html.ValidationMessageFor(model => model.user_logo)
+        </div>*@
+             <tr>
+            <th >
+                @Html.LabelFor(model => model.agent.agent_name)  (*)
+            </th>
+            <td class="text valid">
+                @Html.DropDownList("agent_id","Chọn đơn vị")
+            @Html.ValidationMessageFor(model => model.agent.agent_name)
+            </td>
+        </tr>
+        <tr >
+            <td class="Control"  colspan="2">
+                <ul> 
+                    <li><input type="submit" value="Lưu lại" class="uupdate" /></li>
+                        <li>@Html.ActionLink("Quay lại", "Index",null, new { @class="vback" })</li>
+                </ul>
+            </td>
+        </tr> 
+
+             </tbody>
+</table>
+}
+

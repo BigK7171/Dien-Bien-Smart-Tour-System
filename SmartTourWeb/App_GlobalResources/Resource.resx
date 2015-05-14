@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Địa chỉ</value>
+  </data>
+  <data name="AdminPage" xml:space="preserve">
+    <value>Trang quản trị</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>Bình luận</value>
+  </data>
+  <data name="Del" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="Des" xml:space="preserve">
+    <value>Tóm tắt</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Trang chủ</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Đăng xuất</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Bản đồ du lịch</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Thông tin khác</value>
+  </data>
+  <data name="Please" xml:space="preserve">
+    <value>Vui lòng</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Đăng ký</value>
+  </data>
+  <data name="RelatedTour" xml:space="preserve">
+    <value>Tour liên quan</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Tìm kiếm</value>
+  </data>
+  <data name="tocomment" xml:space="preserve">
+    <value>để bình luận</value>
+  </data>
+  <data name="Tour" xml:space="preserve">
+    <value>Tour du lịch</value>
+  </data>
+  <data name="Werther" xml:space="preserve">
+    <value>Thời tiết</value>
+  </data>
+  <data name="account" xml:space="preserve">
+    <value>Tài khoản</value>
+  </data>
+  <data name="ChuaCoDiaDanh" xml:space="preserve">
+    <value>Chưa có địa danh</value>
+  </data>
+  <data name="detail" xml:space="preserve">
+    <value>Thông tin chung</value>
+  </data>
+  <data name="donthaveacc" xml:space="preserve">
+    <value>Bạn chưa có tài khoản</value>
+  </data>
+  <data name="inputtext" xml:space="preserve">
+    <value>Nhập từ khóa tìm kiếm</value>
+  </data>
+  <data name="intro" xml:space="preserve">
+    <value>Giới thiệu</value>
+  </data>
+  <data name="Listtour" xml:space="preserve">
+    <value>Danh sách tour</value>
+  </data>
+  <data name="pass" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="price" xml:space="preserve">
+    <value>Giá</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>Thời gian</value>
+  </data>
+  <data name="touritem" xml:space="preserve">
+    <value>Vị trí đi qua</value>
+  </data>
+  <data name="Login_Note" xml:space="preserve">
+    <value>Bạn đã đăng nhập thành công. Vui lòng "Đăng xuất" để đăng nhập lại</value>
+  </data>
+  <data name="sub_location" xml:space="preserve">
+    <value>Các địa điểm chi tiết</value>
+  </data>
+  <data name="linkto" xml:space="preserve">
+    <value>LIÊN KẾT WEBSITE</value>
+  </data>
+  <data name="popularPosts" xml:space="preserve">
+    <value>ĐƯỢC XEM NHIỀU</value>
+  </data>
+  <data name="support" xml:space="preserve">
+    <value>HỖ TRỢ TRỰC TUYẾN</value>
+  </data>
+  <data name="supporters" xml:space="preserve">
+    <value>Người hỗ trợ</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>HỆ THỐNG DU LỊCH THÔNG MINH TỪ XA ĐIỆN BIÊN</value>
+  </data>
+  <data name="SelectMapLayer" xml:space="preserve">
+    <value>Chọn lớp bản đồ</value>
+  </data>
+  <data name="touristmap" xml:space="preserve">
+    <value>BẢN ĐỒ DU LỊCH ĐIỆN BIÊN</value>
+  </data>
+  <data name="forecast" xml:space="preserve">
+    <value>Thời tiết hiện tại</value>
+  </data>
+  <data name="humidity" xml:space="preserve">
+    <value>Độ ẩm</value>
+  </data>
+  <data name="place" xml:space="preserve">
+    <value>Điện Biên</value>
+  </data>
+  <data name="windspeed" xml:space="preserve">
+    <value>Tốc độ gió</value>
+  </data>
+  <data name="contact" xml:space="preserve">
+    <value>Liên hệ</value>
+  </data>
+  <data name="introduce" xml:space="preserve">
+    <value>Giới thiệu</value>
+  </data>
+  <data name="maptour" xml:space="preserve">
+    <value>Bản đồ du lịch</value>
+  </data>
+  <data name="linktour" xml:space="preserve">
+    <value>Danh sách các tour du lịch Điện Biên</value>
+  </data>
+  <data name="Searchfor" xml:space="preserve">
+    <value>Chọn danh mục</value>
+  </data>
+  <data name="selectCategory" xml:space="preserve">
+    <value>Chọn lớp bản đồ</value>
+  </data>
+  <data name="search_not_found" xml:space="preserve">
+    <value>Không tìm thấy kết quả nào</value>
+  </data>
+  <data name="Views" xml:space="preserve">
+    <value>lượt xem</value>
+  </data>
+  <data name="Collapse" xml:space="preserve">
+    <value>Đóng video</value>
+  </data>
+  <data name="IntroductionVideo" xml:space="preserve">
+    <value>Video giới thiệu</value>
+  </data>
+  <data name="AdvancedSearch" xml:space="preserve">
+    <value>Tìm kiếm nâng cao</value>
+  </data>
+  <data name="or" xml:space="preserve">
+    <value>hoặc</value>
+  </data>
+  <data name="searchAll" xml:space="preserve">
+    <value>Tất cả</value>
+  </data>
+</root>

@@ -1,0 +1,214 @@
+﻿@{
+    List<SmartTourWeb.Models.smt_parent_category> parent = (List<SmartTourWeb.Models.smt_parent_category>)ViewData["parent"];
+
+    List<SmartTourWeb.Models.smt_sub_category> sub = (List<SmartTourWeb.Models.smt_sub_category>)ViewData["sub"];
+}
+
+@*<link href="~/Content/tool/dropdown_menu/ad-ddlevelsmenu-base.css" rel="stylesheet" />
+<link href="~/Content/tool/dropdown_menu/ad-ddlevelsmenu-topbar.css" rel="stylesheet" />
+<link href="~/Content/tool/smartmenus/addons/bootstrap/jquery.smartmenus.bootstrap.css" rel="stylesheet" /> *@
+
+@*<script src="~/Content/tool/dropdown_menu/ddlevelsmenu.js"></script>
+<script type="text/javascript"> ddlevelsmenu.setup("ddtopmenubar", "topbar") </script>
+<script src="~/Content/tool/smartmenus/jquery.smartmenus.js"></script>
+<script src="~/Content/tool/smartmenus/addons/bootstrap/jquery.smartmenus.bootstrap.js"></script> *@
+
+
+@*<div id="ddtopmenubar" class="mattblackmenu">
+    <ul>
+        <li>@Html.ActionLink(Resources.Resource.Home, "Index", "Home")</li>
+        @if (parent != null)
+        {
+
+            foreach (var item in parent.Where(x => x.parent_category_id != 3 && x.parent_category_id != 1 ))
+            {
+
+                string name = item.parent_category_id.ToString();
+                if ((int)Session["CurrentCulture"] == 1) // English
+                {
+            <li><a href="#" rel="@name">@item.parent_category_name_en</a></li>
+                }
+                else		// Vietnam
+                {
+            <li><a href="#" rel="@name">@item.parent_category_name_vi</a></li>
+                }
+
+            }
+        }
+        <li><a href="#" rel="ddsubmenu1111">@Resources.Resource.Tour</a></li>
+        <li><a href="#" rel="ddsubmenu3">@Resources.Resource.Other</a></li>
+
+    </ul>
+</div>
+<ul id="ddsubmenu3" class="ddsubmenustyle">
+    <li>@Html.ActionLink(Resources.Resource.Map, "Index", "Webgis")</li>
+    <li><a href="http://www.nchmf.gov.vn/web/vi-VN/62/18/70/map/Default.aspx" target="_blank">@Resources.Resource.Werther</a></li>
+</ul>
+<ul id="ddsubmenu1111" class="ddsubmenustyle">
+    <li>@Html.ActionLink(Resources.Resource.Listtour, "TourIndex", "Home")</li>
+
+</ul>
+
+@if (parent != null)
+{
+    foreach (var item in parent.Where(x => x.parent_category_id != 3 && x.parent_category_id != 1))
+    {
+        string name = item.parent_category_id.ToString();
+        //    string na          
+    <ul id="@name" class="ddsubmenustyle">
+        @foreach (var subcategory in sub)
+        {
+            if (subcategory.parent_category_id == item.parent_category_id && subcategory.sub_category_id!=13)
+            {
+                if ((int)Session["CurrentCulture"] == 1) // English
+                {
+            <li>@Html.ActionLink(subcategory.sub_category_name_en, "List", "Home", new { category = subcategory.sub_category_id, category_name = subcategory.sub_category_name_en, }, null)</li>                           
+            
+                }
+                else		// Vietnam
+                {                             
+            <li>@Html.ActionLink(subcategory.sub_category_name_vi, "List", "Home", new { category = subcategory.sub_category_id, category_name = subcategory.sub_category_name_en, }, null)</li>                           
+            
+                }
+            }
+        }
+    </ul>
+    }
+}*@
+
+<nav class="navbar navbar-default" role="navigation" style="height: 52px; padding: 3px 0px; margin: 20px 0px;">
+    <div class="container" style="width:1073px;">
+     <div class="navbar-collapse collapse" style="font-size: 14px;">  @*Sua cho nay *@ 
+          <ul class="nav navbar-nav" style="margin: -9px 0px;"> @*Sua cho nay *@ 
+              
+              <li style="background-color:#EEE"> @*Sua cho nay *@ 
+                  <a href="/Home" style="margin:-3px 0px; padding-bottom:16px"><img alt="Home" src="~/Images/theme/menu-home.png" style="height: 26px;width: 26px;"/></a> @*Sua cho nay *@ 
+              </li> @*Sua cho nay *@ 
+                            
+              @if (parent != null)
+              {
+                  short count = (short)sub.Count;
+                //  var count_div = 0;
+               //   var max_div = parent.Count;
+                  var check_div = false;
+                  foreach (var item in parent.Where(x => x.parent_category_id != 3 && x.parent_category_id != 1))
+                  {
+                   //   count_div++;
+                      string name = item.parent_category_id.ToString();                      
+                      if ((int)Session["CurrentCulture"] == 1) // English
+                      {
+                          check_div = false;
+                         <li class="dropdown">
+                             <a href="#" data-toggle="dropdown" class="dropdown-toggle">@item.parent_category_name_en<b class="caret"></b></a>
+                             <ul class="dropdown-menu">
+                                  @foreach (var subcategory in sub)
+                                  {
+                                    if (subcategory.parent_category_id == item.parent_category_id && subcategory.sub_category_id!=13)
+                                    { 
+                                         if(@check_div == true)
+                                           {
+                                               <li class="divider"></li>     
+                                           }                                                        
+                                       <li>@Html.ActionLink(subcategory.sub_category_name_en, "List", "Home", new { category = subcategory.sub_category_id, category_name = subcategory.sub_category_name_en, }, null)</li> 
+                                        check_div = true;
+                                    }
+                                  }
+                             </ul>
+                         </li>
+                      }
+                      else        // Vietnam
+                      {
+                          check_div = false;
+                         <li class="dropdown">
+                             <a href="#" data-toggle="dropdown" class="dropdown-toggle" rel="@name">@item.parent_category_name_vi<b class="caret"></b></a>
+                             <ul class="dropdown-menu">
+                                 @* @foreach (var subcategory in sub)
+                                  {
+                                       if (subcategory.parent_category_id == item.parent_category_id && subcategory.sub_category_id!=13)
+                                       {
+                                           <div class="divider"></div>
+                                           <li>@Html.ActionLink(subcategory.sub_category_name_vi, "List", "Home", new { category = subcategory.sub_category_id, category_name = subcategory.sub_category_name_en, }, null)</li> 
+                                       }
+                                  }*@
+                                 
+                                 @for(short i = 0; i < count;i++)
+                                 {
+                                     
+                                       if (sub[i].parent_category_id == item.parent_category_id && sub[i].sub_category_id!=13)
+                                       {              
+                                           if(@check_div == true)
+                                           {
+                                               <li class="divider"></li>     
+                                           }                                                                        
+                                           <li>@Html.ActionLink(sub[i].sub_category_name_vi, "List", "Home", new { category = sub[i].sub_category_id, category_name = sub[i].sub_category_name_vi, }, null)</li> 
+                                           check_div = true;
+                                       }
+                                 }
+                             </ul>
+                         </li>
+                      }
+                  }
+              }
+            <li class="dropdown">
+                   <a href="#" data-toggle="dropdown" class="dropdown-toggle">@Resources.Resource.Tour<b class="caret"></b></a>
+                   <ul class="dropdown-menu">
+                      <li>@Html.ActionLink(Resources.Resource.Listtour, "ViewTour", "Home")</li>
+                       <div class="divider"></div>
+                       <li>@Html.ActionLink(Resources.Resource.maptour, "Index", "Webgis")</li>
+                  </ul>
+            </li>
+            <li class="dropdown">
+                  <a href="#" data-toggle="dropdown" class="dropdown-toggle">@Resources.Resource.Other<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                     <li>@Html.ActionLink(Resources.Resource.introduce, "Introduce", "Home")</li>
+                      <div class="divider"></div>
+                      <li>@Html.ActionLink(Resources.Resource.contact, "Contact", "Home")</li>
+                  </ul>
+            </li>
+        </ul>
+          <ul class="nav navbar-nav navbar-right" style="margin: 6px 0px;">  
+              <style></style>           
+            @if (Session["USER_ID"] == null)
+            {
+                if ((int)Session["CurrentCulture"] == 1) // English
+                {
+                     <li>
+                         <span>@Html.ActionLink(Resources.Resource.Login, "Login", "UserManager")</span>
+                         <span style="color: #E9DEDE;">|</span>
+                         <span> @Html.ActionLink(Resources.Resource.Register, "Register", "UserManager")</span>
+                     </li>
+                }
+                else // Tiếng Việt
+                { 
+                    <li>
+                        <span>@Html.ActionLink("Đăng nhập", "Login", "UserManager")</span>
+                        <span style="color: #E9DEDE;"> | </span>
+                        <span>@Html.ActionLink("Đăng ký", "Register", "UserManager")</span>
+                    </li>                    
+                }
+            }
+            else
+            {
+                if ((int)Session["CurrentCulture"] == 1) // English
+                { 
+                <li><span>@Session["USER_NAME"]</span> <span> | </span>
+              <span>@Html.ActionLink(Resources.Resource.AdminPage, "Welcome", "Service")</span></li>
+                <li style="margin:-12px 0px">@Html.ActionLink(Resources.Resource.Logout, "Logout", "UserManager")
+                </li>
+                <img class="avata-small" style="float:right"  src="@Session["LOGO"]"/>
+                }
+                else // Tiếng Việt
+                { <li><span>@Session["USER_NAME"]</span><span> | </span>
+              <span>@Html.ActionLink("Trang quản trị", "Welcome", "Service")</span> </li>
+                  <li style="margin:-12px 0px"> @Html.ActionLink("Đăng xuất", "Logout", "UserManager")</li>
+                <img class="avata-small" style="float:right"  src="@Session["LOGO"]"/>
+                }
+
+            }
+        
+         </ul>
+     </div>         
+ </div>
+</nav>
+
+

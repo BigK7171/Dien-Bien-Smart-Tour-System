@@ -1,0 +1,204 @@
+﻿@model SmartTourWeb.Models.smt_location
+
+@{
+    ViewBag.Title = "Thêm mới địa điểm";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+
+<h2>Thêm mới địa điểm</h2>
+
+@using (Html.BeginForm("Create", "Service", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <table class="TableUpdate" border="1">
+        <tbody>
+            <tr>
+                <td class="Control" colspan="2">
+                    <ul>
+                        <li>
+                            <input type="submit" value="Lưu lại" class="uupdate" /></li>
+                        <li>@Html.ActionLink("Quay lại", "Index",  null, new { @class = "vback" })</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>@if (ViewBag.Success != null) 
+                    {<div class="tgreen">@ViewBag.Success</div>}
+                    else if (ViewBag.Error != null)
+                    { <div class="tred">@ViewBag.Error</div>}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                  Tên địa điểm
+                </th>
+                <td class="text valid">
+                    @Html.EditorFor(model => model.location_name_vi, new { @class = "text valid" })
+                    @Html.ValidationMessageFor(model => model.location_name_vi)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                   Tên địa điểm - Tiếng Anh
+                </th>
+                <td class="text valid">
+                    @Html.EditorFor(model => model.location_name_en, new { @class = "text valid" })
+                    @Html.ValidationMessageFor(model => model.location_name_en)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                   Vĩ độ
+                </th>
+                <td class="text valid">
+                    @Html.EditorFor(model => model.location_latitude)
+                    @Html.ValidationMessageFor(model => model.location_latitude)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                   Kinh độ
+                </th>
+                <td class="text valid">
+                    @Html.EditorFor(model => model.location_longitude)
+                    @Html.ValidationMessageFor(model => model.location_longitude)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Địa chỉ
+                </th>
+                <td class="text valid">
+                    @Html.EditorFor(model => model.location_addr)
+                    @Html.ValidationMessageFor(model => model.location_addr)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                   Địa chỉ -Tiếng Anh
+                </th>
+                <td class="text valid">
+                    @Html.EditorFor(model => model.location_addr_en)
+                    @Html.ValidationMessageFor(model => model.location_addr_en)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                  Danh mục
+                </th>
+                <td class="text valid">
+                    @Html.DropDownListFor(model => model.sub_category_id, (SelectList)ViewBag.category_id)
+                    @Html.ValidationMessageFor(model => model.sub_category_id)
+                </td>
+            </tr>
+             <tr>
+                <th>
+                   Thuộc khu vực
+                </th>
+                <td class="text valid">
+                    @Html.DropDownListFor(model => model.location_parent_id, (SelectList)ViewBag.parent_location,String.Empty)
+                    @Html.ValidationMessageFor(model => model.location_parent_id)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                   Mô tả ngắn
+                </th>
+                <td class="text valid">
+                    @Html.TextAreaFor(model => model.location_short_des_vi, new { cols = 100, rows = 3 })
+                    @Html.ValidationMessageFor(model => model.location_short_des_vi)
+                </td>
+            </tr>
+            <tr>
+                <th>
+               Mô tả ngắn - Tiếng Anh
+                </th>
+                <td class="text valid">
+                    @Html.TextAreaFor(model => model.location_short_des_en, new { cols = 100, rows = 3 })
+                    @Html.ValidationMessageFor(model => model.location_short_des_en)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                   Thông tin chung
+                </th>
+                <td class="text valid">
+
+                    @Html.TextAreaFor(model => model.location_des_vi, new { @id = "ckeDetail_vi" })
+                </td>
+            </tr>
+            <tr>
+                <th>
+                 Thông tin chung - Tiếng Anh
+                </th>
+                <td class="text valid">
+
+                    @Html.TextAreaFor(model => model.location_des_en, new { @id = "ckeDetail_en" })
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Ảnh đại diện
+                </th>
+                <td class="text valid">
+
+                          @Html.TextAreaFor(model => model.location_icondir, new { @id = "ckfPic", @rows = 1, @cols = 80 })
+                        <input type="button" value="Chọn Ảnh ..." onclick="BrowsePic();"/>
+                    @*<input type="file" name="file" style="width: 240px;" />*@
+
+                </td>
+            </tr>
+            <tr>
+                <th>
+                   Đường dẫn video
+                </th>
+                <td class="text valid">
+                    @Html.EditorFor(model => model.location_contact_phone)
+                   @* <input type="button" value="Chọn Video ..." onclick="BrowseVideo();" />*@
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.LabelFor(model => model.location_contact_web)
+                </th>
+                <td class="text valid">
+                    @Html.EditorFor(model => model.location_contact_web)
+                    @Html.ValidationMessageFor(model => model.location_contact_web)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.LabelFor(model => model.location_contact_phone)
+                </th>
+                <td class="text valid">
+                    @Html.EditorFor(model => model.location_contact_phone)
+                    @Html.ValidationMessageFor(model => model.location_contact_phone)
+                </td>
+            </tr>
+
+            <tr>
+                <th>@Html.LabelFor(model => model.location_shared)</th>
+                <td>
+                    @if (Session["AGENT"].ToString() != "3") {
+                    <input type="checkbox" name="locationshared" value="1" checked/>
+                    } else {<div>Chờ phê duyệt</div>}
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="Control" colspan="2">
+                    <ul>
+                        <li>
+                            <input type="submit" value="Lưu lại" class="uupdate" /></li>
+                        <li>@Html.ActionLink("Quay lại", "Index",  null, new { @class = "vback" })</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+}

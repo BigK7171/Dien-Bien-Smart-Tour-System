@@ -1,0 +1,26 @@
+﻿@model IEnumerable<SmartTourWeb.Models.smt_location>
+@{
+    List<SmartTourWeb.Models.smt_location> posts = (List<SmartTourWeb.Models.smt_location>)ViewData["popularposts"];
+}
+
+ @if ((int)Session["CurrentCulture"] == 1)
+ {
+     <h5>@Resources.Resource.popularPosts</h5> 
+     <ul class="sub">
+         @foreach (var item in posts) {
+           <li>@Html.ActionLink(item.location_name_en,"Details", new { id = item.location_id, name_lacation = item.location_name_en})</li>
+     }
+     </ul>      
+ }
+else
+{     
+     <h5>@Resources.Resource.popularPosts</h5> 
+     <ul class="sub">
+         @foreach (var item in posts) {
+           <li>@Html.ActionLink(item.location_name_vi,"Details", new { id = item.location_id, name_lacation = item.location_name_vi})</li>
+     }
+     </ul> 
+ }
+
+
+

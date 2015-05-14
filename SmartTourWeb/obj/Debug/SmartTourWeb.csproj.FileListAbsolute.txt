@@ -1,0 +1,691 @@
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.dll
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.pdb
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\Antlr3.Runtime.dll
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.dll
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\EntityFramework.dll
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\Microsoft.Web.Infrastructure.dll
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.dll
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.dll
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.dll
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.dll
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.dll
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.dll
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.dll
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Web.Optimization.dll
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Web.Providers.dll
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.dll
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.dll
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.dll
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.dll
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\WebGrease.dll
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.xml
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\EntityFramework.xml
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.xml
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.xml
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.xml
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.xml
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.xml
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.xml
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.xml
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.xml
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.xml
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.xml
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.xml
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.Properties.Resources.resources
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csproj.GenerateResource.Cache
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.dll
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.pdb
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\CKEditor.NET.dll
+F:\Dropbox\SmartTourData\SmartTourWeb\SmartTourWeb\bin\CKFinder.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.Properties.Resources.resources
+F:\web smt\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csproj.GenerateResource.Cache
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.pdb
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\Antlr3.Runtime.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\EntityFramework.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\Microsoft.Web.Infrastructure.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Web.Optimization.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Web.Providers.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\WebGrease.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\EntityFramework.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.pdb
+F:\web smt\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csprojResolveAssemblyReference.cache
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\PagedList.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\PagedList.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.xml
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.pdb
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\Antlr3.Runtime.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\EntityFramework.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\Microsoft.Web.Infrastructure.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\PagedList.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Web.Optimization.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Web.Providers.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\WebGrease.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.xml
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\PagedList.xml
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.xml
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\EntityFramework.xml
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.xml
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.xml
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.xml
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.xml
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.xml
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.xml
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.xml
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.xml
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.xml
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.xml
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.xml
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csprojResolveAssemblyReference.cache
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.Properties.Resources.resources
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csproj.GenerateResource.Cache
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.dll
+F:\web smt\SmartTourWeb-bak1311\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.pdb
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.pdb
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\Antlr3.Runtime.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\EntityFramework.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\Microsoft.Web.Infrastructure.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\PagedList.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Optimization.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Providers.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\WebGrease.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\PagedList.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\EntityFramework.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.Properties.Resources.resources
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csproj.GenerateResource.Cache
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.pdb
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\WebActivator.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\WebActivator.pdb
+F:\web smt\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csprojResolveAssemblyReference.cache
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.pdb
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\Antlr3.Runtime.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\CKEditor.NET.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\CKFinder.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.AspNet.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\EntityFramework.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\Microsoft.Web.Infrastructure.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\MySql.Data.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\PagedList.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\SmarttourLib.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Optimization.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Providers.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\WebActivator.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\WebGrease.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OAuth.Consumer.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OAuth.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OpenId.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.AspNet.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\PagedList.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\SmarttourLib.pdb
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\EntityFramework.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\WebActivator.pdb
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OAuth.Consumer.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OAuth.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OpenId.xml
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csprojResolveAssemblyReference.cache
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.Properties.Resources.resources
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csproj.GenerateResource.Cache
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.dll
+L:\tu\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.pdb
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.pdb
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\Antlr3.Runtime.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\EntityFramework.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\Microsoft.Web.Infrastructure.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\MySql.Data.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\PagedList.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Optimization.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Providers.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\WebActivator.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\WebGrease.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OAuth.Consumer.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OAuth.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OpenId.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.AspNet.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\PagedList.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\SmarttourLib.pdb
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\EntityFramework.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\WebActivator.pdb
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OAuth.Consumer.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OAuth.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OpenId.xml
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csprojResolveAssemblyReference.cache
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.Properties.Resources.resources
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csproj.GenerateResource.Cache
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.dll
+F:\web smt\SmartTourWeb-2412 (2)\SmartTourWeb-2412\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.pdb
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\MySql.Data.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\WebActivator.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OAuth.Consumer.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OAuth.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OpenId.dll
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.AspNet.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\WebActivator.pdb
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OAuth.Consumer.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OAuth.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.pdb
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\Antlr3.Runtime.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\EntityFramework.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\MySql.Data.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\PagedList.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Web.Optimization.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Web.Providers.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\WebActivator.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\WebGrease.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\PagedList.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\SmarttourLib.pdb
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\EntityFramework.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\WebActivator.pdb
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csprojResolveAssemblyReference.cache
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.Properties.Resources.resources
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csproj.GenerateResource.Cache
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.dll
+C:\Users\TUTU\Desktop\model\New folder\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.pdb
+F:\web smt\SmartTourWeb\SmartTourWeb\bin\SmarttourLib.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csprojResolveAssemblyReference.cache
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.Properties.Resources.resources
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csproj.GenerateResource.Cache
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.pdb
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.pdb
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\Antlr3.Runtime.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\EntityFramework.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\Microsoft.Web.Infrastructure.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\MySql.Data.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\PagedList.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\SmarttourLib.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Web.Optimization.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Web.Providers.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\WebActivator.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\WebGrease.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OAuth.Consumer.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OAuth.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OpenId.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.AspNet.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\PagedList.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\SmarttourLib.pdb
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\EntityFramework.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\WebActivator.pdb
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OAuth.Consumer.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OAuth.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb24032015\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csprojResolveAssemblyReference.cache
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.Properties.Resources.resources
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csproj.GenerateResource.Cache
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.pdb
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\Antlr3.Runtime.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\EntityFramework.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\MySql.Data.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\PagedList.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.Optimization.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.Providers.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\WebActivator.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\WebGrease.dll
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.xml
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.xml
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.xml
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.xml
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\PagedList.xml
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.xml
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.xml
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\EntityFramework.xml
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.xml
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.xml
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.xml
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.xml
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.xml
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.xml
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.xml
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.xml
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.xml
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.xml
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\bin\WebActivator.pdb
+C:\Users\MANHNC\Desktop\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.pdb
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.pdb
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\Antlr3.Runtime.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\EntityFramework.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\Microsoft.Web.Infrastructure.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\MySql.Data.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\PagedList.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\SmarttourLib.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Web.Optimization.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Web.Providers.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\WebActivator.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\WebGrease.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\PagedList.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\SmarttourLib.pdb
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\EntityFramework.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.xml
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\bin\WebActivator.pdb
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csprojResolveAssemblyReference.cache
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.Properties.Resources.resources
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csproj.GenerateResource.Cache
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.dll
+F:\LABORATORY\Project\Visual\tu\SmartTourWeb -manh 14042015\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.pdb
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.pdb
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\Antlr3.Runtime.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\EntityFramework.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\MySql.Data.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\PagedList.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.Optimization.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.Providers.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\WebActivator.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\WebGrease.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\PagedList.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\SmarttourLib.pdb
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\EntityFramework.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\bin\WebActivator.pdb
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csprojResolveAssemblyReference.cache
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.Properties.Resources.resources
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csproj.GenerateResource.Cache
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.pdb
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.pdb
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\Antlr3.Runtime.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\EntityFramework.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\Microsoft.Web.Infrastructure.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\MySql.Data.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\PagedList.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\SmarttourLib.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Optimization.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Providers.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\WebActivator.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\WebGrease.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.xml
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.xml
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.xml
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.xml
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\PagedList.xml
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.xml
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\SmarttourLib.pdb
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.xml
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\EntityFramework.xml
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.xml
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.xml
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.Formatting.xml
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.xml
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.xml
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Http.WebHost.xml
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.xml
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.xml
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.xml
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.xml
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\WebActivator.pdb
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csprojResolveAssemblyReference.cache
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.Properties.Resources.resources
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csproj.GenerateResource.Cache
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.dll
+F:\LABORATORY\Project\Visual\Thai\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.pdb
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\SmartTourWeb.pdb
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\Antlr3.Runtime.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\EntityFramework.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\MySql.Data.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\PagedList.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Optimization.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Providers.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\WebActivator.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\WebGrease.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\AttributeRouting.Web.Mvc.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\DotNetOpenAuth.Core.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\PagedList.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\PagedList.Mvc.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\SmarttourLib.pdb
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Razor.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\EntityFramework.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\Newtonsoft.Json.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Net.Http.WebRequest.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.Mvc.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Deployment.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\System.Web.WebPages.Razor.xml
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\WebActivator.pdb
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csprojResolveAssemblyReference.cache
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.Properties.Resources.resources
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.csproj.GenerateResource.Cache
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.dll
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\obj\Debug\SmartTourWeb.pdb
+C:\Users\d3vjl\Desktop\SmartTourWeb 04052015\SmartTourWeb\SmartTourWeb\SmartTourWeb\bin\CKFinder.pdb

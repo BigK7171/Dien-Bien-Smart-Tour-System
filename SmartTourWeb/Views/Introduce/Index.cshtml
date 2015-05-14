@@ -1,0 +1,45 @@
+﻿@model  SmartTourWeb.Models.smt_intro
+@{
+    ViewBag.Title = "Quản lý giới thiệu";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Quản lý giới thiệu</h2>
+
+<div class="Control">
+    @if (Model == null)
+    {
+         <ul>
+        <li><a class="vadd" href="/Introduce/Create">Tạo bài giới thiệu</a></li>
+    </ul>
+    }
+   
+</div>
+<table class="TableView">
+    <tr class="trHeader">
+        <th>Tùy chọn</th>
+        <th class="Text">
+            Nội dung Tiếng Việt
+        </th>
+        <th class="Text">
+            Nội dung Tiếng Anh
+        </th>
+           
+    </tr>
+    @if (Model != null)
+    {
+        <tr class="trOdd">
+            <td class="Function">
+                @Html.ActionLink("Edit", "Edit", new { id = Model.intro_id}, new { @class = "vedit" }) 
+            </td>
+            <td class="Text tbold">
+               @Html.Raw(Model.intro_contain)
+            </td>
+            <td class="Text tbold">
+               @Html.Raw(Model.intro_contain_en)
+            </td>            
+        </tr>
+    }
+        
+
+</table>

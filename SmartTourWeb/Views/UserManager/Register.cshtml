@@ -1,0 +1,95 @@
+﻿@model SmartTourWeb.Models.smt_user
+
+@{
+    ViewBag.Title = "Đăng ký tài khoản";
+    Layout = "~/Views/Shared/_SearchLayout.cshtml";
+}
+<link href="~/Content/tool/forms-min.css" rel="stylesheet" />
+<link href="~/Content/tool/buttons-min.css" rel="stylesheet" />
+
+<br />
+@if ((int)Session["CurrentCulture"] == 1)
+{
+    using (Html.BeginForm())
+    {
+    @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+    <div class="box pure-form pure-form-aligned">
+        <div class="box_name tblue ">
+            <div class="active"><span>Đăng ký tài khoản</span></div>
+         </div>
+        <br />
+        @if (ViewBag.Success != null)
+            { <div class="pure-control-group green">@ViewBag.Success</div> }
+            else
+            {
+             <div class="pure-control-group tred">@ViewBag.Error</div>
+            <div class="pure-control-group">
+                <label for="email">Email Address:</label>
+                @Html.EditorFor(model => model.user_email, new { @id = "email"})
+                @Html.ValidationMessageFor(model => model.user_email)
+            </div>
+            <div class="pure-control-group">
+                 <label for="password">Password:</label>
+                @Html.EditorFor(model => model.pasword, new { @id = "password" })
+                @Html.ValidationMessageFor(model => model.pasword)
+            </div>
+            <div class="pure-control-group">
+                 <label for="password">Confirm password:</label>
+                @Html.EditorFor(model => model.ConfirmPassword, new { @id = "password" })
+                @Html.ValidationMessageFor(model => model.ConfirmPassword)
+            </div>
+            <div class="pure-control-group">
+                <label for="name">Name:</label>
+                @Html.EditorFor(model => model.username, new { @id = "name" })
+                @Html.ValidationMessageFor(model => model.username)
+            </div>
+            <div class="pure-controls">
+                <button type="submit" class="pure-button pure-button-primary">Register</button>
+            </div>}
+    </div>
+    }
+}
+else
+{
+    using (Html.BeginForm())
+    {
+    @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+    <div class="box pure-form pure-form-aligned">
+        <div class="box_name tblue ">
+            <div class="active"><span>Đăng ký</span></div>
+        </div>
+        <br />
+        @if (ViewBag.Success != null)
+            { <div class="pure-control-group green">@ViewBag.Success</div> }
+            else
+            {
+             <div class="pure-control-group tred">@ViewBag.Error</div>
+            <div class="pure-control-group">
+                @Html.LabelFor(model => model.user_email)
+                @Html.EditorFor(model => model.user_email, new { @id = "email" })
+                @Html.ValidationMessageFor(model => model.user_email)
+            </div>
+            <div class="pure-control-group">
+                @Html.LabelFor(model => model.pasword)
+                @Html.EditorFor(model => model.pasword, new { @id = "password" })
+                @Html.ValidationMessageFor(model => model.pasword)
+            </div>
+            <div class="pure-control-group">
+                @Html.LabelFor(model => model.ConfirmPassword)
+                @Html.EditorFor(model => model.ConfirmPassword, new { @id = "password" })
+                @Html.ValidationMessageFor(model => model.ConfirmPassword)
+            </div>
+            <div class="pure-control-group">
+                @Html.LabelFor(model => model.username)
+                @Html.EditorFor(model => model.username, new { @id = "name" })
+                @Html.ValidationMessageFor(model => model.username)
+            </div>
+            <div class="pure-controls">
+                <button type="submit" class="pure-button pure-button-primary">Hoàn tất</button>
+            </div>}
+    </div>
+    }
+}
+

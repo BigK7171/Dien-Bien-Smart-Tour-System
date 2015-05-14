@@ -1,0 +1,37 @@
+﻿@model SmartTourWeb.Models.smt_comment
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+<script src="~/Scripts/globalize.js" type="text/javascript"></script>
+
+<link href="~/Content/tool/forms-min.css" rel="stylesheet" />
+<link href="~/Content/tool/buttons-min.css" rel="stylesheet" />
+
+@using (Ajax.BeginForm("CreateComment", "User", new AjaxOptions()
+{
+    UpdateTargetId = "CommentId",
+    HttpMethod = "Post",
+    InsertionMode = InsertionMode.Replace
+}))
+{
+   @Html.ValidationSummary(true)
+    <div class="box-create-comment">
+        
+        <div class="pure-control-group">
+            @Html.TextAreaFor(model => model.comment_contain, new { @id = "text", cols = 87, rows = 3,  placeholder="Viết bình luận ..." })
+            @Html.ValidationMessageFor(model => model.comment_contain)
+        </div>
+        <div class="editor-field" >
+            @Html.HiddenFor(model => model.location_id, new { @Value = ViewBag.ITEM_ID })
+            @Html.ValidationMessageFor(model => model.location_id)
+
+        </div>
+
+        <input type="hidden" name="ITEM_ID" value="@ViewBag.ITEM_ID" />
+
+        <div class="pure-controls">
+                <button type="submit" class="pure-button pure-button-primary">Bình luận</button>
+            </div>
+
+</div>
+}

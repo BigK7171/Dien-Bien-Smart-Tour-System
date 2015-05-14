@@ -1,0 +1,316 @@
+﻿@model SmartTourWeb.Models.smt_tours
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+@{
+    List<SmartTourWeb.Models.smt_tour_items> tour_item = (List<SmartTourWeb.Models.smt_tour_items>)ViewData["tour_item"];
+}
+
+<h2>Chi tiết</h2>
+
+<table class="TableUpdate" border="1">
+    <tbody>
+        <tr>
+            <td class="Control" colspan="2">
+                <ul>
+                    <li>@Html.ActionLink("Sửa", "Edit", new { id = Model.tour_id }, new { @class = "vedit" })</li>
+                    <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tour_id)
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.tour_id)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tour_name_vi)
+            </th>
+            <td class="text valid tbold">
+                @Html.DisplayFor(model => model.tour_name_vi)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tour_name_en)
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.tour_name_en)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tour_short_des_vi)
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.tour_short_des_vi)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tour_short_des_en)
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.tour_short_des_en)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tour_icon_dir)
+            </th>
+            <td class="text valid">
+                <img src="@Model.tour_icon_dir" alt="Logo" height="300" />
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tour_long_des_vi)
+            </th>
+            <td class="text valid">
+                @Html.Raw(Model.tour_long_des_vi)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tour_long_des_en)
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.tour_long_des_en)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tour_duration)
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.tour_duration)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tour_price)
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.tour_price)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tour_status)
+            </th>
+            <td class="text valid">
+                <input type="checkbox" name="tourstatus" value="1"  @(((Model.tour_status == true) ? "checked" : "")) disabled="disabled" />
+            </td>
+        </tr>
+       
+        
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tour_contact_web)
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.tour_contact_web)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tour_contact_phone)
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.tour_contact_phone)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tour_video_dir)
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.tour_video_dir)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.agent.agent_name)
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.agent.agent_name)
+            </td>
+        </tr>
+        <tr>
+            <th>Lộ trình Tour</th>
+            <td>
+                @if (tour_item != null)
+                {
+                    int i = 1;
+
+                    foreach (var item in tour_item)
+                    {
+                        string name = "tb" + i;
+                        if (i != 1)
+                        {<b>&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;</b>}
+                    @Html.ActionLink(item.smt_location.location_name_vi, "Details", "Home", new { id = item.smt_location.location_id }, null)      
+                        i++;
+                    }
+                }
+                else
+                {
+                    <div>Chưa có địa danh nào </div>
+                }
+            </td>
+        </tr>
+        <tr>
+            <th>Sửa lộ trình</th>
+            <td>
+                <br />
+
+                @using (Html.BeginForm(new { id = Model.tour_id }))
+                {   
+                    @Html.ValidationSummary(true) 
+                    <input type="button" id="btAdd" value="Thêm địa điểm" class="bt" />
+                    <input type="button" id="btRemove" value="Xóa địa điểm" class="bt" />
+                    <input type="button" id="btRemoveAll" value="Xóa tất cả" class="bt" /><br />
+                    <div id="main1"></div>
+                }
+                <br />
+                <i> Hướng dẫn: <br />
+                    1. Ấn vào "Thêm địa điểm ", khi hiện ra các ô textbox thì điền tên các địa điểm mà tour đi qua vào đó <br />
+                    (chú ý phải điền chính xác tên địa danh)<br />
+                    2. Ấn tiếp vào "Thêm địa điểm" để thêm các địa điểm mới trên lộ trình tour.<br />
+                    3. Có thể chọn tối đa 15 địa điểm
+                </i>
+            </td>
+        </tr>
+         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tour_user_created)
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.smt_user.user_email)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tour_time_created)
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.tour_time_created)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tour_user_modified)
+            </th>
+            <td class="text valid">
+                @ViewBag.user_modified
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tour_time_modified)
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.tour_time_modified)
+            </td>
+        </tr>
+        <tr>
+            <td class="Control" colspan="2">
+                <ul>
+                    <li>@Html.ActionLink("Sửa", "Edit", new { id = Model.tour_id }, new { @class = "vedit" })</li>
+                    <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                </ul>
+            </td>
+        </tr>
+</table>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/jquery-ui-1.9.2.min.js"></script>
+<style>
+    body
+    {
+        font: 13px verdana;
+        font-weight: normal;
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        var iCnt = 0;
+        var checkButtonSubmit = 0;
+        // CREATE A "DIV" ELEMENT AND DESIGN IT USING JQUERY ".css()" CLASS.
+        var container = $(document.createElement('div')).css({
+            padding: '5px', margin: '20px', width: '170px', border: '1px dashed',
+            borderTopColor: '#999', borderBottomColor: '#999',
+            borderLeftColor: '#999', borderRightColor: '#999'
+        });
+        $('#btAdd').click(function () {
+            if (iCnt <= 14) {
+                iCnt = iCnt + 1;
+                // ADD TEXTBOX.
+                $(container).append('<input placeholder="Địa điểm' + iCnt + '"' + ' type=text class="input" name=tb' + iCnt + ' id=tb' + iCnt + ' />');
+                
+                if (iCnt == 1 && checkButtonSubmit == 0) {        // SHOW SUBMIT BUTTON IF ATLEAST "1" ELEMENT HAS BEEN CREATED.
+                    var divSubmit = $(document.createElement('div'));
+                    // tim kiem
+
+                    $(divSubmit).append('<input  type="submit" value="Lưu lại lộ trình mới" />');
+                    checkButtonSubmit = 1;
+                }
+                $('#main1').after(container, divSubmit);   // ADD BOTH THE DIV ELEMENTS TO THE "main1" CONTAINER.
+            }
+            else {      // AFTER REACHING THE SPECIFIED LIMIT, DISABLE THE "ADD" BUTTON. (20 IS THE LIMIT WE HAVE SET)
+                $(container).append('<label class="tred">Tối đa 15 địa điểm </label>');
+                $('#btAdd').attr('class', 'bt-disable');
+                $('#btAdd').attr('disabled', 'disabled');
+            }
+        });
+        $('#btRemove').click(function () {   // REMOVE ELEMENTS ONE PER CLICK.
+            if (iCnt != 0) { $('#tb' + iCnt).remove(); iCnt = iCnt - 1; }
+            if (iCnt == 0) {
+                $(container).empty();
+                $(container).remove();
+                $('#btSubmit').remove();
+                $('#btAdd').removeAttr('disabled');
+                $('#btAdd').attr('class', 'bt')
+            }
+        });
+        $('#btRemoveAll').click(function () {    // REMOVE ALL THE ELEMENTS IN THE CONTAINER.
+            $(container).empty();
+            $(container).remove();
+            $('#btSubmit').remove(); iCnt = 0;
+            $('#btAdd').removeAttr('disabled');
+            $('#btAdd').attr('class', 'bt');
+        });
+    });
+    $(document).ready(function () {
+        $("#Country").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: "/Tour/Details",
+                    type: "POST",
+                    dataType: "json",
+                    data: { term: request.term },
+                    success: function (data) {
+                        response($.map(data, function (item) {
+                            return { label: item.location_name_vi, value: item.location_name_vi };
+                        }))
+                    }
+                })
+            },
+            messages: {
+                noResults: "", results: ""
+            }
+        });
+    })
+
+</script>
+
+

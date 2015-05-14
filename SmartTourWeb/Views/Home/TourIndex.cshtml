@@ -1,0 +1,92 @@
+﻿@model PagedList.IPagedList<SmartTourWeb.Models.smt_tours>
+@using PagedList;
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "TourIndex";
+    Layout = "~/Views/Shared/Home.cshtml";
+}
+
+@if ((int)Session["CurrentCulture"] == 1) // English
+{
+    <div class="box">
+    <div class="box_name">
+        <div class="active"><span>@Resources.Resource.Listtour</span></div>
+    </div>
+    <div class="box-list">
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+            <table class="box-item">
+                <tr >
+                    <td class="box-item-img">
+                        <img src="@item.tour_icon_dir" /></td>
+                    <td>
+                        <table class="box-item-table">
+                            <tr>
+                                <td class="box-item-name">@Html.ActionLink(item.tour_name_en, "TourDetail", new { id = item.tour_id })</td>
+                            </tr>
+                            <tr>
+                                <td class="box-item-addr">@Resources.Resource.time   @item.tour_duration</td>
+                            </tr>
+                            <tr>
+                                <td class="box-item-addr tred">@Resources.Resource.price   @item.tour_price</td>
+                            </tr>
+                            <tr>
+                                <td class="box-item-des">@Resources.Resource.Des @item.tour_short_des_en</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            }
+        }
+    </div>
+
+
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("TourIndex", new {  page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+</div>
+}
+else		// Vietnam
+{
+<div class="box">
+    <div class="box_name">@Resources.Resource.Listtour</div>
+    <div class="box-list">
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+            <table class="box-item">
+                <tr >
+                    <td class="box-item-img">
+                        <img src="@item.tour_icon_dir" /></td>
+                    <td>
+                        <table class="box-item-table">
+                            <tr>
+                                <td class="box-item-name">@Html.ActionLink(item.tour_name_vi, "TourDetail", new { id = item.tour_id })</td>
+                            </tr>
+                            <tr>
+                                <td class="box-item-addr">@Resources.Resource.time   @item.tour_duration</td>
+                            </tr>
+                            <tr>
+                                <td class="box-item-addr tred">@Resources.Resource.price   @item.tour_price</td>
+                            </tr>
+                            <tr>
+                                <td class="box-item-des">@Resources.Resource.Des @item.tour_short_des_vi</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            }
+        }
+    </div>
+
+
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) của @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("TourIndex", new {  page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+</div>
+}

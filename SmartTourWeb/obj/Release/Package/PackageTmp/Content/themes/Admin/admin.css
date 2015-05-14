@@ -1,0 +1,178 @@
+﻿
+#header {
+background: url(/images/theme/top_bg_c.jpg) repeat-x bottom;
+}
+element.style {
+}
+#header .tableAd td {
+vertical-align: middle;
+}
+#header .right {
+height: 25px;
+line-height: 25px;
+text-align: right;
+padding-right: 7px;
+padding-top: 5px;
+color: #1338d1;
+}
+.right {
+float: right;
+}
+td, div {
+font-size: 100%;
+}
+* {
+margin: 0px;
+padding: 0px;
+}
+user agent stylesheettd, th {
+display: table-cell;
+vertical-align: inherit;
+}
+
+#header .tableAd {
+background: url(/images/theme/top_bg_r.jpg) no-repeat bottom right;
+width: 100%;
+min-width: 1000px;
+font-size: 10px;
+font-weight: bold;
+}
+#header .tableAd td {
+vertical-align: middle;
+}
+#header .logo {
+height: 40px;
+padding-left: 10px;
+color: #0a6ccf;
+font-size: 20px;
+vertical-align: middle;
+}
+#header .div {
+background: url(/images/theme/top_bg_l.jpg) no-repeat left bottom;
+}
+* {
+margin: 0px;
+padding: 0px;
+}
+#header .left {
+height: 25px;
+line-height: 25px;
+text-align: left;
+padding-left: 15px;
+padding-top: 5px;
+color: #FFFFFF;
+font-weight: normal;
+}
+.left {
+float: left;
+}
+#header .right {
+height: 25px;
+line-height: 25px;
+text-align: right;
+padding-right: 7px;
+padding-top: 5px;
+color: #1338d1;
+}
+.right {
+float: right;
+}
+
+/* table 2*/
+table {
+border: 0;
+margin: 0px;
+padding: 0px;
+}
+* {
+margin: 0px;
+padding: 0px;
+}
+user agent stylesheettable {
+display: table;
+border-collapse: separate;
+border-spacing: 2px;
+border-color: gray;
+}
+Inherited from div.div
+td, div {
+font-size: 100%;
+}
+Inherited from div#header
+td, div {
+font-size: 100%;
+}
+Inherited from div.main
+td, div {
+font-size: 100%;
+}
+Inherited from body
+body {
+background: url(imagesAdmin/bg_admin.jpg) repeat-x left bottom fixed;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 12px;
+line-height: 1.5em;
+}
+
+.clearfix {
+display: block;
+}
+.clearfix:after {
+clear: both;
+display: block;
+content: ".";
+height: 0;
+visibility: hidden;
+overflow: hidden;
+}
+
+
+.editor-label {
+   font-size: 14px;
+   font-weight: bold;
+   margin-left: 20px;
+   margin-bottom: 3px;
+}
+.editor-field {
+     margin-left: 20px;
+     margin-bottom: 2px;
+      
+}
+.text-box {
+    min-width:300px
+}
+    single-line {
+    min-width: 100px;
+}
+
+.display-label {
+   font-size: 14px;
+   font-weight: bold;
+   margin-left: 20px;
+   margin-bottom: 3px;
+}
+.display-field {
+     margin-left: 20px;
+     margin-bottom: 2px;
+      
+}
+
+fieldset
+{
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+    max-width: 1000px;
+}
+
+legend
+{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.textareaDetail
+{
+    padding: 0 10px;
+   height: 100px
+}

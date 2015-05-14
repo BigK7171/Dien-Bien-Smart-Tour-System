@@ -1,0 +1,56 @@
+﻿@model SmartTourWeb.Models.smt_support_online
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Sửa thông tin người hỗ trợ</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <table class="TableUpdate" border="1">
+        <tbody>
+            <tr>
+                <td class="Control" colspan="2">
+                    <ul>
+                        <li>
+                            <input type="submit" value="Lưu lại" class="uupdate" /></li>
+                        <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                </th>
+                <td>
+                   @if (ViewBag.Success != null) 
+                    {<div class="tgreen">@ViewBag.Success</div>}
+                    else if (ViewBag.Error != null)
+                    { <div class="tred">@ViewBag.Error</div>}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.LabelFor(model => model.support_name) (*)
+                </th>
+                <td class="text valid tbold">
+                     @Html.EditorFor(model => model.support_name)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.LabelFor(model => model.support_nick)
+                </th>
+                <td class="text valid">
+                    @Html.EditorFor(model => model.support_nick)
+                    @Html.ValidationMessageFor(model => model.support_nick)
+                </td>
+            </tr>
+           
+
+        </tbody>
+    </table>
+    @Html.HiddenFor(model => model.support_id)
+}

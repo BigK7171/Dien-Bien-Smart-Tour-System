@@ -1,0 +1,45 @@
+﻿@model SmartTourWeb.Models.smt_location 
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/jquery-ui-1.9.2.min.js"></script>
+<link href="~/Content/themes/Home/jquery-ui.css" rel="stylesheet" />
+
+<link href="~/Content/tool/forms-min.css" rel="stylesheet" />
+<link href="~/Content/tool/buttons-min.css" rel="stylesheet" />
+<link href="~/Content/themes/Home/Home.css" rel="stylesheet" />
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Get, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+<div style="float:right;padding: 0px 8px;" class="pure-form">
+
+    <input type="text" style="width:210px; padding: 7px 33px; background-image: url(/Images/test/search_icon.jpg); background-size: 35px auto; background-repeat: no-repeat; background-position: left center;"  id="keyword_en" name="stringSearch" placeholder="@Resources.Resource.inputtext">
+    <input value ="@Resources.Resource.Search" type="submit" class="tbold btnSearch pure-button"/>  
+    <div style="margin:6px 0px;">@Html.ActionLink("Advanced Search","AdvancedSearch","Home")</div> 
+</div>
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#keyword_en").autocomplete({
+            source: function(request,response) {
+                $.ajax({
+                    url: "/Home/Search_en",
+                    type: "POST",
+                    dataType: "json",
+                    data: { term: request.term },
+                    success: function (data) {
+                        response($.map(data, function (item) {
+                            return { label: item.location_name_en, value: item.location_name_en };
+                        }))
+                    }
+                })
+            },
+            messages: {
+                noResults: "", results: ""
+            }
+        });
+    })
+</script>

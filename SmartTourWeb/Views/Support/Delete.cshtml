@@ -1,0 +1,60 @@
+﻿@model SmartTourWeb.Models.smt_support_online
+@{
+    ViewBag.Title = "Xóa tài khoản hỗ trợ";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2 class="tred">Bạn chắc chắn muốn xóa ?</h2>
+<table class="TableUpdate" border="1">
+    <tbody>
+        <tr>
+            <td class="Control" colspan="2">
+                <ul>
+                    <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>
+
+               Mã 
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.support_id)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Người hỗ trợ
+            </th>
+            <td class="text valid tbold">
+                @Html.DisplayFor(model => model.support_name)
+            </td>
+        </tr>
+        <tr>
+            <th>
+               Tài khoản Sky
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.support_nick)
+            </td>
+        </tr>
+     
+            <td></td>
+            <td>
+                @using (Html.BeginForm())
+                {
+                    <input type="submit" value="Đồng ý xóa" /> 
+                }
+            </td>
+        </tr>
+        <tr>
+            <td class="Control" colspan="2">
+                <ul>
+                    <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                </ul>
+            </td>
+        </tr>
+</table>
+
+

@@ -1,0 +1,126 @@
+﻿@model SmartTourWeb.Models.smt_sub_category
+
+@{
+    ViewBag.Title = "Xóa danh mục";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2 class="tred">Bạn chắc chắn muốn xóa ?</h2>
+<table class="TableUpdate" border="1">
+    <tbody>
+        <tr>
+            <td class="Control" colspan="2">
+                <ul>
+                    <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>
+
+                Mã danh mục
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.sub_category_id)
+            </td>
+        </tr>
+        <tr>
+            <th>
+               Tên danh mục
+            </th>
+            <td class="text valid tbold">
+                @Html.DisplayFor(model => model.sub_category_name_vi)
+            </td>
+        </tr>
+        <tr>
+            <th>
+              Tên danh mục - Tiếng Anh
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.sub_category_name_en)
+            </td>
+        </tr>
+        <tr>
+            <th>
+               Nhóm
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.smt_parent_category.parent_category_name_vi)
+            </td>
+        </tr>
+        <tr>
+            <th>
+              Ảnh đại diện
+            </th>
+            <td class="text valid">
+                <img src="@Model.sub_category_icondir" style="max-height:150px;max-width:150px" />
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+               Mô tả
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.sub_category_des_vi)
+            </td>
+        </tr>
+        <tr>
+            <th>
+             Mô tả  - Tiếng Anh
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.sub_category_des_en)
+            </td>
+        </tr>
+        <tr>
+            <th>
+               Người tạo
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.smt_user.user_email)
+            </td>
+        </tr>
+        <tr>
+            <th>
+              Thời gian tạo
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.sub_category_time_created)
+            </td>
+        </tr>
+        <tr>
+            <th>
+              Người sửa
+            </th>
+            <td class="text valid">
+                @ViewBag.user_modified
+            </td>
+        </tr>
+        <tr>
+            <th>
+               Thời gian sửa
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.sub_category_time_modified)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                @using (Html.BeginForm())
+                {
+                    <input type="submit" value="Đồng ý xóa" /> 
+                }
+            </td>
+        </tr>
+        <tr>
+            <td class="Control" colspan="2">
+                <ul>
+                    <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                </ul>
+            </td>
+        </tr>
+</table>
+
+

@@ -1,0 +1,45 @@
+﻿@model SmartTourWeb.Models.group
+
+@{
+    ViewBag.Title = "Thêm mới nhóm";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Thêm nhóm mới</h2>
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+
+     <table class="TableUpdate" border="1" >
+         <tbody>
+       
+             <tr >
+                <td class="Control"  colspan="2">
+                    <ul> 
+                        <li><input type="submit" value="Lưu lại" class="uupdate" /></li>
+                         <li>@Html.ActionLink("Quay lại", "Index",null, new { @class="vback" })</li>
+                    </ul>
+                </td>
+            </tr>
+             <tr>
+            <th >
+           Tên nhóm
+            </th>
+            <td class="text valid">
+            @Html.EditorFor(model => model.group_name)
+            @Html.ValidationMessageFor(model => model.group_name)
+            </td>
+        </tr>
+        <tr >
+            <td class="Control"  colspan="2">
+                <ul> 
+                    <li><input type="submit" value="Lưu lại" class="uupdate" /></li>
+                        <li>@Html.ActionLink("Quay lại", "Index",null, new { @class="vback" })</li>
+                </ul>
+            </td>
+        </tr> 
+
+             </tbody>
+</table>
+}
+

@@ -1,0 +1,107 @@
+﻿@model SmartTourWeb.Models.smt_user
+
+@{
+    ViewBag.Title = "Thay đổi thông tin người dùng";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Thay đổi thông tin người dùng</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <table class="TableUpdate" border="1">
+        <tbody>
+            <tr>
+                <td class="Control" colspan="2">
+                    <ul>
+                        <li>
+                            <input type="submit" value="Lưu lại" class="uupdate" /></li>
+                        <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>
+            @Html.LabelFor(model => model.user_email) 
+                </th>
+                <td class="text valid">
+            @Html.DisplayFor(model => model.user_email)
+                </td>
+            </tr>
+            <tr>
+                <th>
+            @Html.LabelFor(model => model.username)   (*)
+                </th>
+                <td class="text valid">
+            @Html.EditorFor(model => model.username)
+            @Html.ValidationMessageFor(model => model.username)
+                </td>
+            </tr>
+            <tr>
+                <th>
+            @Html.LabelFor(model => model.address)
+                </th>
+                <td class="text valid">
+            @Html.EditorFor(model => model.address)
+            @Html.ValidationMessageFor(model => model.address)
+                </td>
+            </tr>
+            <tr>
+                <th>
+            @Html.LabelFor(model => model.phone)
+                </th>
+                <td class="text valid">
+            @Html.EditorFor(model => model.phone)
+            @Html.ValidationMessageFor(model => model.phone)
+                </td>
+            </tr>
+            <tr>
+                <th>
+            @Html.LabelFor(model => model.user_logo)
+                </th>
+                <td class="text valid">
+                     @Html.TextAreaFor(model => model.user_logo, new { @id = "ckfPic", @rows = 1, @cols = 80 })
+                <input type="button" value="Chọn Ảnh ..." onclick="BrowsePic();"/>
+                </td>
+            </tr>
+
+        @if (Session["AGENT"].ToString() == "1")
+        {            <tr>
+                <th>
+                @Html.LabelFor(model => model.agent.agent_name)
+                </th>
+                <td class="text valid">
+                @Html.DisplayFor(model => model.agent.agent_name)
+                    @Html.HiddenFor(model => model.agent_id)
+                </td>
+                        </tr>
+
+        }
+        else
+        {
+            
+                    @Html.HiddenFor(model => model.agent_id)
+        }
+        @Html.HiddenFor(model => model.user_email)
+        @Html.HiddenFor(model => model.secret)
+        @Html.HiddenFor(model => model.user_id)
+        @Html.HiddenFor(model => model.state)
+        @Html.HiddenFor(model => model.created_time)
+        @Html.HiddenFor(model => model.last_login_ip)
+        @Html.HiddenFor(model => model.last_login_time)
+        @Html.HiddenFor(model => model.pasword, new { @Value = "123456"})
+        @Html.HiddenFor(model => model.ConfirmPassword, new { @Value = "123456"})
+
+            <tr>
+                <td class="Control" colspan="2">
+                    <ul>
+                        <li>
+                            <input type="submit" value="Lưu lại" class="uupdate" /></li>
+                        <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                    </ul>
+                </td>
+            </tr>
+    </table>
+}
+

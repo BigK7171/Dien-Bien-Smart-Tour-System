@@ -1,0 +1,217 @@
+﻿@model PagedList.IPagedList<SmartTourWeb.Models.smt_location>
+@using PagedList;
+@using PagedList.Mvc;
+@if ((int)Session["CurrentCulture"] == 1)
+{ ViewBag.Title = "List " + @ViewBag.Category_en; }
+else
+{ ViewBag.Title = "Danh sách các " + @ViewBag.Category; }
+@{
+    //  ViewBag.Title = "List";
+    Layout = "~/Views/Shared/Home.cshtml";
+    <script src="~/Scripts/streamvideo.js"></script>
+    <script src="~/Scripts/streamvideo_en.js"></script>
+    <script src="~/Scripts/limitdes.js"></script>
+}
+@if ((int)Session["CurrentCulture"] == 1) // English
+{
+    <!-- if ((int)Session["CurrentCulture"] == 1) // English
+        { <div>@{Html.RenderAction("Search_en", "Home");}</div><br /> }
+        else // Vietnames
+        { <div>@{Html.RenderAction("Search", "Home");}</div><br />}
+    
+    
+    <div>@{Html.RenderAction("Search", "Home");}</div><br />
+       -->
+    <br />
+    <div class="box">
+        @if ((int)Session["CurrentCulture"] == 1) // English
+        { <div class="box_name">
+            <div class="active">
+                <span>@ViewBag.Category_en</span>
+                <!--  <p style="background: transparent url(/Images/theme/border-bottom.png) repeat-x scroll right top; margin-top: 24px; padding: 168px;"><p></p></p>
+                       -->
+            </div>
+        </div>}
+        else // Tiếng Việt
+        { <div class="box_name">
+            <div class="active">
+                <span>@ViewBag.Category</span>
+                <!--  <p style="background: transparent url(/Images/theme/border-bottom.png) repeat-x scroll right top; margin-top: 24px; padding: 168px;"><p></p></p>
+                   -->
+            </div>
+        </div>}
+
+        <div class="box-list">
+            @if (Model != null)
+            {
+                int i_en = 0, post_count = 0;
+                string postid_en = "";
+                foreach (var item in Model)
+                {
+                    post_count++;
+                    postid_en = "post" + post_count.ToString();
+                    if (@item.location_counter == null)
+                    {
+                        item.location_counter = 0;
+                    }
+                <table class="box-item">
+                    <tr>
+                        <td class="box-item-img">
+                            <img src="@item.location_icondir" />
+                        </td>
+                        <td>
+                            <table class="box-item-table">
+                                <tr>
+                                    <td class="box-item-name">
+                                        <div>@Html.ActionLink(item.location_name_en, "Details", new { id = item.location_id, name_lacation = item.location_name_en })</div>
+                                        <div class="views">@item.location_counter @Resources.Resource.Views</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="box-item-addr">
+                                        @Resources.Resource.Add: @item.location_addr_en
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="box-item-des">@*@Resources.Resource.Des *@
+                                        <div id="@postid_en">@item.location_short_des_en ...</div>
+                                        <script>
+                                            limitDescription("@postid_en");
+                                        </script>
+                                        @if (item.location_videodir != null && item.location_videodir != "")
+                                        {
+                                            i_en++;
+                                            string watch_en = "streaming_video_" + i_en.ToString();
+                                            <div style="float: right; margin: 7px 0px;">
+                                                <a href="javascript:void(0);" onclick="openVideo_en(@i_en);" title="">
+                                                    <span class="icon-video">
+                                                        <img src="~/Images/theme/icon-video.gif" />
+                                                    </span>
+                                                    <span id="@watch_en" style="color:#06F">@Resources.Resource.IntroductionVideo</span>
+                                                </a>
+                                            </div>
+                                        }
+                                        else { }
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr id="@i_en" style="display: none">
+                        <td colspan="3" align="center">
+                            <iframe width="560" height="315" src="@item.location_videodir" frameborder="0" allowfullscreen></iframe>
+                        </td>
+                    </tr>
+                </table>
+                }
+            }
+        </div>
+
+
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("List", new { category = ViewBag.id, page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+    </div>
+}
+else		// Vietnam
+{
+
+
+    <!--<div>@{Html.RenderAction("Search", "Home");}</div><br /> -->
+    <br />
+    <div class="box">
+        <div class="box_name">
+            <div class="active">
+                <span>@ViewBag.Category</span>
+                <!--  <p style="background: transparent url(/Images/theme/border-bottom.png) repeat-x scroll right top; margin-top: 24px; padding: 168px;"><p></p></p>
+           -->
+            </div>
+        </div>
+        <div class="box-list">
+            @if (Model != null)
+            {
+                int i = 0, post_count= 0;
+                string post_id = "";
+                foreach (var item in Model)
+                {
+                    post_count++;
+                    post_id = "post" + post_count.ToString();
+                    if (@item.location_counter == null)
+                    {
+                        item.location_counter = 0;
+                    }
+                <table class="box-item">
+                    <tr>
+                        <td class="box-item-img">
+                            <img src="@item.location_icondir" /></td>
+                        <td>
+                            <table class="box-item-table">
+                                <tr>
+                                    <td class="box-item-name">
+                                        <div>@Html.ActionLink(item.location_name_vi, "Details", new { id = item.location_id, name_lacation = item.location_name_en })</div>
+                                        <div class="views">@item.location_counter @Resources.Resource.Views</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="box-item-addr">@Resources.Resource.Add: @item.location_addr</td>
+                                </tr>
+                                <tr>
+                                    <td class="box-item-des">
+                                        <div id="@post_id">@item.location_short_des_vi</div>
+                                        <script>
+                                            limitDescription("@post_id");
+                                        </script>
+                                        <div>
+                                            @if (item.location_videodir != null && item.location_videodir != "")
+                                            {
+                                                i++;
+                                                string watch = "xem_video_" + i.ToString();
+                                                <div style="float: right; margin: 7px 0px;">
+                                                    <a href="javascript:void(0);" onclick="openVideo(@i);" title="">
+                                                        <span class="icon-video">
+                                                            <img src="~/Images/theme/icon-video.gif" />
+                                                        </span>
+                                                        <span id="@watch" style="color:#06F">@Resources.Resource.IntroductionVideo</span>
+                                                    </a>
+                                                </div>
+                                            }
+                                            else { }
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr id="@i" style="display: none">
+                        <td colspan="3" align="center">
+                            <iframe width="560" height="315" src="@item.location_videodir" frameborder="0" allowfullscreen></iframe>
+                        </td>
+                    </tr>
+                </table>
+                }
+            }
+        </div>
+
+
+        Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) của @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("List", new { category = ViewBag.id, page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+    </div>
+}
+@functions{
+    string trimString(string str, int length)
+    {
+        if (str == null)
+        {
+            str = "";
+        }
+        if (str.Length > length)
+        {
+            return str.Substring(0, length) + " ...";
+        }
+        else
+        {
+            return str;
+        }
+    }
+}

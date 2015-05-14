@@ -1,0 +1,264 @@
+﻿@model SmartTourWeb.Models.smt_location
+
+@{
+    ViewBag.Title = "Chỉnh sửa địa điểm";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Sửa địa điểm</h2>
+
+@using (Html.BeginForm("Edit", "Service", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <table class="TableUpdate" border="1">
+        <tbody>
+            <tr>
+                <td class="Control" colspan="2">
+                    <ul>
+                        <li>
+                            <input type="submit" value="Lưu lại" class="uupdate" /></li>
+                        <li>@Html.ActionLink("Quay lại", "Index", new { category = Model.sub_category_id }, new { @class = "vback" })</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>@if (ViewBag.Success != null)
+                    {<div class="tgreen">@ViewBag.Success</div>}
+                    else if (ViewBag.Error != null)
+                    { <div class="tred">@ViewBag.Error</div>}
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Mã địa điểm
+                </th>
+                <td class="text valid">
+                    @Html.DisplayFor(model => model.location_id)
+                    @Html.HiddenFor(model => model.location_id)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                   Tên địa điểm
+                </th>
+                <td class="text valid tbold">
+                     @Html.EditorFor(model => model.location_name_vi)
+                   @* @Html.HiddenFor(model => model.location_name_vi)*@
+                </td>
+            </tr>
+            <tr>
+                <th>
+                   Tên địa điểm - Tiếng Anh
+                </th>
+                <td class="text valid">
+                    @Html.EditorFor(model => model.location_name_en)
+                    @Html.ValidationMessageFor(model => model.location_name_en)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                  Vĩ độ
+                </th>
+                <td class="text valid">
+                    @Html.EditorFor(model => model.location_latitude)
+                    @Html.ValidationMessageFor(model => model.location_latitude)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Kinh độ
+                </th>
+                <td class="text valid">
+                    @Html.EditorFor(model => model.location_longitude)
+                    @Html.ValidationMessageFor(model => model.location_longitude)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Địa chỉ
+                </th>
+                <td class="text valid">
+                    @Html.EditorFor(model => model.location_addr)
+                    @Html.ValidationMessageFor(model => model.location_addr)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                   Địa chỉ Tiếng Anh
+                </th>
+                <td class="text valid">
+                    @Html.EditorFor(model => model.location_addr_en)
+                    @Html.ValidationMessageFor(model => model.location_addr_en)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.LabelFor(model => model.sub_category_id, "Danh mục")
+                </th>
+                <td class="text valid">
+                    @*  @Html.DropDownList("SERVICE_CATEGORY_ID","Chọn thể loại")
+           @Html.D(model => model.sub_category_id) *@
+                    @Html.DropDownListFor(model => model.sub_category_id, (SelectList)ViewBag.SERVICE_CATEGORY_ID)
+                    @Html.ValidationMessageFor(model => model.sub_category_id)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                 Thuộc khu vực (nếu có)
+                </th>
+                <td class="text valid">
+                 @Html.DropDownListFor(model => model.location_parent_id, (SelectList)ViewBag.parent_location,String.Empty)
+                  @*     @Html.DropDownListFor(model => model.location_parent_id, (SelectList)ViewBag.parent_location)*@
+                    @Html.ValidationMessageFor(model => model.location_parent_id)
+                </td>
+            </tr>
+             <tr>
+                <th>
+                   Lớp bản đồ số hóa (nếu có)
+                </th>
+                <td class="text valid">
+                 @Html.DropDownListFor(model => model.location_layer_id, (SelectList)ViewBag.layer_location,String.Empty)
+                     @*  @Html.DropDownListFor(model => model.location_parent_id, (SelectList)ViewBag.parent_location)*@
+                    @Html.ValidationMessageFor(model => model.location_layer_id)
+                </td>
+            </tr>
+           
+
+             <tr>
+                <th>
+                   Thông tin tóm tắt
+                </th>
+                <td class="text valid">
+                    @Html.TextAreaFor(model => model.location_short_des_vi, new { cols = 100, rows = 3 })
+                    @Html.ValidationMessageFor(model => model.location_short_des_vi)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Thông tin tóm tắt - Tiếng Anh
+                </th>
+                <td class="text valid">
+                    @Html.TextAreaFor(model => model.location_short_des_en, new { cols = 100, rows = 3 })
+                    @Html.ValidationMessageFor(model => model.location_short_des_en)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                  Thông tin chung
+                </th>
+                <td class="text valid">
+                    @Html.TextAreaFor(model => model.location_des_vi, new { @id = "ckeDetail_vi", @rows = 10, @cols = 80 })
+                </td>
+            </tr>
+            <tr>
+                <th>
+                   Thông tin chung -Tiếng Anh
+                </th>
+                <td class="text valid">
+                    @Html.TextAreaFor(model => model.location_des_en, new { @id = "ckeDetail_en", @rows = 10, @cols = 80 })
+                </td>
+            </tr>
+            <tr>
+                <th>
+                   Ảnh đại diện
+                </th>
+                <td class="text valid">
+                    @Html.TextAreaFor(model => model.location_icondir, new { @id = "ckfPic", @rows = 1, @cols = 80 })
+                    <input type="button" value="Chọn Ảnh ..." onclick="BrowsePic();" />
+
+                </td>
+            </tr>
+            <tr>
+                <th>
+                   Đường dẫn video
+                </th>
+                <td class="text valid">
+                    @Html.TextAreaFor(model => model.location_videodir, new { @id = "ckfVideo", @rows = 1, @cols = 80 })
+
+                    <input type="button" value="Chọn Video ..." onclick="BrowseVideo();" />
+                </td>
+            </tr>
+            <tr>
+                <th>
+                  Website liên hệ
+                </th>
+                <td class="text valid">
+                    @Html.EditorFor(model => model.location_contact_web)
+                    @Html.ValidationMessageFor(model => model.location_contact_web)
+                </td>
+
+            </tr>
+            <tr>
+                <th>
+                   Điện thoại liên hệ
+                </th>
+                <td class="text valid">
+                    @Html.EditorFor(model => model.location_contact_phone)
+                    @Html.ValidationMessageFor(model => model.location_contact_phone)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                   Chia sẻ địa điểm này
+                </th>
+                <td class="text valid">
+                    @if (Session["AGENT"].ToString() == "1")
+                    {<div>
+                        <input type="checkbox" name="locationshared" value="1" @((Model.location_shared == true) ? "checked" : "")/>
+                        Bấm chọn để chia sẻ vị trí
+                        </div>
+                    }
+                    else
+                    {
+                        if (Model.location_shared == true)
+                        {<div>Đã phê duyệt</div>
+                        <div>
+                            <input type="checkbox" name="locationshared" value="1" checked />
+                             Bấm chọn để chia sẻ vị trí</div>}
+                        else
+                        {<div>Chờ phê duyệt</div>}
+                    }
+                </td>
+            </tr>
+            <tr>
+                <th>
+                   Đơn vị quản lý
+                </th>
+                <td class="text valid">
+                    @Html.DisplayFor(model => model.agent.agent_name)
+                    @Html.HiddenFor(model => model.agent_id)
+                    @Html.ValidationMessageFor(model => model.agent_id)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                 Người tạo
+                </th>
+                <td class="text valid">
+                    @Html.DisplayFor(model => model.smt_user.user_email)
+                    @Html.HiddenFor(model => model.location_user_created)
+                    @Html.ValidationMessageFor(model => model.location_user_created)
+                </td>
+            </tr>
+            @Html.HiddenFor(model => model.location_time_created)
+            @Html.HiddenFor(model => model.location_time_modified)
+            @Html.HiddenFor(model => model.location_user_modified)
+
+
+
+            <tr>
+                <td class="Control" colspan="2">
+                    <ul>
+                        <li>
+                            <input type="submit" value="Lưu lại" class="uupdate" /></li>
+                        <li>@Html.ActionLink("Quay lại", "Index", new { category = Model.sub_category_id }, new { @class = "vback" })</li>
+                    </ul>
+                </td>
+            </tr>
+    </table>
+}

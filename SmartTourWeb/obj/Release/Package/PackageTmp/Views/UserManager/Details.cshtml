@@ -1,0 +1,118 @@
+﻿@model SmartTourWeb.Models.smt_user
+
+@{
+    ViewBag.Title = "Thông tin người dùng";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<table class="TableUpdate" border="1">
+        <tbody>
+            <tr>
+                <td class="Control" colspan="2">
+                    <ul>
+                        <li>@Html.ActionLink("Sửa", "Edit", new { id = Model.user_id }, new { @class = "vedit" })</li>
+                        <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                    </ul>
+                </td>
+            </tr>            
+            <tr>
+                <th>
+            @Html.LabelFor(model => model.user_id)
+                </th>
+                <td class="text valid">
+            @Html.DisplayFor(model => model.user_id)
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+            @Html.LabelFor(model => model.user_email)
+                </th>
+                <td class="text valid">
+            @Html.DisplayFor(model => model.user_email)
+                </td>
+            </tr>
+            <tr>
+                <th>
+            @Html.LabelFor(model => model.username)
+                </th>
+                <td class="text valid">
+            @Html.DisplayFor(model => model.username)
+                </td>
+            </tr>
+            <tr>
+                <th>
+            @Html.LabelFor(model => model.address)
+                </th>
+                <td class="text valid">
+            @Html.DisplayFor(model => model.address)
+                </td>
+            </tr>
+            <tr>
+                <th>
+            @Html.LabelFor(model => model.phone)
+                </th>
+                <td class="text valid">
+            @Html.DisplayFor(model => model.phone)
+                </td>
+            </tr>
+            <tr>
+                <th>
+            @Html.LabelFor(model => model.user_logo)
+                </th>
+                <td class="text valid">
+                    <img src="@Model.user_logo" style="max-height:150px;max-width:150px" />
+                </td>
+            </tr>
+            <tr>
+                <th>
+            @Html.LabelFor(model => model.agent.agent_name)
+                </th>
+                <td class="text valid">
+            @Html.DisplayFor(model => model.agent.agent_name)
+                </td>
+            </tr>
+@*            <tr>
+                <th>
+            @Html.LabelFor(model => model.state)
+                </th>
+                <td class="text valid">
+            @Html.DisplayFor(model => model.state)
+                </td>
+            </tr>*@
+            <tr>
+                <th>
+            @Html.LabelFor(model => model.created_time)
+                </th>
+                <td class="text valid">
+            @Html.DisplayFor(model => model.created_time)
+                </td>
+            </tr>
+            <tr>
+                <th>
+            @Html.LabelFor(model => model.last_login_ip)
+                </th>
+                <td class="text valid">
+            @Html.DisplayFor(model => model.last_login_ip)
+                </td>
+            </tr>
+            <tr>
+                <th>
+            @Html.LabelFor(model => model.last_login_time)
+                </th>
+                <td class="text valid">
+            @Html.DisplayFor(model => model.last_login_time)
+                </td>
+            </tr>
+            <tr>
+                <td class="Control" colspan="2">
+                    <ul>
+                        
+                        <li>@Html.ActionLink("Sửa", "Edit", new { id = Model.user_id }, new { @class = "vedit" })</li>
+                        <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                    </ul>
+                </td>
+            </tr>
+    </table>

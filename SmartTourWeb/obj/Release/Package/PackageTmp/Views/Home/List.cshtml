@@ -1,0 +1,124 @@
+﻿@model PagedList.IPagedList<SmartTourWeb.Models.smt_location>
+@using PagedList;
+@using PagedList.Mvc;
+ @if ((int)Session["CurrentCulture"] == 1)
+ { ViewBag.Title ="List " + @ViewBag.Category_en; }
+        else
+ { ViewBag.Title = "Danh sách các " +  @ViewBag.Category; }
+@{
+  //  ViewBag.Title = "List";
+    Layout = "~/Views/Shared/Home.cshtml";
+}
+
+@if ((int)Session["CurrentCulture"] == 1) // English
+{
+   <!-- if ((int)Session["CurrentCulture"] == 1) // English
+        { <div>@{Html.RenderAction("Search_en", "Home");}</div><br /> }
+        else // Vietnames
+        { <div>@{Html.RenderAction("Search", "Home");}</div><br />}
+    
+    
+    <div>@{Html.RenderAction("Search", "Home");}</div><br />
+       -->
+<br />
+<div class="box">
+    @if ((int)Session["CurrentCulture"] == 1) // English
+                { <div class="box_name">
+                    <div class="active">
+                        <span>@ViewBag.Category_en</span>
+                      <!--  <p style="background: transparent url(/Images/theme/border-bottom.png) repeat-x scroll right top; margin-top: 24px; padding: 168px;"><p></p></p>
+                       -->
+                    </div>
+                  </div>}
+                else // Tiếng Việt
+                { <div class="box_name">
+                    <div class="active">
+                        <span>@ViewBag.Category</span>
+                      <!--  <p style="background: transparent url(/Images/theme/border-bottom.png) repeat-x scroll right top; margin-top: 24px; padding: 168px;"><p></p></p>
+                   -->
+                    </div>
+                  </div>}
+    
+    <div class="box-list">
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+            <table class="box-item">
+                <tr >
+                    <td class="box-item-img">
+                        <img src="@item.location_icondir" /></td> 
+                    <td>
+                        <table class="box-item-table">
+                            <tr>
+                                <td class="box-item-name">@Html.ActionLink(item.location_name_en, "Details", new { id = item.location_id, name_lacation=item.location_name_en })</td>
+                            </tr>
+                            <tr>
+                                <td class="box-item-addr">@Resources.Resource.Add : @item.location_addr_en
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="box-item-des">@*@Resources.Resource.Des *@ @item.location_short_des_en ...</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            }
+        }
+    </div>
+
+
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("List", new { category = ViewBag.id, page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+</div>
+}
+else		// Vietnam
+{
+
+
+<!--<div>@{Html.RenderAction("Search", "Home");}</div><br /> -->
+<br />
+<div class="box">
+    <div class="box_name">
+        <div class="active">
+            <span>@ViewBag.Category</span>
+          <!--  <p style="background: transparent url(/Images/theme/border-bottom.png) repeat-x scroll right top; margin-top: 24px; padding: 168px;"><p></p></p>
+           -->
+        </div>
+    </div>
+    <div class="box-list">
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+            <table class="box-item">
+                <tr >
+                    <td class="box-item-img">
+                        <img src="@item.location_icondir" /></td>
+                    <td>
+                        <table class="box-item-table">
+                            <tr>
+                                <td class="box-item-name">@Html.ActionLink(item.location_name_vi, "Details", new { id = item.location_id, name_lacation=item.location_name_en })</td>
+                            </tr>
+                            <tr>
+                                <td class="box-item-addr">@Resources.Resource.Add  @item.location_addr</td>
+                            </tr>
+                            <tr>
+                                <td class="box-item-des">@*@Resources.Resource.Des*@  @item.location_short_des_vi ...</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            }
+        }
+    </div>
+
+
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) của @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("List", new { category = ViewBag.id, page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+</div>
+}

@@ -1,0 +1,45 @@
+﻿@model SmartTourWeb.Models.group
+
+@{
+    ViewBag.Title = "Thông tin nhóm";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2>Thông tin nhóm</h2>
+
+<table class="TableUpdate" border="1">
+        <tbody>
+            <tr>
+                <td class="Control" colspan="2">
+                    <ul>
+                        <li>@Html.ActionLink("Sửa", "Edit", new { id = Model.id }, new { @class = "vedit" })</li>
+                        <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>
+
+       Mã nhóm
+                </th>
+                <td class="text valid">
+                    @Html.DisplayFor(model => model.id)
+                </td>
+            </tr>
+            <tr>
+                <th>
+           Tên nhóm
+                </th>
+                <td class="text valid tbold">
+            @Html.DisplayFor(model => model.group_name)
+                </td>
+            </tr>
+            <tr>
+                <td class="Control" colspan="2">
+                    <ul>
+                        <li>@Html.ActionLink("Sửa", "Edit", new { id = Model.id }, new { @class = "vedit" })</li>
+                        <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                    </ul>
+                </td>
+            </tr>
+    </table>

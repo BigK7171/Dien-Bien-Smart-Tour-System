@@ -1,0 +1,78 @@
+﻿@model SmartTourWeb.Models.smt_link_tour
+
+@{
+    ViewBag.Title = "Xóa tour";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<h2 class="tred">Bạn chắc chắn muốn xóa ?</h2>
+
+<table class="TableUpdate" border="1">
+    <tbody>
+        <tr>
+            <td class="Control" colspan="2">
+                <ul>
+                    <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>
+               Mã liên kết
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.link_tour_id)
+            </td>
+        </tr>
+        <tr>
+            <th>
+               Tên liên kết
+            </th>
+            <td class="text valid tbold">
+                @Html.DisplayFor(model => model.tour_name)
+            </td>
+        </tr>
+        <tr>
+            <th>
+               Tên liên kết - Tiếng Anh
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.tour_name_en)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Giới thiệu
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.tour_des_vi)
+            </td>
+        </tr>
+        <tr>
+            <th>
+               Giới thiệu - Tiếng Anh
+            </th>
+            <td class="text valid">
+                @Html.DisplayFor(model => model.tour_des_en)
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                @using (Html.BeginForm())
+                {
+                    <input type="submit" value="Delete" />
+                }
+
+            </td>
+        </tr>
+        <tr>
+            <td class="Control" colspan="2">
+                <ul>
+                    <li>@Html.ActionLink("Quay lại", "Index", null, new { @class = "vback" })</li>
+                </ul>
+            </td>
+        </tr>
+</table>
+
+

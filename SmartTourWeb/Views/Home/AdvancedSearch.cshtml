@@ -1,0 +1,181 @@
+﻿@model PagedList.IPagedList<SmartTourWeb.Models.smt_location>
+@using PagedList;
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = Resources.Resource.AdvancedSearch;
+    Layout = "~/Views/Shared/_SearchLayout.cshtml";
+    List<SmartTourWeb.Models.smt_location> location = (List<SmartTourWeb.Models.smt_location>)ViewData["locate"];
+
+}
+
+<style>
+    .advancedsearch
+    {
+        float: left;
+        width: 65%;
+        min-height: 1000px;
+        margin: 0px 26px;
+        padding: 26px;
+        border: 1px solid #EEE;
+    }
+
+    span > select
+    {
+        height: 33px;
+        border-radius: 5px;
+        margin: 12px 0px 12px 12px;
+        border: 1px solid rgb(204, 204, 204);
+    }
+
+    .buttonSearch
+    {
+        height: 33px;
+        border-radius: 5px;
+        border: 1px solid rgb(204, 204, 204);
+        width: 89px;
+        background-color: #3EADD0;
+        color: #FFF;
+        font-weight: bold;
+    }
+
+    .input_keyword
+    {
+        width: 232px;
+        margin: 0px 12px;
+        border-radius: 5px 5px;
+        border: 1px solid #CCCCCC;
+        height: 32px;
+    }
+
+    select
+    {
+        width: 233px;
+    }
+</style>
+
+<div class="advancedsearch">
+    <div style="margin: 0px 81px;">
+        <div style="text-align: center">
+            <label style="color: #466DEE">@Resources.Resource.AdvancedSearch</label>
+        </div>
+        <table>
+            <tr class="pure-form">
+
+                <td><span style="color: #06F">@Resources.Resource.inputtext</span> </td>
+                <td>
+                    <input type="text" id="keyword_advanced" name="inputtext" placeholder="@Resources.Resource.inputtext" class="input_keyword" />
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><span style="color: #06F">@Resources.Resource.Searchfor</span></td>
+                <td>
+                    <span>
+                        @if ((int)Session["CurrentCulture"] == 1)
+                        {
+                            @Html.DropDownList("Category", (SelectList)ViewBag.sub_category_id_en)
+                        }
+                        else
+                        {
+                            @Html.DropDownList("Category", (SelectList)ViewBag.sub_category_id)
+
+                        }
+                    </span>
+                </td>
+                <td>
+                    <input type="button" id="category_advanced" name="search" value="" class="circleSearchbutton" onclick="getResult()" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="searchResult"></div>
+</div>
+<script type="text/javascript">
+        
+    var cate_id = 0;
+    var language = @Session["CurrentCulture"];
+    $(document).ready(function () {
+        $("#Category").change(function () {
+            cate_id = $("#Category").val();
+            //   alert(cate_id);
+        });
+    });
+
+    function getResult(){
+                    
+        var searchString = $("#keyword_advanced").val();
+        //    alert(searchString);
+        //alert(cate_id);
+        if(cate_id =="error")
+        {
+            cate_id =0;
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: 'SearchQuery',
+            data: JSON.stringify({ category_id: cate_id, searchString: searchString, language: language }),
+            contentType: "application/json; charset=utf-8;",
+            success: function (data) {
+                //  alert(data)
+                showData(data);                        
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(textStatus);
+            }
+        });
+
+    }
+    function showData(data) {
+        // alert(data.length);
+        if(data.length ==0)
+        {
+            //   alert(@Resources.Resource.search_not_found);
+            document.getElementById("searchResult").innerHTML = '<div style="text-align:center;color:#F00">Không tìm thấy địa điểm nào phù hợp</div>';
+        }
+                   
+        else
+        {
+            // Show data in div tag 
+            //alert(data.length);
+            if(language == "1")
+                document.getElementById("searchResult").innerHTML = "<h5>Search result: </h5>";
+            
+            else
+                document.getElementById("searchResult").innerHTML = "<h5>Kết quả tìm kiếm: </h5>";
+            var i = 0;
+            var count = data.length;
+            for( i = 0 ; i < count ;i++)
+            {                              
+                var name = data[i].location_name;  
+                var addr = data[i].location_addr;
+                var des = data[i].location_short_des;
+                var name_en = data[i].location_name_en;
+
+
+                if(des==null) des = "";
+                var icon = data[i].location_icon;
+                var html = '';
+                html += '<table class="box-item" style="margin: 0px"><tr>';
+                html += '<td class="box-item-img"><img src="'+ icon +'" /></td>'; 
+                html += '<td><table class="box-item-table">';
+                html += '<tr><td class="box-item-name"> <a href="/Detail-'+ data[i].location_id + '/'+ name_en +'">'+ name +'</a></td></tr>';
+                if(language == "1")
+                {
+                    html += '<tr><td class="box-item-addr"> Address: '  + addr +'</td></tr>';
+                }
+                else
+                    html += '<tr><td class="box-item-addr"> Địa chỉ: '  + addr +'</td></tr>';
+                html += '<tr><td class="box-item-des"><p style="text-align:justify">'+ des +'...</p></td></tr>';
+                html +=  '</table></td></tr></table>';
+                var newDiv = document.createElement('div');
+                newDiv.innerHTML = html;               
+                document.getElementById('searchResult').appendChild(newDiv);               
+            }
+                    
+        }
+    }
+
+            
+</script>
+

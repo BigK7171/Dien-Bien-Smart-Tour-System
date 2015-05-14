@@ -1,0 +1,44 @@
+﻿@model IEnumerable<SmartTourWeb.Models.smt_support_online>
+
+@{
+    Layout = null;
+    List<SmartTourWeb.Models.smt_support_online> supports = (List<SmartTourWeb.Models.smt_support_online>)ViewData["supporter"];
+}
+
+<script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
+
+<div style="margin: 0px 0px 30px;" class="widget">
+<style>                      
+                       .listsupport
+                        {
+                           width: 100%;
+                        }
+                        .listsupport > ul >li > span
+                        {
+                            float:right;
+                            width: 50%;
+                            padding: 0px 26px;
+                            color: rgb(24, 135, 246);
+                        }
+
+</style>
+
+    <h5>@Resources.Resource.support</h5> 
+    <h6 style="font-size:15px; font-weight:bold; color:#186DF3;">@Resources.Resource.supporters</h6> 
+     
+      <div class="listsupport widget-archive">
+          <ul>
+             @foreach (var item in supports)
+             {
+                 string strLink = "skype:" + @item.support_nick.ToString() + "?chat";                 
+                 
+                 <li><a>@Html.DisplayFor(modelItem => item.support_name)</a>               
+                 <span>
+                    <a title="Talk with me via Skype" href="@strLink"><img alt="Talk with me via Skype" src="~/Images/theme/skype.gif" /></a>                     
+                 </span>   
+                 </li>               
+             }
+          </ul>       
+       </div>
+ </div>
+
